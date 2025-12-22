@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///E:/2/asean-wonders-website/app/thaifont_ca35a787.module.css"],"sourcesContent":["@font-face {\n    \nfont-family: 'thaiFont';\n    src: url('@vercel/turbopack-next/internal/font/local/font?{%22path%22:%22./fonts/%E9%B8%BF%E9%9B%B7%E8%A1%8C%E4%B9%A6%E7%AE%80%E4%BD%93.otf%22,%22preload%22:true,%22has_size_adjust%22:true}') format('opentype');\n    font-display: swap;\n    \n}\n\n@font-face {\n    font-family: 'thaiFont Fallback';\n    src: local(\"Arial\");\n    ascent-override: 76.58%;\ndescent-override: 40.69%;\nline-gap-override: 0.00%;\nsize-adjust: 111.84%;\n\n}\n\n.className {\n    font-family: 'thaiFont', 'thaiFont Fallback';\n    \n}\n.variable {\n    --font-thai: 'thaiFont', 'thaiFont Fallback';\n}\n\n"],"names":[],"mappings":"AAAA;;;;;;AAQA;;;;;;;;;AAUA;;;;AAIA"}}]
+}

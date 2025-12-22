@@ -1,0 +1,25 @@
+/* [project]/app/thaifont_ca35a787.module.css [app-client] (css) */
+@font-face {
+  font-family: thaiFont;
+  src: url("../media/鸿雷行书简体-s.p.0e09522d.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: thaiFont Fallback;
+  src: local(Arial);
+  ascent-override: 76.58%;
+  descent-override: 40.69%;
+  line-gap-override: 0.0%;
+  size-adjust: 111.84%;
+}
+
+.thaifont_ca35a787-module__HYbcFa__className {
+  font-family: thaiFont, thaiFont Fallback;
+}
+
+.thaifont_ca35a787-module__HYbcFa__variable {
+  --font-thai: "thaiFont", "thaiFont Fallback";
+}
+
+/*# sourceMappingURL=app_thaifont_ca35a787_module_6ffcba31.css.map*/

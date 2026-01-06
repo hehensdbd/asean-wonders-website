@@ -1169,12 +1169,12 @@ const festivals = [
     },
     {
         id: 4,
-        name: "水灯节庆典",
+        name: "佛诞节（万佛节）",
         thai: "Visakha Bucha (วิสาขบูชา)",
-        date: "每年5月（月圆之夜）",
+        date: "每年泰历六月十五日",
         description: "佛教重要节日，纪念佛祖的诞生、得道和涅槃。",
-        image: "/placeholder.svg?key=fest4&height=400&width=300",
-        details: "毗湿奴节是泰国最重要的佛教节日之一。信徒们聚集在寺庙中进行冥想、诵经和烛光游行，以纪念佛祖释迦牟尼的诞生、成道和涅槃。",
+        image: "/images/佛诞节.png",
+        details: "佛诞节是泰国最重要的佛教节日之一。信徒们聚集在寺庙中进行冥想、诵经和烛光游行，以纪念佛祖释迦牟尼的诞生、成道和涅槃。",
         traditions: [
             "寺庙礼拜",
             "烛光游行",
@@ -1185,7 +1185,7 @@ const festivals = [
 ];
 function FestivalsPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen bg-background",
+        className: "min-h-screen bg-background flex flex-col",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navigation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/app/explore/festivals/page.tsx",
@@ -1193,33 +1193,8 @@ function FestivalsPage() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                className: "max-w-7xl mx-auto px-4 md:px-6 py-12",
+                className: "max-w-7xl mx-auto px-4 md:px-6 py-12 flex-1",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-8",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/explore",
-                            className: "flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-6",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
-                                    size: 20
-                                }, void 0, false, {
-                                    fileName: "[project]/app/explore/festivals/page.tsx",
-                                    lineNumber: 68,
-                                    columnNumber: 13
-                                }, this),
-                                "返回探索"
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/explore/festivals/page.tsx",
-                            lineNumber: 64,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/app/explore/festivals/page.tsx",
-                        lineNumber: 63,
-                        columnNumber: 9
-                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mb-16",
                         children: [
@@ -1228,7 +1203,7 @@ function FestivalsPage() {
                                 children: "探索泰国文化"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                lineNumber: 75,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1236,7 +1211,7 @@ function FestivalsPage() {
                                 children: "节日庆典"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                lineNumber: 78,
+                                lineNumber: 67,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1244,13 +1219,13 @@ function FestivalsPage() {
                                 children: "泰国全年都充满了色彩斑斓的节日庆祝活动。从传统的泼水节到浪漫的水灯节，每个节日都讲述了泰国文化和精神信仰的故事。"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                lineNumber: 79,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/festivals/page.tsx",
-                        lineNumber: 74,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1269,17 +1244,17 @@ function FestivalsPage() {
                                                 className: "object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                lineNumber: 94,
+                                                lineNumber: 83,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/explore/festivals/page.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 82,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 81,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1290,7 +1265,7 @@ function FestivalsPage() {
                                                 children: festival.thai
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                lineNumber: 100,
+                                                lineNumber: 89,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1298,7 +1273,7 @@ function FestivalsPage() {
                                                 children: festival.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                lineNumber: 103,
+                                                lineNumber: 92,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1308,20 +1283,20 @@ function FestivalsPage() {
                                                         size: 18
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                                        lineNumber: 105,
+                                                        lineNumber: 94,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: festival.date
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                                        lineNumber: 106,
+                                                        lineNumber: 95,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 93,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1329,7 +1304,7 @@ function FestivalsPage() {
                                                 children: festival.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 97,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1337,7 +1312,7 @@ function FestivalsPage() {
                                                 children: festival.details
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                lineNumber: 109,
+                                                lineNumber: 98,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1347,7 +1322,7 @@ function FestivalsPage() {
                                                         children: "传统活动："
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                                        lineNumber: 112,
+                                                        lineNumber: 101,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1359,42 +1334,42 @@ function FestivalsPage() {
                                                                         className: "w-2 h-2 bg-secondary rounded-full"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                                                        lineNumber: 116,
+                                                                        lineNumber: 105,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     tradition
                                                                 ]
                                                             }, i, true, {
                                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                                lineNumber: 115,
+                                                                lineNumber: 104,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 102,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                                lineNumber: 111,
+                                                lineNumber: 100,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 88,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, festival.id, true, {
                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                lineNumber: 87,
+                                lineNumber: 76,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/explore/festivals/page.tsx",
-                        lineNumber: 85,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1405,7 +1380,7 @@ function FestivalsPage() {
                                 children: "相关文化体验"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                lineNumber: 129,
+                                lineNumber: 118,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1417,14 +1392,14 @@ function FestivalsPage() {
                                             className: "bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer h-full",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                    src: "/placeholder.svg?key=food&height=200&width=200",
+                                                    src: "/images/节日美食.png",
                                                     alt: "Festival Food",
                                                     width: 200,
                                                     height: 200,
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/festivals/page.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 122,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1432,7 +1407,7 @@ function FestivalsPage() {
                                                     children: "节日美食"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/festivals/page.tsx",
-                                                    lineNumber: 140,
+                                                    lineNumber: 129,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1440,18 +1415,18 @@ function FestivalsPage() {
                                                     children: "品尝节日期间的传统小食和特色菜肴"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/festivals/page.tsx",
-                                                    lineNumber: 141,
+                                                    lineNumber: 130,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/festivals/page.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 121,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 120,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1460,14 +1435,14 @@ function FestivalsPage() {
                                             className: "bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer h-full",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                    src: "/placeholder.svg?key=art&height=200&width=200",
+                                                    src: "/images/节日表演.png",
                                                     alt: "Festival Performances",
                                                     width: 200,
                                                     height: 200,
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/festivals/page.tsx",
-                                                    lineNumber: 147,
+                                                    lineNumber: 136,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1475,7 +1450,7 @@ function FestivalsPage() {
                                                     children: "节日表演"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/festivals/page.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 143,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1483,36 +1458,61 @@ function FestivalsPage() {
                                                     children: "欣赏节日期间的舞蹈、音乐和文化表演"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/festivals/page.tsx",
-                                                    lineNumber: 155,
+                                                    lineNumber: 144,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/festivals/page.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 135,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/festivals/page.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 134,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/explore/festivals/page.tsx",
-                                lineNumber: 130,
+                                lineNumber: 119,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/festivals/page.tsx",
-                        lineNumber: 128,
+                        lineNumber: 117,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/explore/festivals/page.tsx",
                 lineNumber: 61,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-7xl mx-auto px-4 md:px-6 py-8 w-full",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    href: "/explore",
+                    className: "flex items-center justify-center gap-2 text-secondary hover:text-accent transition-colors border border-border rounded-lg px-6 py-3 w-full max-w-xs mx-auto hover:bg-secondary/5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
+                            size: 20
+                        }, void 0, false, {
+                            fileName: "[project]/app/explore/festivals/page.tsx",
+                            lineNumber: 157,
+                            columnNumber: 11
+                        }, this),
+                        "返回探索"
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/explore/festivals/page.tsx",
+                    lineNumber: 153,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/explore/festivals/page.tsx",
+                lineNumber: 152,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {

@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { Calendar, User, ArrowRight } from "lucide-react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 const newsArticles = [
   {
@@ -12,7 +13,7 @@ const newsArticles = [
     date: "2025-04-08",
     author: "泰国文化局",
     category: "节日",
-    image: "/placeholder.svg?key=news1&height=400&width=600",
+    image: "/images/宋干节新闻.png",
     excerpt:
       "泰国今年的宋干节将于4月13日至15日举行。这个传统的泼水节庆典将在全国各地举行，游客可以体验泼水、赤脚行走和撒香粉等传统活动。",
     content: "宋干节是泰国最重要的文化节日，标志着泰国新年的到来。今年的庆祝活动预计吸引来自世界各地的数百万游客...",
@@ -23,7 +24,7 @@ const newsArticles = [
     date: "2025-03-15",
     author: "文化部",
     category: "文化",
-    image: "/placeholder.svg?key=news2&height=400&width=600",
+    image: "/images/清迈古城新闻.png",
     excerpt:
       "泰国文化部宣布清迈古城已被列为UNESCO世界遗产的候选地。这个有700多年历史的古城以其众多寺庙和传统建筑而闻名。",
     content: "清迈古城拥有丰富的文化遗产，包括300多座寺庙和传统的Lanna建筑风格...",
@@ -34,7 +35,7 @@ const newsArticles = [
     date: "2025-02-20",
     author: "旅游局",
     category: "美食",
-    image: "/placeholder.svg?key=news3&height=400&width=600",
+    image: "/images/美食节新闻.png",
     excerpt: "第三届泰国美食节在曼谷市中心举办，汇集了来自全国各地的最佳泰国美食。超过100位著名厨师参展。",
     content: "这个年度盛事展示了泰国美食的多样性和创新精神，从街头小食到高端料理...",
   },
@@ -44,7 +45,7 @@ const newsArticles = [
     date: "2025-02-10",
     author: "艺术基金会",
     category: "艺术",
-    image: "/placeholder.svg?key=news4&height=400&width=600",
+    image: "/images/手工艺品新闻.png",
     excerpt: "泰国的传统手工艺展览在国际手工艺博览会上获得金奖。展览展示了泰国陶瓷、丝绸和木雕的精湛工艺。",
     content: "这个展览汇集了来自全泰国60多位工匠的作品，展示了几个世纪的工艺传统...",
   },
@@ -78,7 +79,7 @@ export default function NewsPage() {
                 <div className="inline-block w-fit px-3 py-1 bg-secondary/20 text-secondary rounded text-xs font-semibold mb-3">
                   {newsArticles[0].category}
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-3">{newsArticles[0].title}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3 no-decoration">{newsArticles[0].title}</h2>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                   <span className="flex items-center gap-1">
                     <Calendar size={16} />
@@ -140,6 +141,7 @@ export default function NewsPage() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

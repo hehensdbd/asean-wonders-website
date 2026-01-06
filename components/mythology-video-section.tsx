@@ -20,62 +20,92 @@ export interface MythologyVideo {
   description: string
   duration: string
   thumbnail: string
+  characters?: number[] // IDs of characters that appear in this video
 }
 
 export function MythologyVideoSection({
-  character,
+  characters,
   videos,
+  onCharacterChange,
 }: {
-  character: MythologyCharacter | null
+  characters: MythologyCharacter[]
   videos: MythologyVideo[]
+  onCharacterChange?: (characterId: number) => void
 }) {
+  const [selectedCharacterId, setSelectedCharacterId] = useState<number>(characters[0]?.id || 1)
   const [selectedVideo, setSelectedVideo] = useState<MythologyVideo | null>(
-    character ? videos.find((v) => v.characterId === character.id) || null : null,
+    videos.find((v) => v.characterId === selectedCharacterId) || null,
   )
 
+  const handleCharacterSelect = (characterId: number) => {
+    setSelectedCharacterId(characterId)
+    const firstVideo = videos.find((v) => v.characterId === characterId)
+    setSelectedVideo(firstVideo || null)
+    onCharacterChange?.(characterId)
+  }
+
+  const handleVideoSelect = (video: MythologyVideo) => {
+    setSelectedVideo(video)
+    // If video is for a different character, update selected character
+    if (video.characterId !== selectedCharacterId) {
+      setSelectedCharacterId(video.characterId)
+      onCharacterChange?.(video.characterId)
+    }
+  }
+
+  const selectedCharacter = characters.find((c) => c.id === selectedCharacterId)
+  const relatedVideos = videos.filter((v) => v.characterId === selectedCharacterId)
+
   return (
-    <div className="w-full bg-gradient-to-br from-[#1a3d3a]/10 to-[#d4a574]/10 rounded-2xl p-8">
+    <div className="w-full bg-gradient-to-br from-[#1a3d3a]/10 to-[#d4a574]/10 rounded-2xl p-6 md:p-8">
       {/* Section title */}
       <h2 className="text-3xl font-bold mb-8 text-foreground">神话视频讲堂</h2>
 
       {/* Video layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left: Character info with background */}
-        <div className="lg:col-span-1 relative">
-          {character && (
-            <>
-              {/* Character background image */}
-              <div className="absolute inset-0 rounded-xl overflow-hidden -z-10">
-                <Image
-                  src={character.image || "/placeholder.svg"}
-                  alt={character.name}
-                  fill
-                  className="object-cover opacity-20"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
-              </div>
+      <div className="flex flex-col lg:flex-row gap-6">
+        <div className="w-full lg:w-48 flex-shrink-0">
+          <div className="space-y-2">
+            {characters.map((character) => {
+              const isSelected = character.id === selectedCharacterId
+              return (
+                <button
+                  key={character.id}
+                  onClick={() => handleCharacterSelect(character.id)}
+                  className={`
+                    w-full text-left rounded-lg overflow-hidden transition-all duration-300 ease-in-out
+                    ${isSelected ? "bg-secondary/20 border-2 border-secondary" : "bg-card border border-border hover:border-secondary/50"}
+                  `}
+                  style={{
+                    height: isSelected ? "auto" : "48px",
+                  }}
+                >
+                  {/* Compressed state - only name */}
+                  <div className="p-3">
+                    <h3 className="font-bold text-sm line-clamp-1">{character.name}</h3>
+                  </div>
 
-              {/* Character info */}
-              <div className="relative p-6 rounded-xl bg-black/30 backdrop-blur-sm text-white">
-                <h3 className="text-2xl font-bold mb-2">{character.name}</h3>
-                <p className="text-yellow-400 font-semibold mb-4">{character.thai}</p>
-                <p className="text-sm text-gray-200 mb-4">{character.title}</p>
-                <div className="h-32 rounded-lg overflow-hidden border-2 border-yellow-400/50">
-                  <Image
-                    src={character.image || "/placeholder.svg"}
-                    alt={character.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </>
-          )}
+                  {/* Expanded state - image and description */}
+                  {isSelected && (
+                    <div className="px-3 pb-3 animate-in fade-in slide-in-from-top-2 duration-300">
+                      <div className="relative w-full h-24 rounded-lg overflow-hidden mb-2">
+                        <Image
+                          src={character.image || "/placeholder.svg"}
+                          alt={character.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <p className="text-xs text-secondary font-semibold mb-1">{character.thai}</p>
+                      <p className="text-xs text-muted-foreground line-clamp-2">{character.description}</p>
+                    </div>
+                  )}
+                </button>
+              )
+            })}
+          </div>
         </div>
 
-        {/* Right: Video player and info */}
-        <div className="lg:col-span-2">
+        <div className="flex-1">
           {selectedVideo ? (
             <>
               {/* Video player placeholder */}
@@ -98,43 +128,46 @@ export function MythologyVideoSection({
               </div>
 
               {/* Video info */}
-              <div>
+              <div className="mb-6">
                 <h4 className="text-xl font-bold mb-3 text-foreground">{selectedVideo.title}</h4>
-                <p className="text-muted-foreground mb-6 leading-relaxed">{selectedVideo.description}</p>
+                <p className="text-muted-foreground leading-relaxed">{selectedVideo.description}</p>
+              </div>
 
-                {/* Video list */}
-                <div className="space-y-2">
-                  <h5 className="text-sm font-semibold text-foreground mb-4">相关视频</h5>
-                  {videos
-                    .filter((v) => v.characterId === character?.id)
-                    .map((video) => (
-                      <button
-                        key={video.id}
-                        onClick={() => setSelectedVideo(video)}
-                        className={`w-full flex gap-3 p-3 rounded-lg transition-all ${
+              {/* Related videos list */}
+              <div className="space-y-2">
+                <h5 className="text-sm font-semibold text-foreground mb-4">相关视频</h5>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {relatedVideos.map((video) => (
+                    <button
+                      key={video.id}
+                      onClick={() => handleVideoSelect(video)}
+                      className={`
+                        flex gap-3 p-3 rounded-lg transition-all
+                        ${
                           selectedVideo.id === video.id
                             ? "bg-secondary/20 border border-secondary"
                             : "hover:bg-muted border border-transparent"
-                        }`}
-                      >
-                        <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-muted">
-                          <Image
-                            src={video.thumbnail || "/placeholder.svg"}
-                            alt={video.title}
-                            fill
-                            className="object-cover"
-                          />
-                          <Play
-                            size={16}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white"
-                          />
-                        </div>
-                        <div className="flex-1 text-left">
-                          <h6 className="font-semibold text-sm text-foreground line-clamp-2">{video.title}</h6>
-                          <p className="text-xs text-muted-foreground mt-1">{video.duration}</p>
-                        </div>
-                      </button>
-                    ))}
+                        }
+                      `}
+                    >
+                      <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-muted">
+                        <Image
+                          src={video.thumbnail || "/placeholder.svg"}
+                          alt={video.title}
+                          fill
+                          className="object-cover"
+                        />
+                        <Play
+                          size={16}
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white"
+                        />
+                      </div>
+                      <div className="flex-1 text-left">
+                        <h6 className="font-semibold text-sm text-foreground line-clamp-2">{video.title}</h6>
+                        <p className="text-xs text-muted-foreground mt-1">{video.duration}</p>
+                      </div>
+                    </button>
+                  ))}
                 </div>
               </div>
             </>

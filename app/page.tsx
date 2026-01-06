@@ -3,6 +3,7 @@ import { HeroCarousel } from "@/components/hero-carousel"
 import { CulturalGrid } from "@/components/cultural-grid"
 import { NewsSection, CreativeProductsSection, TravelSection, CommunitySection } from "@/components/content-sections"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export default function Home() {
   return (
@@ -37,6 +38,8 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      <ScrollToTop />
     </div>
   )
 }

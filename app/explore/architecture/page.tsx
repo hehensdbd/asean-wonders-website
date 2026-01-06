@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Building2 } from "lucide-react"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { BackButton } from "@/components/back-button"
 
 const sites = [
   {
@@ -14,7 +16,7 @@ const sites = [
     location: "曼谷",
     period: "建于18世纪",
     description: "泰国最神圣的寺庙，收藏著著名的翡翠玉佛。",
-    image: "/placeholder.svg?key=arch1&height=400&width=300",
+    image: "/images/玉佛寺.png",
     details:
       "玉佛寺是泰国最重要的寺庙，也是国王的私人礼拜场所。这座寺庙以其精美的建筑和收藏著著名的翡翠玉佛而闻名。寺庙的建筑风格结合了泰国古典建筑的所有元素。",
   },
@@ -25,7 +27,7 @@ const sites = [
     location: "曼谷",
     period: "建于1782年",
     description: "泰国国王的官方住所，以其华丽的建筑和复杂的装饰著称。",
-    image: "/placeholder.svg?key=arch2&height=400&width=300",
+    image: "/images/大皇宫.png",
     details:
       "大皇宫是泰国最著名的地标之一。这座宏伟的建筑群包括多个建筑，展示了泰国建筑的最高成就。其复杂的细节工作和金色的装饰使其成为一个真正的艺术杰作。",
   },
@@ -36,7 +38,7 @@ const sites = [
     location: "素可泰",
     period: "13-15世纪",
     description: "泰国最重要的历史遗址之一，包含众多寺庙遗迹。",
-    image: "/placeholder.svg?key=arch3&height=400&width=300",
+    image: "/images/素可泰.png",
     details:
       "素可泰历史公园是泰国古老王国的中心。这个公园包含了超过40个寺庙遗迹，反映了素可泰时期的建筑成就和艺术风格。这些遗迹提供了对泰国历史和文化的深刻洞察。",
   },
@@ -47,7 +49,7 @@ const sites = [
     location: "清迈",
     period: "建于1296年",
     description: "北部古城，拥有许多历史寺庙和古建筑。",
-    image: "/placeholder.svg?key=arch4&height=400&width=300",
+    image: "/images/清迈古城新闻.png",
     details:
       "清迈古城是泰国北方文化的心脏。这座古城保留了许多寺庙和传统建筑，反映了Lanna王国的建筑风格。漫步在古城的街道上，您可以感受到几个世纪的历史和文化。",
   },
@@ -55,21 +57,10 @@ const sites = [
 
 export default function ArchitecturePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        {/* Breadcrumb */}
-        <div className="mb-8">
-          <Link
-            href="/explore"
-            className="flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-6"
-          >
-            <ArrowLeft size={20} />
-            返回探索
-          </Link>
-        </div>
-
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12 flex-1">
         {/* Hero Section */}
         <div className="mb-16">
           <div className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-4">
@@ -146,7 +137,20 @@ export default function ArchitecturePage() {
         </section>
       </main>
 
+      {/* 返回探索按钮 - 放在页面底部，Footer上方 */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 w-full">
+        <Link
+          href="/explore"
+          className="flex items-center justify-center gap-2 text-secondary hover:text-accent transition-colors border border-border rounded-lg px-6 py-3 w-full max-w-xs mx-auto hover:bg-secondary/5"
+        >
+          <ArrowLeft size={20} />
+          返回探索
+        </Link>
+      </div>
+
       <Footer />
+      <BackButton />
+      <ScrollToTop />
     </div>
   )
 }

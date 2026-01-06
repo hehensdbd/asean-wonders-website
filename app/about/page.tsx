@@ -3,6 +3,7 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Target, Users, Globe, Heart } from "lucide-react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 export default function AboutPage() {
   return (
@@ -18,40 +19,39 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Mission Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div className="bg-card border border-border rounded-lg p-8">
-            <Target className="text-secondary mb-4" size={40} />
-            <h2 className="text-2xl font-bold mb-4">我们的使命</h2>
-            <p className="text-muted-foreground">
-              通过数字平台和沉浸式体验，使全世界的人们能够了解、欣赏和参与东南亚文化。我们相信文化交流能够促进理解和尊重。
-            </p>
-          </div>
+        <div className="bg-card border border-border rounded-lg p-8">
+          <Target className="text-secondary mb-4" size={40} />
+          <h2 className="text-2xl font-bold mb-4 no-decoration">我们的使命</h2>
+          <p className="text-muted-foreground">
+            通过数字平台和沉浸式体验，使全世界的人们能够了解、欣赏和参与东南亚文化。我们相信文化交流能够促进理解和尊重。
+          </p>
+        </div>
 
-          <div className="bg-card border border-border rounded-lg p-8">
-            <Heart className="text-secondary mb-4" size={40} />
-            <h2 className="text-2xl font-bold mb-4">我们的价值观</h2>
-            <p className="text-muted-foreground">
-              我们致力于真实性、包容性和可持续性。我们与当地社区合作，确保文化得到真实和尊重的呈现，同时为当地经济做出贡献。
-            </p>
-          </div>
+        <div className="bg-card border border-border rounded-lg p-8">
+          <Heart className="text-secondary mb-4" size={40} />
+          <h2 className="text-2xl font-bold mb-4 no-decoration">我们的价值观</h2>
+          <p className="text-muted-foreground">
+            我们致力于真实性、包容性和可持续性。我们与当地社区合作，确保文化得到真实和尊重的呈现，同时为当地经济做出贡献。
+          </p>
+        </div>
 
-          <div className="bg-card border border-border rounded-lg p-8">
-            <Users className="text-secondary mb-4" size={40} />
-            <h2 className="text-2xl font-bold mb-4">我们的团队</h2>
-            <p className="text-muted-foreground">
-              由文化学者、旅游专家、设计师和开发人员组成的多国团队。我们对传播东南亚文化的热情驱动着我们的工作。
-            </p>
-          </div>
+        <div className="bg-card border border-border rounded-lg p-8">
+          <Users className="text-secondary mb-4" size={40} />
+          <h2 className="text-2xl font-bold mb-4 no-decoration">我们的团队</h2>
+          <p className="text-muted-foreground">
+            由文化学者、旅游专家、设计师和开发人员组成的多国团队。我们对传播东南亚文化的热情驱动着我们的工作。
+          </p>
+        </div>
 
-          <div className="bg-card border border-border rounded-lg p-8">
-            <Globe className="text-secondary mb-4" size={40} />
-            <h2 className="text-2xl font-bold mb-4">全球视野</h2>
-            <p className="text-muted-foreground">
-              我们的平台已经帮助数百万用户发现和欣赏东南亚文化。我们继续扩展我们的内容和服务，以更好地服务全球观众。
-            </p>
-          </div>
-        </section>
+        <div className="bg-card border border-border rounded-lg p-8">
+          <Globe className="text-secondary mb-4" size={40} />
+          <h2 className="text-2xl font-bold mb-4 no-decoration">全球视野</h2>
+          <p className="text-muted-foreground">
+            我们的平台已经帮助数百万用户发现和欣赏东南亚文化。我们继续扩展我们的内容和服务，以更好地服务全球观众。
+          </p>
+        </div>
+      </section>
 
         {/* Stats Section */}
         <section className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
@@ -70,7 +70,7 @@ export default function AboutPage() {
 
         {/* Contact Section */}
         <section className="bg-card border border-border rounded-lg p-12">
-          <h2 className="text-3xl font-bold mb-8 text-center">联系我们</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center justify-center">联系我们</h2>
           <div className="max-w-2xl mx-auto">
             <form className="space-y-6">
               <div>
@@ -109,6 +109,7 @@ export default function AboutPage() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

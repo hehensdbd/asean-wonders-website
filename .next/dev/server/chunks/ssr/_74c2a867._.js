@@ -224,7 +224,7 @@ function Navigation() {
         router.refresh(); // 刷新页面以更新状态
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        className: "sticky top-0 z-50 bg-[#002760] border-b border-[#001d47]",
+        className: "sticky top-0 z-50 bg-primary border-b border-primary-foreground/20",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full px-4 md:px-6",
             children: [
@@ -264,7 +264,7 @@ function Navigation() {
                                     className: "relative hidden md:block",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "flex items-center gap-1 px-2 py-1 text-white text-sm hover:bg-[#001d47] rounded transition-colors",
+                                            className: "flex items-center gap-1 px-2 py-1 text-primary-foreground text-sm hover:bg-primary-foreground/10 rounded transition-colors",
                                             onClick: ()=>setShowCountryDropdown(!showCountryDropdown),
                                             children: [
                                                 "-",
@@ -284,7 +284,7 @@ function Navigation() {
                                             columnNumber: 15
                                         }, this),
                                         showCountryDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute top-full left-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-1 w-32 z-50",
+                                            className: "absolute top-full left-0 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-md shadow-lg mt-1 w-32 z-50",
                                             onMouseEnter: ()=>setShowCountryDropdown(true),
                                             onMouseLeave: ()=>setShowCountryDropdown(false),
                                             children: aseanCountries.map((country)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -828,14 +828,14 @@ function HeroCarousel() {
         },
         {
             id: 4,
-            image: "/images/泰国美食.jpg",
+            image: "/images/泰国美食1.png",
             title: "泰国美食",
             description: "品尝东南亚的独特风味",
             link: "/explore/food"
         },
         {
             id: 5,
-            image: "/images/泰国建筑.jpg",
+            image: "/images/泰国建筑.png",
             title: "古代建筑",
             description: "发现历史的印记",
             link: "/explore/architecture"

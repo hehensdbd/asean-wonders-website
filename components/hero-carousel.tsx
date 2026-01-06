@@ -37,14 +37,14 @@ export function HeroCarousel() {
     },
     {
       id: 4,
-      image: "/images/泰国美食.jpg",
+      image: "/images/泰国美食1.png",
       title: "泰国美食",
       description: "品尝东南亚的独特风味",
       link: "/explore/food",
     },
     {
       id: 5,
-      image: "/images/泰国建筑.jpg",
+      image: "/images/泰国建筑.png",
       title: "古代建筑",
       description: "发现历史的印记",
       link: "/explore/architecture",
@@ -111,11 +111,11 @@ export function HeroCarousel() {
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <h2 
-               className={`text-6xl md:text-7xl font-bold mb-3 ${thaiFont.className}`}
+               className={`text-6xl md:text-7xl font-bold mb-3 ${thaiFont.className} no-decoration`}
                 style={{ 
-                  textShadow: '2px 2px 8px rgba(0,0,0,0.5)', // 添加文字阴影
-                  letterSpacing: '-0.05em', // 调整字间距
-                  lineHeight: '1.2', // 调整行高 
+                  textShadow: '2px 2px 8px rgba(0,0,0,0.5)',
+                  letterSpacing: '-0.05em',
+                  lineHeight: '1.2',
                 }}
               >
                 {slide.title}

@@ -5,16 +5,17 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { MessageCircle, ThumbsUp, Share2, Plus, MoreVertical } from "lucide-react"
 import { useState } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 const initialPosts = [
   {
     id: 1,
     author: "张三",
-    avatar: "/placeholder.svg?key=user1&height=48&width=48",
+    avatar: "/images/孔剧.png",
     date: "2 小时前",
     title: "我在清迈的寺庙体验",
     content: "今天在清迈参加了晨间冥想活动，与友善的僧侣们度过了神奇的一小时。真是一次改变人生的经历！",
-    image: "/placeholder.svg?key=post1&height=300&width=400",
+    image: "/images/冥想分享.png",
     likes: 234,
     comments: 45,
     shares: 12,
@@ -23,11 +24,11 @@ const initialPosts = [
   {
     id: 2,
     author: "李四",
-    avatar: "/placeholder.svg?key=user2&height=48&width=48",
+    avatar: "/images/节日庆典壁纸.png",
     date: "5 小时前",
     title: "泰国美食烹饪课程推荐",
     content: "刚完成了5天的泰国烹饪课程。学到了如何制作正宗的冬阴功汤和绿咖喱。强烈推荐曼谷的这家烹饪学校！",
-    image: "/placeholder.svg?key=post2&height=300&width=400",
+    image: "/images/烹饪分享.png",
     likes: 567,
     comments: 89,
     shares: 34,
@@ -36,11 +37,11 @@ const initialPosts = [
   {
     id: 3,
     author: "王五",
-    avatar: "/placeholder.svg?key=user3&height=48&width=48",
+    avatar: "/images/南塔尼.png",
     date: "12 小时前",
     title: "水灯节的美妙回忆",
     content: "去年参加了水灯节，真是太美了。看着数千盏灯笼在河上漂浮，感觉与宇宙相连。现在迫不及待想再去一次！",
-    image: "/placeholder.svg?key=post3&height=300&width=400",
+    image: "/images/水灯节分享.png",
     likes: 892,
     comments: 156,
     shares: 78,
@@ -123,7 +124,7 @@ export default function CommunityPage() {
 
         {/* Create Post */}
         <div className="bg-card border border-border rounded-lg p-6 mb-8">
-          <h2 className="text-lg font-bold mb-4">
+          <h2 className="text-lg font-bold mb-4 justify-center">
             {activeTab === "shares" && "分享您的故事"}
             {activeTab === "questions" && "提出您的问题"}
             {activeTab === "feedback" && "提供反馈意见"}
@@ -242,6 +243,7 @@ export default function CommunityPage() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }

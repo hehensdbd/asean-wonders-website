@@ -7,6 +7,7 @@ import Link from "next/link"
 import { ShoppingCart, Heart, ArrowRight } from "lucide-react"
 import { useState } from "react"
 import { ProductCarouselMain } from "@/components/product-carousel-main"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 // Product data
 const creativeProducts = [
@@ -110,19 +111,19 @@ const wallpapers = [
     id: 201,
     name: "寺庙艺术壁纸",
     resolution: "4K",
-    image: "/placeholder.svg?key=wallpaper1&height=400&width=600",
+    image: "/images/寺庙艺术壁纸.png",
   },
   {
     id: 202,
     name: "传统图案壁纸",
     resolution: "2K",
-    image: "/placeholder.svg?key=wallpaper2&height=400&width=600",
+    image: "/images/传统图案壁纸.png",
   },
   {
     id: 203,
     name: "泰式风景壁纸",
     resolution: "4K",
-    image: "/placeholder.svg?key=wallpaper3&height=400&width=600",
+    image: "/images/泰式风景壁纸.png",
   },
 ]
 
@@ -204,88 +205,97 @@ function WallpaperCard({ wallpaper }: { wallpaper: Wallpaper }) {
 
 export default function CulturalProductsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    // 添加背景容器 - 使用文创页面的背景类
+    <div className="min-h-screen relative bg-image-base bg-cultural-products">
+      {/* 添加遮罩层 - 根据图片亮度调整透明度 */}
+      <div className="bg-overlay overlay-dark-5"></div>
+      
+      {/* 内容区域 */}
+      <div className="bg-content">
+        <Navigation />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        {/* Hero Section */}
-        <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">文创</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            发现精选的泰国文化产品，每一件都体现了传统工艺和现代设计的完美结合。通过直接链接，轻松购买心仪的产品。
-          </p>
-        </div>
+        <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
+          {/* Hero Section */}
+          <div className="mb-30">
+            {/* 标题间距 */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">文创</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              发现精选的泰国文化产品，每一件都体现了传统工艺和现代设计的完美结合。通过直接链接，轻松购买心仪的产品。
+            </p>
+          </div>
 
-        {/* Module 1: Creative Products */}
-        <ProductCarouselMain
-          title="文创产品"
-          description="展示独特的创意产品，融合传统工艺与现代设计。每件产品都是泰国文化的艺术表达。"
-          products={creativeProducts}
-          moreLink="/cultural-products/creative"
-          layout="left-text"
-        />
+          {/* Module 1: Creative Products */}
+          <ProductCarouselMain
+            title="文创产品"
+            description="展示独特的创意产品，融合传统工艺与现代设计。每件产品都是泰国文化的艺术表达。"
+            products={creativeProducts}
+            moreLink="/cultural-products/creative"
+            layout="left-text"
+          />
 
-        {/* Module 2: Local Specialties */}
-        <ProductCarouselMain
-          title="本地特产"
-          description="品尝和购买地道的泰国特产，从传统调味料到特色商品，感受最地道的泰国味道。"
-          products={localSpecialties}
-          moreLink="/cultural-products/local"
-          layout="right-text"
-        />
+          {/* Module 2: Local Specialties */}
+          <ProductCarouselMain
+            title="本地特产"
+            description="品尝和购买地道的泰国特产，从传统调味料到特色商品，感受最地道的泰国味道。"
+            products={localSpecialties}
+            moreLink="/cultural-products/local"
+            layout="right-text"
+          />
 
-        {/* Module 3: Beautiful Wallpapers */}
-        <section className="mb-16">
-          <div className="mb-8">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h2 className="text-3xl font-bold">精美壁纸</h2>
-                <p className="text-muted-foreground mt-2">
-                  下载精心策划的泰国文化主题壁纸，将文化艺术带入你的日常生活。提供多种分辨率。
-                </p>
+          {/* Module 3: Beautiful Wallpapers */}
+          <section className="mb-16">
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-3xl font-bold">精美壁纸</h2>
+                  <p className="text-muted-foreground mt-2">
+                    下载精心策划的泰国文化主题壁纸，将文化艺术带入你的日常生活。提供多种分辨率。
+                  </p>
+                </div>
+                <Link
+                  href="/cultural-products/wallpapers"
+                  className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap"
+                >
+                  查看更多 <ArrowRight size={20} />
+                </Link>
               </div>
-              <Link
-                href="/cultural-products/wallpapers"
-                className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold whitespace-nowrap"
-              >
-                查看更多 <ArrowRight size={20} />
-              </Link>
             </div>
-          </div>
 
-          {/* Featured wallpapers grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {wallpapers.slice(0, 3).map((wallpaper) => (
-              <div
-                key={wallpaper.id}
-                className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group"
-              >
-                <div className="relative w-full h-48 bg-muted">
-                  <Image
-                    src={wallpaper.image || "/placeholder.svg"}
-                    alt={wallpaper.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-                  <button className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="px-4 py-2 bg-white text-foreground rounded font-semibold text-sm">下载</div>
-                  </button>
+            {/* Featured wallpapers grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {wallpapers.slice(0, 3).map((wallpaper) => (
+                <div
+                  key={wallpaper.id}
+                  className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow group"
+                >
+                  <div className="relative w-full h-48 bg-muted">
+                    <Image
+                      src={wallpaper.image || "/placeholder.svg"}
+                      alt={wallpaper.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
+                    <button className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="px-4 py-2 bg-white text-foreground rounded font-semibold text-sm">下载</div>
+                    </button>
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-semibold text-sm mb-2">{wallpaper.name}</h4>
+                    <p className="text-xs text-muted-foreground">{wallpaper.resolution} 分辨率</p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h4 className="font-semibold text-sm mb-2">{wallpaper.name}</h4>
-                  <p className="text-xs text-muted-foreground">{wallpaper.resolution} 分辨率</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          {/* Module divider */}
-          <div className="my-12 border-t border-border" />
-        </section>
-      </main>
+            {/* Module divider */}
+            <div className="my-12 border-t border-border" />
+          </section>
+        </main>
 
-      <Footer />
+        <Footer />
+        <ScrollToTop />
+      </div>
     </div>
   )
 }

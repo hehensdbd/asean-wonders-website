@@ -52,7 +52,7 @@ export function ProductCarouselMain({
   const textContent = (
     <div className="flex flex-col justify-between h-full">
       <div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">{currentProduct.name}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 no-decoration">{currentProduct.name}</h2>
         <p className="text-lg text-muted-foreground mb-6">
           {currentProduct.description || "精选产品，融合传统工艺与现代设计"}
         </p>

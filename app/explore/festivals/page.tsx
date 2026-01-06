@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Calendar } from "lucide-react"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { BackButton } from "@/components/back-button"
 
 const festivals = [
   {
@@ -42,34 +44,23 @@ const festivals = [
   },
   {
     id: 4,
-    name: "水灯节庆典",
+    name: "佛诞节（万佛节）",
     thai: "Visakha Bucha (วิสาขบูชา)",
-    date: "每年5月（月圆之夜）",
+    date: "每年泰历六月十五日",
     description: "佛教重要节日，纪念佛祖的诞生、得道和涅槃。",
-    image: "/placeholder.svg?key=fest4&height=400&width=300",
+    image: "/images/佛诞节.png",
     details:
-      "毗湿奴节是泰国最重要的佛教节日之一。信徒们聚集在寺庙中进行冥想、诵经和烛光游行，以纪念佛祖释迦牟尼的诞生、成道和涅槃。",
+      "佛诞节是泰国最重要的佛教节日之一。信徒们聚集在寺庙中进行冥想、诵经和烛光游行，以纪念佛祖释迦牟尼的诞生、成道和涅槃。",
     traditions: ["寺庙礼拜", "烛光游行", "诵经活动", "布施"],
   },
 ]
 
 export default function FestivalsPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        {/* Breadcrumb */}
-        <div className="mb-8">
-          <Link
-            href="/explore"
-            className="flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-6"
-          >
-            <ArrowLeft size={20} />
-            返回探索
-          </Link>
-        </div>
-
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12 flex-1">
         {/* Hero Section */}
         <div className="mb-16">
           <div className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-4">
@@ -131,7 +122,7 @@ export default function FestivalsPage() {
             <Link href="/explore/food">
               <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
                 <Image
-                  src="/placeholder.svg?key=food&height=200&width=200"
+                  src="/images/节日美食.png"
                   alt="Festival Food"
                   width={200}
                   height={200}
@@ -145,7 +136,7 @@ export default function FestivalsPage() {
             <Link href="/explore/art">
               <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer h-full">
                 <Image
-                  src="/placeholder.svg?key=art&height=200&width=200"
+                  src="/images/节日表演.png"
                   alt="Festival Performances"
                   width={200}
                   height={200}
@@ -159,7 +150,20 @@ export default function FestivalsPage() {
         </section>
       </main>
 
+      {/* 返回探索按钮 - 放在页面底部，Footer上方 */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 w-full">
+        <Link
+          href="/explore"
+          className="flex items-center justify-center gap-2 text-secondary hover:text-accent transition-colors border border-border rounded-lg px-6 py-3 w-full max-w-xs mx-auto hover:bg-secondary/5"
+        >
+          <ArrowLeft size={20} />
+          返回探索
+        </Link>
+      </div>
+
       <Footer />
+      <BackButton />
+      <ScrollToTop />
     </div>
   )
 }

@@ -149,7 +149,7 @@ export function Navigation() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#002760] border-b border-[#001d47]">
+    <nav className="sticky top-0 z-50 bg-[#1a3d3a] border-b border-primary-foreground/20">
       <div className="w-full px-4 md:px-6">
         <div className="flex items-center justify-between h-16 max-w-7xl mx-auto">
           {/* Logo部分 */}
@@ -169,7 +169,7 @@ export function Navigation() {
             {/* 国家选择器 */}
             <div className="relative hidden md:block">
               <button
-                className="flex items-center gap-1 px-2 py-1 text-white text-sm hover:bg-[#001d47] rounded transition-colors"
+                className="flex items-center gap-1 px-2 py-1 text-primary-foreground text-sm hover:bg-primary-foreground/10 rounded transition-colors"
                 onClick={() => setShowCountryDropdown(!showCountryDropdown)}
               >
                 -{currentCountry}
@@ -177,7 +177,7 @@ export function Navigation() {
               </button>
               {showCountryDropdown && (
                 <div
-                  className="absolute top-full left-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-1 w-32 z-50"
+                  className="absolute top-full left-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-1 w-32 z-50"
                   onMouseEnter={() => setShowCountryDropdown(true)}
                   onMouseLeave={() => setShowCountryDropdown(false)}
                 >
@@ -187,8 +187,8 @@ export function Navigation() {
                       onClick={() => handleCountryChange(country)}
                       className={`block w-full text-left px-3 py-2 text-xs transition-colors ${
                         currentCountry === country
-                          ? "bg-[#002760] text-yellow-400 font-semibold"
-                          : "text-white hover:bg-[#002760] hover:text-yellow-400"
+                          ? "bg-accent text-accent-foreground font-semibold"
+                          : "text-white hover:bg-accent hover:text-accent-foreground"
                       }`}
                     >
                       {country}
@@ -210,7 +210,7 @@ export function Navigation() {
               >
                 <Link href={item.href}>
                   <button
-                    className="px-3 py-2 text-sm font-medium text-white hover:bg-[#001d47] transition-colors rounded-md flex items-center gap-1"
+                    className="px-3 py-2 text-sm font-medium text-white hover:bg-primary-foreground/10 transition-colors rounded-md flex items-center gap-1"
                     aria-expanded={item.submenu ? openDropdown === item.label : undefined}
                     aria-haspopup={item.submenu ? "menu" : undefined}
                   >
@@ -226,7 +226,7 @@ export function Navigation() {
                 </Link>
                 {item.submenu && openDropdown === item.label && (
                   <div
-                    className="absolute top-full left-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-0 w-48"
+                    className="absolute top-full left-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-0 w-48"
                     role="menu"
                     onMouseEnter={() => handleDropdownMouseEnter(item.label)}
                     onMouseLeave={() => handleDropdownMouseLeave()}
@@ -235,7 +235,7 @@ export function Navigation() {
                       <Link
                         key={subitem.label}
                         href={subitem.href}
-                        className="block px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 whitespace-nowrap first:rounded-t-md last:rounded-b-md transition-colors"
+                        className="block px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground whitespace-nowrap first:rounded-t-md last:rounded-b-md transition-colors"
                         role="menuitem"
                       >
                         {subitem.label}
@@ -252,14 +252,14 @@ export function Navigation() {
             {/* 搜索下拉框 */}
             <div className="relative">
               <button
-                className="p-2 hover:bg-[#001d47] rounded-md transition-colors"
+                className="p-2 hover:bg-primary-foreground/10 rounded-md transition-colors"
                 aria-label="搜索"
                 onClick={() => setShowSearchDropdown(!showSearchDropdown)}
               >
                 <Search size={20} className="text-white" />
               </button>
               {showSearchDropdown && (
-                <div className="absolute top-full right-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-2 w-72 p-4 z-50">
+                <div className="absolute top-full right-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-2 w-72 p-4 z-50">
                   <div className="relative flex items-center">
                     <Search size={18} className="absolute left-3 text-white/60" aria-hidden="true" />
                     <input
@@ -268,7 +268,7 @@ export function Navigation() {
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-                      className="w-full pl-10 pr-4 py-2 rounded-lg bg-white text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                      className="w-full pl-10 pr-4 py-2 rounded-lg bg-white text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent"
                       aria-label="搜索东盟文化内容"
                       autoFocus
                     />
@@ -280,7 +280,7 @@ export function Navigation() {
             {/* 语言下拉框 */}
             <div className="relative hidden md:block">
               <button
-                className="p-2 hover:bg-[#001d47] rounded-md transition-colors flex items-center gap-1"
+                className="p-2 hover:bg-primary-foreground/10 rounded-md transition-colors flex items-center gap-1"
                 aria-label="语言选择"
                 onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
               >
@@ -288,15 +288,15 @@ export function Navigation() {
                 <span className="text-white text-xs hidden lg:inline">{currentLanguage}</span>
               </button>
               {showLanguageDropdown && (
-                <div className="absolute top-full right-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-2 w-40 z-50">
+                <div className="absolute top-full right-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-2 w-40 z-50">
                   {languages.map((lang) => (
                     <button
                       key={lang}
                       onClick={() => handleLanguageChange(lang)}
                       className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
                         currentLanguage === lang
-                          ? "bg-[#002760] text-yellow-400 font-semibold"
-                          : "text-white hover:bg-[#002760] hover:text-yellow-400"
+                          ? "bg-accent text-accent-foreground font-semibold"
+                          : "text-white hover:bg-accent hover:text-accent-foreground"
                       }`}
                     >
                       {lang}
@@ -309,12 +309,12 @@ export function Navigation() {
             {/* 认证下拉框 */}
             <div className="relative">
               <button
-                className="p-2 hover:bg-[#001d47] rounded-md transition-colors"
+                className="p-2 hover:bg-primary-foreground/10 rounded-md transition-colors"
                 aria-label="用户账户"
                 onClick={() => setShowAuthDropdown(!showAuthDropdown)}
               >
                 {isLoggedIn ? (
-                  <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-[#002760] font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold text-sm">
                     用
                   </div>
                 ) : (
@@ -322,25 +322,25 @@ export function Navigation() {
                 )}
               </button>
               {showAuthDropdown && (
-                <div className="absolute top-full right-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-2 w-48 z-50">
+                <div className="absolute top-full right-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-2 w-48 z-50">
                   {isLoggedIn ? (
                     <>
-                      <div className="px-4 py-3 border-b border-[#002760] text-white text-sm">用户账户</div>
+                      <div className="px-4 py-3 border-b border-primary-foreground/20 text-white text-sm">用户账户</div>
                       <Link
                         href="/profile"
-                        className="block px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors"
+                        className="block px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         个人资料
                       </Link>
                       <Link
                         href="/favorites"
-                        className="block px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors"
+                        className="block px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         我的收藏
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="w-full text-left px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors flex items-center gap-2"
+                        className="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2"
                       >
                         <LogOut size={16} />
                         登出
@@ -350,14 +350,14 @@ export function Navigation() {
                     <>
                       <button
                         onClick={handleLoginClick}
-                        className="w-full text-left px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors flex items-center gap-2 border-b border-[#002760]"
+                        className="w-full text-left px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2 border-b border-primary-foreground/20"
                       >
                         <LogIn size={16} />
                         登录
                       </button>
                       <button
                         onClick={handleRegisterClick}
-                        className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors"
+                        className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
                         注册账户
                       </button>
@@ -369,7 +369,7 @@ export function Navigation() {
 
             {/* 移动端菜单按钮 */}
             <button
-              className="lg:hidden p-2 hover:bg-[#001d47] rounded-md transition-colors"
+              className="lg:hidden p-2 hover:bg-primary-foreground/10 rounded-md transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "关闭菜单" : "打开菜单"}
               aria-expanded={isMobileMenuOpen}
@@ -382,14 +382,14 @@ export function Navigation() {
         {/* 移动端导航 */}
         {isMobileMenuOpen && (
           <div
-            className="lg:hidden border-t border-[#001d47] pb-4 bg-[#001d47]"
+            className="lg:hidden border-t border-primary-foreground/20 pb-4 bg-[#1a3d3a]"
             role="navigation"
             aria-label="移动导航"
           >
             {navItems.map((item) => (
               <div key={item.label}>
                 <button
-                  className="w-full text-left px-4 py-2 text-sm font-medium text-white hover:bg-[#002760] transition-colors flex justify-between items-center"
+                  className="w-full text-left px-4 py-2 text-sm font-medium text-white hover:bg-primary-foreground/10 transition-colors flex justify-between items-center"
                   onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                   aria-expanded={item.submenu ? openDropdown === item.label : undefined}
                   aria-haspopup={item.submenu ? "menu" : undefined}
@@ -404,12 +404,12 @@ export function Navigation() {
                   )}
                 </button>
                 {item.submenu && openDropdown === item.label && (
-                  <div className="bg-[#002760]" role="menu">
+                  <div className="bg-[#1a3d3a]" role="menu">
                     {item.submenu.map((subitem) => (
                       <Link
                         key={subitem.label}
                         href={subitem.href}
-                        className="block px-8 py-2 text-sm text-white hover:text-yellow-400 transition-colors"
+                        className="block px-8 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors"
                         role="menuitem"
                       >
                         {subitem.label}

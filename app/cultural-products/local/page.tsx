@@ -6,6 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { ShoppingCart, Heart, ArrowLeft, Star } from "lucide-react"
 import { useState } from "react"
+import ScrollToTop from "@/components/scroll-to-top"
+import BackButton from "@/components/back-button"
 
 const products = [
   {
@@ -171,6 +173,8 @@ export default function LocalSpecialtiesPage() {
       </main>
 
       <Footer />
+      <ScrollToTop />
+      <BackButton />
     </div>
   )
 }

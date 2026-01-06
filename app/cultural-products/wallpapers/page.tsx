@@ -2,6 +2,8 @@
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import ScrollToTop from "@/components/scroll-to-top"
+import BackButton from "@/components/back-button"
 import Image from "next/image"
 import Link from "next/link"
 import { Download, ArrowLeft } from "lucide-react"
@@ -14,7 +16,7 @@ const wallpapers = [
     category: "建筑",
     resolution: "4K",
     size: "2.5MB",
-    image: "/placeholder.svg?key=wallpaper1&height=600&width=900",
+    image: "/images/寺庙艺术壁纸.png",
   },
   {
     id: 202,
@@ -22,7 +24,7 @@ const wallpapers = [
     category: "图案",
     resolution: "2K",
     size: "1.8MB",
-    image: "/placeholder.svg?key=wallpaper2&height=600&width=900",
+    image: "/images/传统图案壁纸.png",
   },
   {
     id: 203,
@@ -30,7 +32,7 @@ const wallpapers = [
     category: "风景",
     resolution: "4K",
     size: "3.2MB",
-    image: "/placeholder.svg?key=wallpaper3&height=600&width=900",
+    image: "/images/泰式风景壁纸.png",
   },
   {
     id: 204,
@@ -38,7 +40,7 @@ const wallpapers = [
     category: "节日",
     resolution: "4K",
     size: "2.8MB",
-    image: "/placeholder.svg?key=wallpaper4&height=600&width=900",
+    image: "/images/节日庆典壁纸.png",
   },
   {
     id: 205,
@@ -46,7 +48,7 @@ const wallpapers = [
     category: "艺术",
     resolution: "2K",
     size: "2.1MB",
-    image: "/placeholder.svg?key=wallpaper5&height=600&width=900",
+    image: "/images/古典舞蹈壁纸.png",
   },
   {
     id: 206,
@@ -54,7 +56,7 @@ const wallpapers = [
     category: "美食",
     resolution: "4K",
     size: "2.9MB",
-    image: "/placeholder.svg?key=wallpaper6&height=600&width=900",
+    image: "/images/美食文化壁纸.png",
   },
 ]
 
@@ -177,6 +179,8 @@ export default function WallpapersPage() {
       </main>
 
       <Footer />
+      <ScrollToTop />
+      <BackButton />
     </div>
   )
 }

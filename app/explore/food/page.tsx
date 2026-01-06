@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { BackButton } from "@/components/back-button"
 
 const dishes = [
   {
@@ -46,21 +48,10 @@ const dishes = [
 
 export default function FoodPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        {/* Breadcrumb */}
-        <div className="mb-8">
-          <Link
-            href="/explore"
-            className="flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-6"
-          >
-            <ArrowLeft size={20} />
-            返回探索
-          </Link>
-        </div>
-
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12 flex-1">
         {/* Hero Section */}
         <div className="mb-16">
           <div className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-4">
@@ -137,7 +128,20 @@ export default function FoodPage() {
         </section>
       </main>
 
+      {/* 返回探索按钮 - 放在页面底部，Footer上方 */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 w-full">
+        <Link
+          href="/explore"
+          className="flex items-center justify-center gap-2 text-secondary hover:text-accent transition-colors border border-border rounded-lg px-6 py-3 w-full max-w-xs mx-auto hover:bg-secondary/5"
+        >
+          <ArrowLeft size={20} />
+          返回探索
+        </Link>
+      </div>
+
       <Footer />
+      <BackButton />
+      <ScrollToTop />
     </div>
   )
 }

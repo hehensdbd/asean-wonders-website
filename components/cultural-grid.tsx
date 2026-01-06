@@ -1,12 +1,13 @@
 import Link from "next/link"
-import { FileText, Palette, UtensilsCrossed, Map, Users } from "lucide-react"
+import Image from "next/image"
 
 const culturalItems = [
   {
     id: "news",
     title: "资讯",
     description: "最新的文化活动与旅游信息",
-    icon: FileText,
+    // 改为图片路径
+    icon: "/images/news.png",
     color: "bg-yellow-100 text-yellow-700",
     href: "/news",
   },
@@ -14,7 +15,7 @@ const culturalItems = [
     id: "cultural-products",
     title: "文创",
     description: "原创设计与本地特产",
-    icon: Palette,
+    icon: "/images/cultural-products.png",
     color: "bg-pink-100 text-pink-700",
     href: "/cultural-products",
   },
@@ -22,7 +23,7 @@ const culturalItems = [
     id: "food",
     title: "美食",
     description: "探索东盟的美食文化",
-    icon: UtensilsCrossed,
+    icon: "/images/food.png",
     color: "bg-orange-100 text-orange-700",
     href: "/explore/food",
   },
@@ -30,7 +31,7 @@ const culturalItems = [
     id: "travel",
     title: "旅游",
     description: "地区介绍与路线规划",
-    icon: Map,
+    icon: "/images/travel.png",
     color: "bg-green-100 text-green-700",
     href: "/travel",
   },
@@ -38,7 +39,7 @@ const culturalItems = [
     id: "community",
     title: "交流",
     description: "用户生成的内容与讨论",
-    icon: Users,
+    icon: "/images/community.png",
     color: "bg-blue-100 text-blue-700",
     href: "/community",
   },
@@ -47,22 +48,28 @@ const culturalItems = [
 export function CulturalGrid() {
   return (
     <section className="py-4 md:py-8">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">快速导航</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center justify-center">
+        快速导航
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-        {culturalItems.map((item) => {
-          const Icon = item.icon
-          return (
-            <Link key={item.id} href={item.href}>
-              <div className="bg-card hover:shadow-lg transition-shadow duration-300 rounded-lg p-6 text-center cursor-pointer border border-border h-full flex flex-col items-center justify-center">
-                <div className={`${item.color} p-4 rounded-full mb-4`}>
-                  <Icon size={32} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+        {culturalItems.map((item) => (
+          <Link key={item.id} href={item.href}>
+            <div className="bg-card hover:shadow-lg transition-shadow duration-300 rounded-lg p-6 text-center cursor-pointer border border-border h-full flex flex-col items-center justify-center">
+              <div className={`${item.color} p-4 rounded-full mb-4`}>
+                {/* 使用 Next.js Image 组件 */}
+                <Image 
+                  src={item.icon}
+                  alt={item.title}
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
               </div>
-            </Link>
-          )
-        })}
+              <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.description}</p>
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
   )

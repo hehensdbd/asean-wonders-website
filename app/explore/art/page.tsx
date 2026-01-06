@@ -2,17 +2,20 @@
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { BackButton } from "@/components/back-button"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Music } from "lucide-react"
 
+
 const artForms = [
   {
     id: 1,
-    name: "古典舞蹈",
+    name: "孔剧表演",
     thai: "Khon (โขน)",
-    description: "泰国最高雅的古典舞蹈形式，通常表演古代史诗和神话故事。",
-    image: "/placeholder.svg?key=art1&height=400&width=300",
+    description: "泰国经典的皇家舞蹈剧，优雅舞姿与传统音乐交织，演绎史诗故事《罗摩衍那》。",
+    image: "/images/孔剧.png",
     details:
       "古典舞蹈（Khon）是泰国最古老和最复杂的舞蹈形式。舞者穿着精美的传统服装和面具，通过精确的手势和身体运动来讲述故事，特别是《罗摩衍那》中的故事。",
     characteristics: ["精美的面具", "复杂的手势", "传统服装", "传统音乐"],
@@ -22,7 +25,7 @@ const artForms = [
     name: "民间舞蹈",
     thai: "Ram Thai (รำไทย)",
     description: "不同地区的传统民间舞蹈，各具特色，反映了地方文化。",
-    image: "/placeholder.svg?key=art2&height=400&width=300",
+    image: "/images/民间舞蹈.png",
     details:
       "泰国各地都有独特的民间舞蹈传统。从东北地区的Isaan舞到北方的Lanna舞，每个地区都有自己独特的舞蹈风格和音乐节奏，反映了该地区的文化特色。",
     characteristics: ["区域特色", "传统音乐", "群舞", "故事叙述"],
@@ -32,7 +35,7 @@ const artForms = [
     name: "传统音乐",
     thai: "Pipat (ปี่พาทย์)",
     description: "泰国古老的管乐和打击乐组合，常在庆典和仪式中演奏。",
-    image: "/placeholder.svg?key=art3&height=400&width=300",
+    image: "/images/古典音乐.png",
     details:
       "泰国传统音乐使用各种传统乐器，包括竹制长笛（Pipat）、鼓和其他打击乐器。这些音乐形式已有数个世纪的历史，是泰国文化认同的重要组成部分。",
     characteristics: ["竹笛演奏", "鼓声节奏", "传统乐器", "仪式用途"],
@@ -41,31 +44,20 @@ const artForms = [
     id: 4,
     name: "木偶戏",
     thai: "Nang Talung (หนังตะลุง)",
-    description: "皮影戏的一种形式，使用剪影和灯光在屏幕上讲述故事。",
-    image: "/placeholder.svg?key=art4&height=400&width=300",
+    description: "泰国著名的传统木偶戏，融合精致木偶操控与古典表演艺术讲述故事。",
+    image: "/images/木偶戏.png",
     details:
-      "泰国皮影戏是一种古老的艺术形式，艺人操纵皮制的人物剪影，在灯光下投射在屏幕上。通过这种方式讲述故事、传说和民间传说，为观众提供娱乐和教育。",
-    characteristics: ["皮制剪影", "灯光投射", "手工操纵", "故事讲述"],
+      "精美的人偶、娴熟的操控技巧，再加上生动有趣的故事节奏，通过这种方式讲述故事、传说和民间传说，带观众感受泰国的历史与文化。",
+    characteristics: ["精致木偶", "古典表演", "手工操纵", "故事讲述"],
   },
 ]
 
 export default function ArtPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        {/* Breadcrumb */}
-        <div className="mb-8">
-          <Link
-            href="/explore"
-            className="flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-6"
-          >
-            <ArrowLeft size={20} />
-            返回探索
-          </Link>
-        </div>
-
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12 flex-1">
         {/* Hero Section */}
         <div className="mb-16">
           <div className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-4">
@@ -135,7 +127,20 @@ export default function ArtPage() {
         </section>
       </main>
 
+      {/* 返回探索按钮 - 放在页面底部，Footer上方 */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 w-full">
+        <Link
+          href="/explore"
+          className="flex items-center justify-center gap-2 text-secondary hover:text-accent transition-colors border border-border rounded-lg px-6 py-3 w-full max-w-xs mx-auto hover:bg-secondary/5"
+        >
+          <ArrowLeft size={20} />
+          返回探索
+        </Link>
+      </div>
+
       <Footer />
+      <BackButton />
+      <ScrollToTop />
     </div>
   )
 }

@@ -7,6 +7,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { MythologyFloatingCards, type MythologyCharacter } from "@/components/mythology-floating-cards"
 import { useRouter } from "next/navigation"
+import ScrollToTop from "@/components/scroll-to-top"
 
 const mythologyCharacters: MythologyCharacter[] = [
   {
@@ -15,7 +16,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     thai: "Nang Tani (นางทานี)",
     title: "树神女神",
     description: "泰国民间中的诗意女神，是榕树神话中的中心人物。",
-    image: "/thai-mythology-goddess-nang-tani.jpg",
+    image: "/images/南塔尼1.png",
     detailHref: "/explore/mythology",
   },
   {
@@ -24,7 +25,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     thai: "Hanuman (หนุมาน)",
     title: "神圣的猴子战士",
     description: "源自《罗摩衍那》的英雄人物，象征忠诚、勇气和智慧。",
-    image: "/thai-mythology-hanuman-monkey-warrior.jpg",
+    image: "/images/哈奴曼.png",
     detailHref: "/explore/mythology",
   },
   {
@@ -33,7 +34,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     thai: "Rama (พระราม)",
     title: "王子与英雄",
     description: "泰国版《罗摩衍那》中的中心人物，代表正义和王权。",
-    image: "/thai-mythology-prince-rama.jpg",
+    image: "/images/罗摩.png",
     detailHref: "/explore/mythology",
   },
   {
@@ -42,25 +43,25 @@ const mythologyCharacters: MythologyCharacter[] = [
     thai: "Ravana (ทศกัณฐ)",
     title: "强大的反派",
     description: "泰国罗摩衍那中的主要反派角色，象征邪恶的力量。",
-    image: "/thai-mythology-ravana-demon-king.jpg",
+    image: "/images/十面魔王.png",
     detailHref: "/explore/mythology",
   },
   {
     id: 5,
-    name: "娜娜",
-    thai: "Nang Nana (นางนนา)",
-    title: "高贵的女性战士",
-    description: "泰国神话中的女性英雄，以其智慧和勇气闻名于世。",
-    image: "/thai-mythology-nang-nana.jpg",
+    name: "金娜丽",
+    thai: "Kinnari(กินรี)",
+    title: "天国歌者与舞者",
+    description: "上半身为绝世美女，下半身为天鹅或孔雀的神话生物，以美妙歌喉与舞姿著称。",
+    image: "/images/金娜丽.png",
     detailHref: "/explore/mythology",
   },
   {
     id: 6,
-    name: "拉玛",
-    thai: "Rama (พระลาหม)",
-    title: "命运的守护者",
-    description: "泰国民间传说中的神秘人物，象征命运和转变。",
-    image: "/thai-mythology-rama-guardian.jpg",
+    name: "伽鲁达",
+    thai: "Garuda (ครุฑ)",
+    title: "毗湿奴的坐骑",
+    description: "半人半鹰的金翅神鸟，拥有无上神力，是忠诚、力量与速度的化身。",
+    image: "/images/伽鲁达.png",
     detailHref: "/explore/mythology",
   },
 ]
@@ -108,17 +109,24 @@ export default function ExplorePage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    // 使用组合类名：bg-image-base + 特定页面背景类
+    <div className="min-h-screen relative bg-image-base bg-explore">
+      {/* 添加遮罩层 - 根据需求选择透明度 */}
+      <div className="bg-overlay overlay-dark-5"></div>
+      
+      {/* 内容区域 */}
+      <div className="bg-content">
+        <Navigation />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        {/* Hero Section */}
-        <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">探索泰国文化</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            发现东盟万象中最迷人的文化瑰宝。从古老的神话到现代的艺术表演，每一页都讲述了一个独特的故事。
-          </p>
-        </div>
+        <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
+          {/* Hero Section */}
+          <div className="mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">探索泰国文化</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              发现东盟万象中最迷人的文化瑰宝。从古老的神话到现代的艺术表演，每一页都讲述了一个独特的故事。
+            </p>
+          </div>
+
 
         <div className="mb-32 space-y-8">
           <div>
@@ -179,6 +187,9 @@ export default function ExplorePage() {
       </main>
 
       <Footer />
+
+      <ScrollToTop />
+     </div>
     </div>
   )
 }

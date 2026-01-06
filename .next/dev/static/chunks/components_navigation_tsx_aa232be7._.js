@@ -234,7 +234,7 @@ function Navigation() {
         router.refresh(); // 刷新页面以更新状态
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        className: "sticky top-0 z-50 bg-[#002760] border-b border-[#001d47]",
+        className: "sticky top-0 z-50 bg-[#1a3d3a] border-b border-primary-foreground/20",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full px-4 md:px-6",
             children: [
@@ -274,7 +274,7 @@ function Navigation() {
                                     className: "relative hidden md:block",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "flex items-center gap-1 px-2 py-1 text-white text-sm hover:bg-[#001d47] rounded transition-colors",
+                                            className: "flex items-center gap-1 px-2 py-1 text-primary-foreground text-sm hover:bg-primary-foreground/10 rounded transition-colors",
                                             onClick: ()=>setShowCountryDropdown(!showCountryDropdown),
                                             children: [
                                                 "-",
@@ -294,12 +294,12 @@ function Navigation() {
                                             columnNumber: 15
                                         }, this),
                                         showCountryDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute top-full left-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-1 w-32 z-50",
+                                            className: "absolute top-full left-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-1 w-32 z-50",
                                             onMouseEnter: ()=>setShowCountryDropdown(true),
                                             onMouseLeave: ()=>setShowCountryDropdown(false),
                                             children: aseanCountries.map((country)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>handleCountryChange(country),
-                                                    className: `block w-full text-left px-3 py-2 text-xs transition-colors ${currentCountry === country ? "bg-[#002760] text-yellow-400 font-semibold" : "text-white hover:bg-[#002760] hover:text-yellow-400"}`,
+                                                    className: `block w-full text-left px-3 py-2 text-xs transition-colors ${currentCountry === country ? "bg-accent text-accent-foreground font-semibold" : "text-white hover:bg-accent hover:text-accent-foreground"}`,
                                                     children: country
                                                 }, country, false, {
                                                     fileName: "[project]/components/navigation.tsx",
@@ -335,7 +335,7 @@ function Navigation() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             href: item.href,
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                className: "px-3 py-2 text-sm font-medium text-white hover:bg-[#001d47] transition-colors rounded-md flex items-center gap-1",
+                                                className: "px-3 py-2 text-sm font-medium text-white hover:bg-primary-foreground/10 transition-colors rounded-md flex items-center gap-1",
                                                 "aria-expanded": item.submenu ? openDropdown === item.label : undefined,
                                                 "aria-haspopup": item.submenu ? "menu" : undefined,
                                                 children: [
@@ -361,13 +361,13 @@ function Navigation() {
                                             columnNumber: 17
                                         }, this),
                                         item.submenu && openDropdown === item.label && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute top-full left-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-0 w-48",
+                                            className: "absolute top-full left-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-0 w-48",
                                             role: "menu",
                                             onMouseEnter: ()=>handleDropdownMouseEnter(item.label),
                                             onMouseLeave: ()=>handleDropdownMouseLeave(),
                                             children: item.submenu.map((subitem)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: subitem.href,
-                                                    className: "block px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 whitespace-nowrap first:rounded-t-md last:rounded-b-md transition-colors",
+                                                    className: "block px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground whitespace-nowrap first:rounded-t-md last:rounded-b-md transition-colors",
                                                     role: "menuitem",
                                                     children: subitem.label
                                                 }, subitem.label, false, {
@@ -398,7 +398,7 @@ function Navigation() {
                                     className: "relative",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "p-2 hover:bg-[#001d47] rounded-md transition-colors",
+                                            className: "p-2 hover:bg-primary-foreground/10 rounded-md transition-colors",
                                             "aria-label": "搜索",
                                             onClick: ()=>setShowSearchDropdown(!showSearchDropdown),
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
@@ -415,7 +415,7 @@ function Navigation() {
                                             columnNumber: 15
                                         }, this),
                                         showSearchDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute top-full right-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-2 w-72 p-4 z-50",
+                                            className: "absolute top-full right-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-2 w-72 p-4 z-50",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "relative flex items-center",
                                                 children: [
@@ -434,7 +434,7 @@ function Navigation() {
                                                         value: searchQuery,
                                                         onChange: (e)=>setSearchQuery(e.target.value),
                                                         onKeyPress: (e)=>e.key === "Enter" && handleSearch(),
-                                                        className: "w-full pl-10 pr-4 py-2 rounded-lg bg-white text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400",
+                                                        className: "w-full pl-10 pr-4 py-2 rounded-lg bg-white text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent",
                                                         "aria-label": "搜索东盟文化内容",
                                                         autoFocus: true
                                                     }, void 0, false, {
@@ -463,7 +463,7 @@ function Navigation() {
                                     className: "relative hidden md:block",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "p-2 hover:bg-[#001d47] rounded-md transition-colors flex items-center gap-1",
+                                            className: "p-2 hover:bg-primary-foreground/10 rounded-md transition-colors flex items-center gap-1",
                                             "aria-label": "语言选择",
                                             onClick: ()=>setShowLanguageDropdown(!showLanguageDropdown),
                                             children: [
@@ -490,10 +490,10 @@ function Navigation() {
                                             columnNumber: 15
                                         }, this),
                                         showLanguageDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute top-full right-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-2 w-40 z-50",
+                                            className: "absolute top-full right-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-2 w-40 z-50",
                                             children: languages.map((lang)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     onClick: ()=>handleLanguageChange(lang),
-                                                    className: `block w-full text-left px-4 py-2 text-sm transition-colors ${currentLanguage === lang ? "bg-[#002760] text-yellow-400 font-semibold" : "text-white hover:bg-[#002760] hover:text-yellow-400"}`,
+                                                    className: `block w-full text-left px-4 py-2 text-sm transition-colors ${currentLanguage === lang ? "bg-accent text-accent-foreground font-semibold" : "text-white hover:bg-accent hover:text-accent-foreground"}`,
                                                     children: lang
                                                 }, lang, false, {
                                                     fileName: "[project]/components/navigation.tsx",
@@ -515,11 +515,11 @@ function Navigation() {
                                     className: "relative",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "p-2 hover:bg-[#001d47] rounded-md transition-colors",
+                                            className: "p-2 hover:bg-primary-foreground/10 rounded-md transition-colors",
                                             "aria-label": "用户账户",
                                             onClick: ()=>setShowAuthDropdown(!showAuthDropdown),
                                             children: isLoggedIn ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-[#002760] font-bold text-sm",
+                                                className: "w-8 h-8 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold text-sm",
                                                 children: "用"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/navigation.tsx",
@@ -539,11 +539,11 @@ function Navigation() {
                                             columnNumber: 15
                                         }, this),
                                         showAuthDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute top-full right-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-2 w-48 z-50",
+                                            className: "absolute top-full right-0 bg-[#1a3d3a] border border-primary-foreground/20 rounded-md shadow-lg mt-2 w-48 z-50",
                                             children: isLoggedIn ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "px-4 py-3 border-b border-[#002760] text-white text-sm",
+                                                        className: "px-4 py-3 border-b border-primary-foreground/20 text-white text-sm",
                                                         children: "用户账户"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/navigation.tsx",
@@ -552,7 +552,7 @@ function Navigation() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                         href: "/profile",
-                                                        className: "block px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors",
+                                                        className: "block px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors",
                                                         children: "个人资料"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/navigation.tsx",
@@ -561,7 +561,7 @@ function Navigation() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                         href: "/favorites",
-                                                        className: "block px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors",
+                                                        className: "block px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors",
                                                         children: "我的收藏"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/navigation.tsx",
@@ -570,7 +570,7 @@ function Navigation() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: handleLogout,
-                                                        className: "w-full text-left px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors flex items-center gap-2",
+                                                        className: "w-full text-left px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__["LogOut"], {
                                                                 size: 16
@@ -591,7 +591,7 @@ function Navigation() {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: handleLoginClick,
-                                                        className: "w-full text-left px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors flex items-center gap-2 border-b border-[#002760]",
+                                                        className: "w-full text-left px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2 border-b border-primary-foreground/20",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$in$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LogIn$3e$__["LogIn"], {
                                                                 size: 16
@@ -609,7 +609,7 @@ function Navigation() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: handleRegisterClick,
-                                                        className: "block w-full text-left px-4 py-2 text-sm text-white hover:bg-[#002760] hover:text-yellow-400 transition-colors",
+                                                        className: "block w-full text-left px-4 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors",
                                                         children: "注册账户"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/navigation.tsx",
@@ -630,7 +630,7 @@ function Navigation() {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "lg:hidden p-2 hover:bg-[#001d47] rounded-md transition-colors",
+                                    className: "lg:hidden p-2 hover:bg-primary-foreground/10 rounded-md transition-colors",
                                     onClick: ()=>setIsMobileMenuOpen(!isMobileMenuOpen),
                                     "aria-label": isMobileMenuOpen ? "关闭菜单" : "打开菜单",
                                     "aria-expanded": isMobileMenuOpen,
@@ -667,13 +667,13 @@ function Navigation() {
                     columnNumber: 9
                 }, this),
                 isMobileMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "lg:hidden border-t border-[#001d47] pb-4 bg-[#001d47]",
+                    className: "lg:hidden border-t border-primary-foreground/20 pb-4 bg-[#1a3d3a]",
                     role: "navigation",
                     "aria-label": "移动导航",
                     children: navItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "w-full text-left px-4 py-2 text-sm font-medium text-white hover:bg-[#002760] transition-colors flex justify-between items-center",
+                                    className: "w-full text-left px-4 py-2 text-sm font-medium text-white hover:bg-primary-foreground/10 transition-colors flex justify-between items-center",
                                     onClick: ()=>setOpenDropdown(openDropdown === item.label ? null : item.label),
                                     "aria-expanded": item.submenu ? openDropdown === item.label : undefined,
                                     "aria-haspopup": item.submenu ? "menu" : undefined,
@@ -702,11 +702,11 @@ function Navigation() {
                                     columnNumber: 17
                                 }, this),
                                 item.submenu && openDropdown === item.label && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-[#002760]",
+                                    className: "bg-[#1a3d3a]",
                                     role: "menu",
                                     children: item.submenu.map((subitem)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             href: subitem.href,
-                                            className: "block px-8 py-2 text-sm text-white hover:text-yellow-400 transition-colors",
+                                            className: "block px-8 py-2 text-sm text-white hover:bg-accent hover:text-accent-foreground transition-colors",
                                             role: "menuitem",
                                             children: subitem.label
                                         }, subitem.label, false, {

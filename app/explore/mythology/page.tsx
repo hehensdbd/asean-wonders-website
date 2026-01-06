@@ -4,10 +4,12 @@ import { useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { BackButton } from "@/components/back-button"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import type { MythologyCharacter } from "@/components/mythology-carousel"
+import type { MythologyCharacter } from "@/components/mythology-video-section"
 import { MythologyVideoSection, type MythologyVideo } from "@/components/mythology-video-section"
 
 const characters: MythologyCharacter[] = [
@@ -69,7 +71,8 @@ const videos: MythologyVideo[] = [
     description:
       "探索关于南塔尼的经典民间故事。这个视频讲述了美丽的树神与凡人之间的爱情传说，以及她如何成为榕树的保护神。",
     duration: "12:34",
-    thumbnail: "/placeholder.svg?key=video1",
+    thumbnail: "/thai-tree-goddess-nang-tani.jpg",
+    characters: [1], // Only Nang Tani appears
   },
   {
     id: 2,
@@ -77,7 +80,8 @@ const videos: MythologyVideo[] = [
     title: "泰国民间中的南塔尼信仰",
     description: "了解泰国人民如何崇拜南塔尼，以及这个女神在现代泰国文化中的重要性。",
     duration: "18:45",
-    thumbnail: "/placeholder.svg?key=video2",
+    thumbnail: "/thai-shrine-worship.jpg",
+    characters: [1],
   },
   {
     id: 3,
@@ -85,7 +89,8 @@ const videos: MythologyVideo[] = [
     title: "哈奴曼：忠诚的象征",
     description: "深入了解哈奴曼的史诗冒险，他如何帮助罗摩拯救妻子，以及他在泰国古典舞蹈中的表现。",
     duration: "22:15",
-    thumbnail: "/placeholder.svg?key=video3",
+    thumbnail: "/hanuman-monkey-warrior.jpg",
+    characters: [2, 3], // Hanuman and Rama appear together
   },
   {
     id: 4,
@@ -93,7 +98,8 @@ const videos: MythologyVideo[] = [
     title: "泰国舞蹈中的哈奴曼",
     description: "观看传统泰国古典舞蹈如何演绎哈奴曼的英勇故事和复杂的动作编排。",
     duration: "15:20",
-    thumbnail: "/placeholder.svg?key=video4",
+    thumbnail: "/thai-classical-dance-hanuman.jpg",
+    characters: [2],
   },
   {
     id: 5,
@@ -101,7 +107,8 @@ const videos: MythologyVideo[] = [
     title: "罗摩衍那：泰国版本的史诗",
     description: "了解《罗摩衍那》如何在泰国得到改编和演绎，以及罗摩作为理想王子的象征意义。",
     duration: "25:40",
-    thumbnail: "/placeholder.svg?key=video5",
+    thumbnail: "/thai-ramakien-epic.jpg",
+    characters: [3, 4], // Rama and Ravana
   },
   {
     id: 6,
@@ -109,7 +116,8 @@ const videos: MythologyVideo[] = [
     title: "罗摩的道德教训",
     description: "探索罗摩的故事如何传递道德和伦理价值观，影响了几个世纪的泰国教育。",
     duration: "19:30",
-    thumbnail: "/placeholder.svg?key=video6",
+    thumbnail: "/prince-rama-thailand.jpg",
+    characters: [3],
   },
   {
     id: 7,
@@ -117,7 +125,8 @@ const videos: MythologyVideo[] = [
     title: "十面魔王的权力与野心",
     description: "分析十面魔王作为反派角色的复杂性，以及他如何代表罗摩衍那中的邪恶力量。",
     duration: "20:15",
-    thumbnail: "/placeholder.svg?key=video7",
+    thumbnail: "/ravana-ten-headed-demon.jpg",
+    characters: [4],
   },
   {
     id: 8,
@@ -125,7 +134,8 @@ const videos: MythologyVideo[] = [
     title: "善恶之争：十面魔王的故事",
     description: "通过十面魔王的视角探索泰国神话中关于善与恶的永恒主题。",
     duration: "17:50",
-    thumbnail: "/placeholder.svg?key=video8",
+    thumbnail: "/thai-mythology-good-evil.jpg",
+    characters: [4, 3], // Ravana and Rama
   },
   {
     id: 9,
@@ -133,7 +143,8 @@ const videos: MythologyVideo[] = [
     title: "娜娜：女性战士的传说",
     description: "探索泰国神话中的女性英雄娜娜的故事。这个视频讲述了她如何通过智慧和勇气赢得尊重。",
     duration: "16:20",
-    thumbnail: "/placeholder.svg?key=video9",
+    thumbnail: "/thai-female-warrior.jpg",
+    characters: [5],
   },
   {
     id: 10,
@@ -141,7 +152,8 @@ const videos: MythologyVideo[] = [
     title: "娜娜与古代泰国女性权力",
     description: "了解娜娜如何代表泰国文化中女性的力量和地位。",
     duration: "14:30",
-    thumbnail: "/placeholder.svg?key=video10",
+    thumbnail: "/ancient-thai-women-power.jpg",
+    characters: [5],
   },
   {
     id: 11,
@@ -149,7 +161,8 @@ const videos: MythologyVideo[] = [
     title: "拉玛：命运之书",
     description: "深入探索神秘的拉玛形象如何在泰国民间传说和现代文化中发挥重要作用。",
     duration: "19:45",
-    thumbnail: "/placeholder.svg?key=video11",
+    thumbnail: "/thai-destiny-guardian.jpg",
+    characters: [6],
   },
   {
     id: 12,
@@ -157,7 +170,8 @@ const videos: MythologyVideo[] = [
     title: "拉玛与命运的转变",
     description: "揭示拉玛如何作为命运的守护者影响泰国人民的精神信仰。",
     duration: "18:00",
-    thumbnail: "/placeholder.svg?key=video12",
+    thumbnail: "/thai-spiritual-belief-destiny.jpg",
+    characters: [6],
   },
 ]
 
@@ -167,24 +181,29 @@ export default function MythologyPage() {
 
   const initialCharacter = characterId ? characters.find((c) => c.id === Number.parseInt(characterId)) : characters[0]
 
-  const [selectedCharacter, setSelectedCharacter] = useState<MythologyCharacter>(initialCharacter || characters[0])
+  const [selectedCharacterId, setSelectedCharacterId] = useState<number>(initialCharacter?.id || 1)
+  const [currentVideo, setCurrentVideo] = useState<MythologyVideo | null>(
+    videos.find((v) => v.characterId === selectedCharacterId) || null,
+  )
+
+  const getCharactersInCurrentVideo = () => {
+    if (!currentVideo || !currentVideo.characters) return [characters.find((c) => c.id === selectedCharacterId)!]
+    return characters.filter((c) => currentVideo.characters?.includes(c.id))
+  }
+
+  const displayedCharacters = getCharactersInCurrentVideo()
+
+  const handleCharacterChange = (characterId: number) => {
+    setSelectedCharacterId(characterId)
+    const firstVideo = videos.find((v) => v.characterId === characterId)
+    setCurrentVideo(firstVideo || null)
+  }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12">
-        {/* Breadcrumb */}
-        <div className="mb-8">
-          <Link
-            href="/explore"
-            className="flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-6"
-          >
-            <ArrowLeft size={20} />
-            返回探索
-          </Link>
-        </div>
-
+      <main className="max-w-7xl mx-auto px-4 md:px-6 py-12 flex-1">
         {/* Hero Section */}
         <div className="mb-16">
           <div className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-4">
@@ -197,7 +216,7 @@ export default function MythologyPage() {
         </div>
 
         <section className="mb-16">
-          <MythologyVideoSection character={selectedCharacter} videos={videos} />
+          <MythologyVideoSection characters={characters} videos={videos} onCharacterChange={handleCharacterChange} />
         </section>
 
         {/* Introduction */}
@@ -216,14 +235,14 @@ export default function MythologyPage() {
           </div>
         </section>
 
-        {/* Characters Grid */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">主要人物详情</h2>
+          <h2 className="text-3xl font-bold mb-4">主要人物详情</h2>
+          <p className="text-muted-foreground mb-8">以下是当前视频中出现的神话人物：</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {characters.map((character) => (
+            {displayedCharacters.map((character) => (
               <div
                 key={character.id}
-                className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative w-full h-64">
                   <Image
@@ -302,7 +321,20 @@ export default function MythologyPage() {
         </section>
       </main>
 
+      {/* 返回探索按钮 - 放在页面底部，Footer上方 */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 w-full">
+        <Link
+          href="/explore"
+          className="flex items-center justify-center gap-2 text-secondary hover:text-accent transition-colors border border-border rounded-lg px-6 py-3 w-full max-w-xs mx-auto hover:bg-secondary/5"
+        >
+          <ArrowLeft size={20} />
+          返回探索
+        </Link>
+      </div>
+
       <Footer />
+      <BackButton />
+      <ScrollToTop />
     </div>
   )
 }

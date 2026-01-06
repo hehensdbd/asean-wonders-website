@@ -116,10 +116,158 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  /* 修改标题布局，实现左对齐 */
+  h1,
+  h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 改为左对齐 */
+    gap: 0.5rem; /* 缩短装饰图案与文字的距离，原为1rem */
+    width: 100%;
   }
-  body {
-    @apply bg-background text-foreground;
+  h2.no-decoration::before,
+  h2.no-decoration::after {
+    display: none;
   }
+
+  h2.no-decoration {
+    display: block !important; /* 覆盖flex布局 */
+    text-align: left; /* 确保左对齐 */
+  }
+
+  h2.text-center.justify-center {
+    justify-content: center !important;
+    display: flex !important;
+    text-align: center !important;
+  }
+  
+  /* 确保装饰图案也跟随居中布局 */
+  h2.text-center.justify-center::before,
+  h2.text-center.justify-center::after {
+    display: inline-block !important;
+    position: static !important;
+  }
+
+  /* 标题装饰图案 - 左侧 */
+  h1::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("/images/title.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0; /* 防止装饰图案被压缩 */
+  }
+
+  h2::before {
+    content: "";
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-image: url("/images/title2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+
+  /* 标题装饰图案 - 右侧 */
+  h1::after {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("/images/title.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scaleX(-1);
+    flex-shrink: 0;
+  }
+
+  h2::after {
+    content: "";
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-image: url("/images/title2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scaleX(-1);
+    flex-shrink: 0;
+  }
+
+}
+
+/* 添加以下背景相关样式 */
+
+/* 基础背景样式类 - 所有背景都继承这个 */
+.bg-image-base {
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+/* 探索页面背景 */
+.bg-explore {
+  background-image: url('/images/backgrounds/explore-bg.png');
+}
+
+/* 文创页面背景 */
+.bg-cultural-products {
+  background-image: url('/images/backgrounds/cultural-products-bg.png');
+}
+
+/* 旅游页面背景 */
+.bg-travel {
+  background-image: url('/images/backgrounds/travel-bg.png');
+}
+
+/* 登录和注册页面背景 */
+.bg-dl {
+  background-image: url('/images/backgrounds/dl.png');
+}
+
+/* 通用遮罩层样式 */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* 内容容器样式 */
+.bg-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* 深色遮罩层（提高文字可读性） */
+.overlay-dark-5 {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.overlay-dark-10 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.overlay-dark-15 {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.overlay-dark-20 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 浅色遮罩层（深色背景时使用） */
+.overlay-light-5 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.overlay-light-10 {
+  background-color: rgba(255, 255, 255, 0.1);
 }

@@ -1095,10 +1095,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 const artForms = [
     {
         id: 1,
-        name: "古典舞蹈",
+        name: "孔剧表演",
         thai: "Khon (โขน)",
-        description: "泰国最高雅的古典舞蹈形式，通常表演古代史诗和神话故事。",
-        image: "/placeholder.svg?key=art1&height=400&width=300",
+        description: "泰国经典的皇家舞蹈剧，优雅舞姿与传统音乐交织，演绎史诗故事《罗摩衍那》。",
+        image: "/images/孔剧.png",
         details: "古典舞蹈（Khon）是泰国最古老和最复杂的舞蹈形式。舞者穿着精美的传统服装和面具，通过精确的手势和身体运动来讲述故事，特别是《罗摩衍那》中的故事。",
         characteristics: [
             "精美的面具",
@@ -1112,7 +1112,7 @@ const artForms = [
         name: "民间舞蹈",
         thai: "Ram Thai (รำไทย)",
         description: "不同地区的传统民间舞蹈，各具特色，反映了地方文化。",
-        image: "/placeholder.svg?key=art2&height=400&width=300",
+        image: "/images/民间舞蹈.png",
         details: "泰国各地都有独特的民间舞蹈传统。从东北地区的Isaan舞到北方的Lanna舞，每个地区都有自己独特的舞蹈风格和音乐节奏，反映了该地区的文化特色。",
         characteristics: [
             "区域特色",
@@ -1126,7 +1126,7 @@ const artForms = [
         name: "传统音乐",
         thai: "Pipat (ปี่พาทย์)",
         description: "泰国古老的管乐和打击乐组合，常在庆典和仪式中演奏。",
-        image: "/placeholder.svg?key=art3&height=400&width=300",
+        image: "/images/古典音乐.png",
         details: "泰国传统音乐使用各种传统乐器，包括竹制长笛（Pipat）、鼓和其他打击乐器。这些音乐形式已有数个世纪的历史，是泰国文化认同的重要组成部分。",
         characteristics: [
             "竹笛演奏",
@@ -1139,12 +1139,12 @@ const artForms = [
         id: 4,
         name: "木偶戏",
         thai: "Nang Talung (หนังตะลุง)",
-        description: "皮影戏的一种形式，使用剪影和灯光在屏幕上讲述故事。",
-        image: "/placeholder.svg?key=art4&height=400&width=300",
-        details: "泰国皮影戏是一种古老的艺术形式，艺人操纵皮制的人物剪影，在灯光下投射在屏幕上。通过这种方式讲述故事、传说和民间传说，为观众提供娱乐和教育。",
+        description: "泰国著名的传统木偶戏，融合精致木偶操控与古典表演艺术讲述故事。",
+        image: "/images/木偶戏.png",
+        details: "精美的人偶、娴熟的操控技巧，再加上生动有趣的故事节奏，通过这种方式讲述故事、传说和民间传说，带观众感受泰国的历史与文化。",
         characteristics: [
-            "皮制剪影",
-            "灯光投射",
+            "精致木偶",
+            "古典表演",
             "手工操纵",
             "故事讲述"
         ]
@@ -1152,7 +1152,7 @@ const artForms = [
 ];
 function ArtPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen bg-background",
+        className: "min-h-screen bg-background flex flex-col",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/app/explore/art/page.tsx",
@@ -1160,33 +1160,8 @@ function ArtPage() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                className: "max-w-7xl mx-auto px-4 md:px-6 py-12",
+                className: "max-w-7xl mx-auto px-4 md:px-6 py-12 flex-1",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-8",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/explore",
-                            className: "flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-6",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
-                                    size: 20
-                                }, void 0, false, {
-                                    fileName: "[project]/app/explore/art/page.tsx",
-                                    lineNumber: 64,
-                                    columnNumber: 13
-                                }, this),
-                                "返回探索"
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/explore/art/page.tsx",
-                            lineNumber: 60,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/app/explore/art/page.tsx",
-                        lineNumber: 59,
-                        columnNumber: 9
-                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mb-16",
                         children: [
@@ -1195,7 +1170,7 @@ function ArtPage() {
                                 children: "探索泰国文化"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/art/page.tsx",
-                                lineNumber: 71,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1203,7 +1178,7 @@ function ArtPage() {
                                 children: "艺术表演"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/art/page.tsx",
-                                lineNumber: 74,
+                                lineNumber: 63,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1211,13 +1186,13 @@ function ArtPage() {
                                 children: "泰国拥有丰富而多样的艺术表演传统。从精美的古典舞蹈到充满活力的民间艺术，每种形式都是泰国文化遗产的重要组成部分。"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/art/page.tsx",
-                                lineNumber: 75,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/art/page.tsx",
-                        lineNumber: 70,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1236,17 +1211,17 @@ function ArtPage() {
                                                 className: "object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                lineNumber: 90,
+                                                lineNumber: 79,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/explore/art/page.tsx",
-                                            lineNumber: 89,
+                                            lineNumber: 78,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/art/page.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 77,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1257,7 +1232,7 @@ function ArtPage() {
                                                 children: art.thai
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 85,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1265,7 +1240,7 @@ function ArtPage() {
                                                 children: art.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 88,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1273,7 +1248,7 @@ function ArtPage() {
                                                 children: art.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                lineNumber: 100,
+                                                lineNumber: 89,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1281,7 +1256,7 @@ function ArtPage() {
                                                 children: art.details
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                lineNumber: 101,
+                                                lineNumber: 90,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1293,14 +1268,14 @@ function ArtPage() {
                                                                 size: 18
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                                lineNumber: 105,
+                                                                lineNumber: 94,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "特点："
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/explore/art/page.tsx",
-                                                        lineNumber: 104,
+                                                        lineNumber: 93,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1312,42 +1287,42 @@ function ArtPage() {
                                                                         className: "w-2 h-2 bg-secondary rounded-full"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/explore/art/page.tsx",
-                                                                        lineNumber: 111,
+                                                                        lineNumber: 100,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     char
                                                                 ]
                                                             }, i, true, {
                                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                                lineNumber: 110,
+                                                                lineNumber: 99,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/art/page.tsx",
-                                                        lineNumber: 108,
+                                                        lineNumber: 97,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/explore/art/page.tsx",
-                                                lineNumber: 103,
+                                                lineNumber: 92,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/explore/art/page.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 84,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, art.id, true, {
                                 fileName: "[project]/app/explore/art/page.tsx",
-                                lineNumber: 83,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/explore/art/page.tsx",
-                        lineNumber: 81,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1358,7 +1333,7 @@ function ArtPage() {
                                 children: "表演视频"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/art/page.tsx",
-                                lineNumber: 124,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1375,29 +1350,54 @@ function ArtPage() {
                                             className: "text-muted-foreground"
                                         }, void 0, false, {
                                             fileName: "[project]/app/explore/art/page.tsx",
-                                            lineNumber: 131,
+                                            lineNumber: 120,
                                             columnNumber: 17
                                         }, this)
                                     }, i, false, {
                                         fileName: "[project]/app/explore/art/page.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 116,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/art/page.tsx",
-                                lineNumber: 125,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/art/page.tsx",
-                        lineNumber: 123,
+                        lineNumber: 112,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/explore/art/page.tsx",
                 lineNumber: 57,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "max-w-7xl mx-auto px-4 md:px-6 py-8 w-full",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    href: "/explore",
+                    className: "flex items-center justify-center gap-2 text-secondary hover:text-accent transition-colors border border-border rounded-lg px-6 py-3 w-full max-w-xs mx-auto hover:bg-secondary/5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
+                            size: 20
+                        }, void 0, false, {
+                            fileName: "[project]/app/explore/art/page.tsx",
+                            lineNumber: 133,
+                            columnNumber: 11
+                        }, this),
+                        "返回探索"
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/explore/art/page.tsx",
+                    lineNumber: 129,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/explore/art/page.tsx",
+                lineNumber: 128,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {

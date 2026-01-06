@@ -224,7 +224,7 @@ function Navigation() {
         router.refresh(); // 刷新页面以更新状态
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        className: "sticky top-0 z-50 bg-[#002760] border-b border-[#001d47]",
+        className: "sticky top-0 z-50 bg-primary border-b border-primary-foreground/20",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "w-full px-4 md:px-6",
             children: [
@@ -264,7 +264,7 @@ function Navigation() {
                                     className: "relative hidden md:block",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            className: "flex items-center gap-1 px-2 py-1 text-white text-sm hover:bg-[#001d47] rounded transition-colors",
+                                            className: "flex items-center gap-1 px-2 py-1 text-primary-foreground text-sm hover:bg-primary-foreground/10 rounded transition-colors",
                                             onClick: ()=>setShowCountryDropdown(!showCountryDropdown),
                                             children: [
                                                 "-",
@@ -284,7 +284,7 @@ function Navigation() {
                                             columnNumber: 15
                                         }, this),
                                         showCountryDropdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute top-full left-0 bg-[#001d47] border border-[#002760] rounded-md shadow-lg mt-1 w-32 z-50",
+                                            className: "absolute top-full left-0 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-md shadow-lg mt-1 w-32 z-50",
                                             onMouseEnter: ()=>setShowCountryDropdown(true),
                                             onMouseLeave: ()=>setShowCountryDropdown(false),
                                             children: aseanCountries.map((country)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1087,112 +1087,131 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 ;
 ;
 ;
-function MythologyVideoSection({ character, videos }) {
-    const [selectedVideo, setSelectedVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(character ? videos.find((v)=>v.characterId === character.id) || null : null);
+function MythologyVideoSection({ characters, videos, onCharacterChange }) {
+    const [selectedCharacterId, setSelectedCharacterId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(characters[0]?.id || 1);
+    const [selectedVideo, setSelectedVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(videos.find((v)=>v.characterId === selectedCharacterId) || null);
+    const handleCharacterSelect = (characterId)=>{
+        setSelectedCharacterId(characterId);
+        const firstVideo = videos.find((v)=>v.characterId === characterId);
+        setSelectedVideo(firstVideo || null);
+        onCharacterChange?.(characterId);
+    };
+    const handleVideoSelect = (video)=>{
+        setSelectedVideo(video);
+        // If video is for a different character, update selected character
+        if (video.characterId !== selectedCharacterId) {
+            setSelectedCharacterId(video.characterId);
+            onCharacterChange?.(video.characterId);
+        }
+    };
+    const selectedCharacter = characters.find((c)=>c.id === selectedCharacterId);
+    const relatedVideos = videos.filter((v)=>v.characterId === selectedCharacterId);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full bg-gradient-to-br from-[#1a3d3a]/10 to-[#d4a574]/10 rounded-2xl p-8",
+        className: "w-full bg-gradient-to-br from-[#1a3d3a]/10 to-[#d4a574]/10 rounded-2xl p-6 md:p-8",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                 className: "text-3xl font-bold mb-8 text-foreground",
                 children: "神话视频讲堂"
             }, void 0, false, {
                 fileName: "[project]/components/mythology-video-section.tsx",
-                lineNumber: 39,
+                lineNumber: 62,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 lg:grid-cols-3 gap-8",
+                className: "flex flex-col lg:flex-row gap-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "lg:col-span-1 relative",
-                        children: character && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute inset-0 rounded-xl overflow-hidden -z-10",
+                        className: "w-full lg:w-48 flex-shrink-0",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "space-y-2",
+                            children: characters.map((character)=>{
+                                const isSelected = character.id === selectedCharacterId;
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>handleCharacterSelect(character.id),
+                                    className: `
+                    w-full text-left rounded-lg overflow-hidden transition-all duration-300 ease-in-out
+                    ${isSelected ? "bg-secondary/20 border-2 border-secondary" : "bg-card border border-border hover:border-secondary/50"}
+                  `,
+                                    style: {
+                                        height: isSelected ? "auto" : "48px"
+                                    },
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                            src: character.image || "/placeholder.svg",
-                                            alt: character.name,
-                                            fill: true,
-                                            className: "object-cover opacity-20"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 49,
-                                            columnNumber: 17
-                                        }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute inset-0 bg-gradient-to-t from-black/60 to-black/20"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 55,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/components/mythology-video-section.tsx",
-                                    lineNumber: 48,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative p-6 rounded-xl bg-black/30 backdrop-blur-sm text-white",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-2xl font-bold mb-2",
-                                            children: character.name
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 60,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-yellow-400 font-semibold mb-4",
-                                            children: character.thai
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 61,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-gray-200 mb-4",
-                                            children: character.title
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 62,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "h-32 rounded-lg overflow-hidden border-2 border-yellow-400/50",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                src: character.image || "/placeholder.svg",
-                                                alt: character.name,
-                                                width: 200,
-                                                height: 200,
-                                                className: "w-full h-full object-cover"
+                                            className: "p-3",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "font-bold text-sm line-clamp-1",
+                                                children: character.name
                                             }, void 0, false, {
                                                 fileName: "[project]/components/mythology-video-section.tsx",
-                                                lineNumber: 64,
-                                                columnNumber: 19
+                                                lineNumber: 84,
+                                                columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 63,
-                                            columnNumber: 17
+                                            lineNumber: 83,
+                                            columnNumber: 19
+                                        }, this),
+                                        isSelected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "px-3 pb-3 animate-in fade-in slide-in-from-top-2 duration-300",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "relative w-full h-24 rounded-lg overflow-hidden mb-2",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                        src: character.image || "/placeholder.svg",
+                                                        alt: character.name,
+                                                        fill: true,
+                                                        className: "object-cover"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/mythology-video-section.tsx",
+                                                        lineNumber: 91,
+                                                        columnNumber: 25
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                    lineNumber: 90,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-xs text-secondary font-semibold mb-1",
+                                                    children: character.thai
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                    lineNumber: 98,
+                                                    columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-xs text-muted-foreground line-clamp-2",
+                                                    children: character.description
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                    lineNumber: 99,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/mythology-video-section.tsx",
+                                            lineNumber: 89,
+                                            columnNumber: 21
                                         }, this)
                                     ]
-                                }, void 0, true, {
+                                }, character.id, true, {
                                     fileName: "[project]/components/mythology-video-section.tsx",
-                                    lineNumber: 59,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true)
+                                    lineNumber: 71,
+                                    columnNumber: 17
+                                }, this);
+                            })
+                        }, void 0, false, {
+                            fileName: "[project]/components/mythology-video-section.tsx",
+                            lineNumber: 67,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/mythology-video-section.tsx",
-                        lineNumber: 44,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "lg:col-span-2",
+                        className: "flex-1",
                         children: selectedVideo ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1205,14 +1224,14 @@ function MythologyVideoSection({ character, videos }) {
                                             className: "object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 113,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"
                                         }, void 0, false, {
                                             fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 89,
+                                            lineNumber: 119,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1224,17 +1243,17 @@ function MythologyVideoSection({ character, videos }) {
                                                     className: "text-black fill-black"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/mythology-video-section.tsx",
-                                                    lineNumber: 92,
+                                                    lineNumber: 122,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/mythology-video-section.tsx",
-                                                lineNumber: 91,
+                                                lineNumber: 121,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 90,
+                                            lineNumber: 120,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1242,116 +1261,127 @@ function MythologyVideoSection({ character, videos }) {
                                             children: selectedVideo.duration
                                         }, void 0, false, {
                                             fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 95,
+                                            lineNumber: 125,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/mythology-video-section.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 112,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mb-6",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                             className: "text-xl font-bold mb-3 text-foreground",
                                             children: selectedVideo.title
                                         }, void 0, false, {
                                             fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 102,
+                                            lineNumber: 132,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-muted-foreground mb-6 leading-relaxed",
+                                            className: "text-muted-foreground leading-relaxed",
                                             children: selectedVideo.description
                                         }, void 0, false, {
                                             fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 103,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
-                                                    className: "text-sm font-semibold text-foreground mb-4",
-                                                    children: "相关视频"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/mythology-video-section.tsx",
-                                                    lineNumber: 107,
-                                                    columnNumber: 19
-                                                }, this),
-                                                videos.filter((v)=>v.characterId === character?.id).map((video)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        onClick: ()=>setSelectedVideo(video),
-                                                        className: `w-full flex gap-3 p-3 rounded-lg transition-all ${selectedVideo.id === video.id ? "bg-secondary/20 border border-secondary" : "hover:bg-muted border border-transparent"}`,
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-muted",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                        src: video.thumbnail || "/placeholder.svg",
-                                                                        alt: video.title,
-                                                                        fill: true,
-                                                                        className: "object-cover"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/mythology-video-section.tsx",
-                                                                        lineNumber: 121,
-                                                                        columnNumber: 27
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
-                                                                        size: 16,
-                                                                        className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/mythology-video-section.tsx",
-                                                                        lineNumber: 127,
-                                                                        columnNumber: 27
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/components/mythology-video-section.tsx",
-                                                                lineNumber: 120,
-                                                                columnNumber: 25
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "flex-1 text-left",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
-                                                                        className: "font-semibold text-sm text-foreground line-clamp-2",
-                                                                        children: video.title
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/mythology-video-section.tsx",
-                                                                        lineNumber: 133,
-                                                                        columnNumber: 27
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                        className: "text-xs text-muted-foreground mt-1",
-                                                                        children: video.duration
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/mythology-video-section.tsx",
-                                                                        lineNumber: 134,
-                                                                        columnNumber: 27
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/components/mythology-video-section.tsx",
-                                                                lineNumber: 132,
-                                                                columnNumber: 25
-                                                            }, this)
-                                                        ]
-                                                    }, video.id, true, {
-                                                        fileName: "[project]/components/mythology-video-section.tsx",
-                                                        lineNumber: 111,
-                                                        columnNumber: 23
-                                                    }, this))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/components/mythology-video-section.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 133,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/mythology-video-section.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 131,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
+                                            className: "text-sm font-semibold text-foreground mb-4",
+                                            children: "相关视频"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/mythology-video-section.tsx",
+                                            lineNumber: 138,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "grid grid-cols-1 md:grid-cols-2 gap-3",
+                                            children: relatedVideos.map((video)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>handleVideoSelect(video),
+                                                    className: `
+                        flex gap-3 p-3 rounded-lg transition-all
+                        ${selectedVideo.id === video.id ? "bg-secondary/20 border border-secondary" : "hover:bg-muted border border-transparent"}
+                      `,
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-muted",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                                    src: video.thumbnail || "/placeholder.svg",
+                                                                    alt: video.title,
+                                                                    fill: true,
+                                                                    className: "object-cover"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                                    lineNumber: 154,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
+                                                                    size: 16,
+                                                                    className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                                    lineNumber: 160,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/mythology-video-section.tsx",
+                                                            lineNumber: 153,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex-1 text-left",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h6", {
+                                                                    className: "font-semibold text-sm text-foreground line-clamp-2",
+                                                                    children: video.title
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                                    lineNumber: 166,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-xs text-muted-foreground mt-1",
+                                                                    children: video.duration
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                                    lineNumber: 167,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/mythology-video-section.tsx",
+                                                            lineNumber: 165,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, video.id, true, {
+                                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                                    lineNumber: 141,
+                                                    columnNumber: 21
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/mythology-video-section.tsx",
+                                            lineNumber: 139,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/mythology-video-section.tsx",
+                                    lineNumber: 137,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -1362,29 +1392,29 @@ function MythologyVideoSection({ character, videos }) {
                                 children: "选择一个人物查看相关视频"
                             }, void 0, false, {
                                 fileName: "[project]/components/mythology-video-section.tsx",
-                                lineNumber: 143,
+                                lineNumber: 176,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/mythology-video-section.tsx",
-                            lineNumber: 142,
+                            lineNumber: 175,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/mythology-video-section.tsx",
-                        lineNumber: 78,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/mythology-video-section.tsx",
-                lineNumber: 42,
+                lineNumber: 65,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/mythology-video-section.tsx",
-        lineNumber: 37,
+        lineNumber: 60,
         columnNumber: 5
     }, this);
 }
@@ -1473,7 +1503,10 @@ const videos = [
         title: "南塔尼：树神的爱情故事",
         description: "探索关于南塔尼的经典民间故事。这个视频讲述了美丽的树神与凡人之间的爱情传说，以及她如何成为榕树的保护神。",
         duration: "12:34",
-        thumbnail: "/placeholder.svg?key=video1"
+        thumbnail: "/thai-tree-goddess-nang-tani.jpg",
+        characters: [
+            1
+        ]
     },
     {
         id: 2,
@@ -1481,7 +1514,10 @@ const videos = [
         title: "泰国民间中的南塔尼信仰",
         description: "了解泰国人民如何崇拜南塔尼，以及这个女神在现代泰国文化中的重要性。",
         duration: "18:45",
-        thumbnail: "/placeholder.svg?key=video2"
+        thumbnail: "/thai-shrine-worship.jpg",
+        characters: [
+            1
+        ]
     },
     {
         id: 3,
@@ -1489,7 +1525,11 @@ const videos = [
         title: "哈奴曼：忠诚的象征",
         description: "深入了解哈奴曼的史诗冒险，他如何帮助罗摩拯救妻子，以及他在泰国古典舞蹈中的表现。",
         duration: "22:15",
-        thumbnail: "/placeholder.svg?key=video3"
+        thumbnail: "/hanuman-monkey-warrior.jpg",
+        characters: [
+            2,
+            3
+        ]
     },
     {
         id: 4,
@@ -1497,7 +1537,10 @@ const videos = [
         title: "泰国舞蹈中的哈奴曼",
         description: "观看传统泰国古典舞蹈如何演绎哈奴曼的英勇故事和复杂的动作编排。",
         duration: "15:20",
-        thumbnail: "/placeholder.svg?key=video4"
+        thumbnail: "/thai-classical-dance-hanuman.jpg",
+        characters: [
+            2
+        ]
     },
     {
         id: 5,
@@ -1505,7 +1548,11 @@ const videos = [
         title: "罗摩衍那：泰国版本的史诗",
         description: "了解《罗摩衍那》如何在泰国得到改编和演绎，以及罗摩作为理想王子的象征意义。",
         duration: "25:40",
-        thumbnail: "/placeholder.svg?key=video5"
+        thumbnail: "/thai-ramakien-epic.jpg",
+        characters: [
+            3,
+            4
+        ]
     },
     {
         id: 6,
@@ -1513,7 +1560,10 @@ const videos = [
         title: "罗摩的道德教训",
         description: "探索罗摩的故事如何传递道德和伦理价值观，影响了几个世纪的泰国教育。",
         duration: "19:30",
-        thumbnail: "/placeholder.svg?key=video6"
+        thumbnail: "/prince-rama-thailand.jpg",
+        characters: [
+            3
+        ]
     },
     {
         id: 7,
@@ -1521,7 +1571,10 @@ const videos = [
         title: "十面魔王的权力与野心",
         description: "分析十面魔王作为反派角色的复杂性，以及他如何代表罗摩衍那中的邪恶力量。",
         duration: "20:15",
-        thumbnail: "/placeholder.svg?key=video7"
+        thumbnail: "/ravana-ten-headed-demon.jpg",
+        characters: [
+            4
+        ]
     },
     {
         id: 8,
@@ -1529,7 +1582,11 @@ const videos = [
         title: "善恶之争：十面魔王的故事",
         description: "通过十面魔王的视角探索泰国神话中关于善与恶的永恒主题。",
         duration: "17:50",
-        thumbnail: "/placeholder.svg?key=video8"
+        thumbnail: "/thai-mythology-good-evil.jpg",
+        characters: [
+            4,
+            3
+        ]
     },
     {
         id: 9,
@@ -1537,7 +1594,10 @@ const videos = [
         title: "娜娜：女性战士的传说",
         description: "探索泰国神话中的女性英雄娜娜的故事。这个视频讲述了她如何通过智慧和勇气赢得尊重。",
         duration: "16:20",
-        thumbnail: "/placeholder.svg?key=video9"
+        thumbnail: "/thai-female-warrior.jpg",
+        characters: [
+            5
+        ]
     },
     {
         id: 10,
@@ -1545,7 +1605,10 @@ const videos = [
         title: "娜娜与古代泰国女性权力",
         description: "了解娜娜如何代表泰国文化中女性的力量和地位。",
         duration: "14:30",
-        thumbnail: "/placeholder.svg?key=video10"
+        thumbnail: "/ancient-thai-women-power.jpg",
+        characters: [
+            5
+        ]
     },
     {
         id: 11,
@@ -1553,7 +1616,10 @@ const videos = [
         title: "拉玛：命运之书",
         description: "深入探索神秘的拉玛形象如何在泰国民间传说和现代文化中发挥重要作用。",
         duration: "19:45",
-        thumbnail: "/placeholder.svg?key=video11"
+        thumbnail: "/thai-destiny-guardian.jpg",
+        characters: [
+            6
+        ]
     },
     {
         id: 12,
@@ -1561,20 +1627,36 @@ const videos = [
         title: "拉玛与命运的转变",
         description: "揭示拉玛如何作为命运的守护者影响泰国人民的精神信仰。",
         duration: "18:00",
-        thumbnail: "/placeholder.svg?key=video12"
+        thumbnail: "/thai-spiritual-belief-destiny.jpg",
+        characters: [
+            6
+        ]
     }
 ];
 function MythologyPage() {
     const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSearchParams"])();
     const characterId = searchParams.get("character");
     const initialCharacter = characterId ? characters.find((c)=>c.id === Number.parseInt(characterId)) : characters[0];
-    const [selectedCharacter, setSelectedCharacter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initialCharacter || characters[0]);
+    const [selectedCharacterId, setSelectedCharacterId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initialCharacter?.id || 1);
+    const [currentVideo, setCurrentVideo] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(videos.find((v)=>v.characterId === selectedCharacterId) || null);
+    const getCharactersInCurrentVideo = ()=>{
+        if (!currentVideo || !currentVideo.characters) return [
+            characters.find((c)=>c.id === selectedCharacterId)
+        ];
+        return characters.filter((c)=>currentVideo.characters?.includes(c.id));
+    };
+    const displayedCharacters = getCharactersInCurrentVideo();
+    const handleCharacterChange = (characterId)=>{
+        setSelectedCharacterId(characterId);
+        const firstVideo = videos.find((v)=>v.characterId === characterId);
+        setCurrentVideo(firstVideo || null);
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-background",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 174,
+                lineNumber: 204,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1590,19 +1672,19 @@ function MythologyPage() {
                                     size: 20
                                 }, void 0, false, {
                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                    lineNumber: 183,
+                                    lineNumber: 213,
                                     columnNumber: 13
                                 }, this),
                                 "返回探索"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/explore/mythology/page.tsx",
-                            lineNumber: 179,
+                            lineNumber: 209,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 178,
+                        lineNumber: 208,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1613,7 +1695,7 @@ function MythologyPage() {
                                 children: "探索泰国文化"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 190,
+                                lineNumber: 220,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1621,7 +1703,7 @@ function MythologyPage() {
                                 children: "神话传说"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 193,
+                                lineNumber: 223,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1629,28 +1711,29 @@ function MythologyPage() {
                                 children: "深入探索泰国古老的神话世界。这些故事已经流传了数个世纪，塑造了泰国的文化认同和精神信仰。"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 194,
+                                lineNumber: 224,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 189,
+                        lineNumber: 219,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         className: "mb-16",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$mythology$2d$video$2d$section$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MythologyVideoSection"], {
-                            character: selectedCharacter,
-                            videos: videos
+                            characters: characters,
+                            videos: videos,
+                            onCharacterChange: handleCharacterChange
                         }, void 0, false, {
                             fileName: "[project]/app/explore/mythology/page.tsx",
-                            lineNumber: 200,
+                            lineNumber: 230,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 199,
+                        lineNumber: 229,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1661,7 +1744,7 @@ function MythologyPage() {
                                 children: "泰国神话宇宙"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 205,
+                                lineNumber: 235,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1672,7 +1755,7 @@ function MythologyPage() {
                                         children: "泰国神话深深植根于古老的宗教信仰和文化传统。其中最重要的是《罗摩衍那》（Ramakien），这是古代印度史诗在泰国的独特改编版本。"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 207,
+                                        lineNumber: 237,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1680,43 +1763,51 @@ function MythologyPage() {
                                         children: "这些故事不仅仅是娱乐，它们是道德教育的工具，教导人们关于勇气、忠诚、智慧和正义。通过寺庙壁画、古典舞蹈和民间传说，这些神话人物在泰国文化中继续发挥着重要的作用。"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 210,
+                                        lineNumber: 240,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "从女神到战士，从妖怪到凡人，每个角色都代表了人类体验的某个方面，为泰国人民提供了深刻的文化和精神指引。"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 243,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 206,
+                                lineNumber: 236,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 204,
+                        lineNumber: 234,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                         className: "mb-16",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl font-bold mb-8",
+                                className: "text-3xl font-bold mb-4",
                                 children: "主要人物详情"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 221,
+                                lineNumber: 250,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-muted-foreground mb-8",
+                                children: "以下是当前视频中出现的神话人物："
+                            }, void 0, false, {
+                                fileName: "[project]/app/explore/mythology/page.tsx",
+                                lineNumber: 251,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "grid grid-cols-1 md:grid-cols-2 gap-8",
-                                children: characters.map((character)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow",
+                                children: displayedCharacters.map((character)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "relative w-full h-64",
@@ -1727,12 +1818,12 @@ function MythologyPage() {
                                                     className: "object-cover"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 229,
+                                                    lineNumber: 259,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                                lineNumber: 228,
+                                                lineNumber: 258,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1743,7 +1834,7 @@ function MythologyPage() {
                                                         children: character.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 237,
+                                                        lineNumber: 267,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1751,7 +1842,7 @@ function MythologyPage() {
                                                         children: character.thai
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 238,
+                                                        lineNumber: 268,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1759,7 +1850,7 @@ function MythologyPage() {
                                                         children: character.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 269,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1767,30 +1858,30 @@ function MythologyPage() {
                                                         children: character.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 240,
+                                                        lineNumber: 270,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                                lineNumber: 236,
+                                                lineNumber: 266,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, character.id, true, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 224,
+                                        lineNumber: 254,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 222,
+                                lineNumber: 252,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 220,
+                        lineNumber: 249,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1801,7 +1892,7 @@ function MythologyPage() {
                                 children: "相关文化"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 249,
+                                lineNumber: 279,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1820,7 +1911,7 @@ function MythologyPage() {
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 253,
+                                                    lineNumber: 283,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1828,7 +1919,7 @@ function MythologyPage() {
                                                     children: "古典舞蹈"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 260,
+                                                    lineNumber: 290,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1836,7 +1927,7 @@ function MythologyPage() {
                                                     children: "通过舞蹈表现神话人物和故事"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 261,
+                                                    lineNumber: 291,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1848,24 +1939,24 @@ function MythologyPage() {
                                                             className: "ml-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                                            lineNumber: 263,
+                                                            lineNumber: 293,
                                                             columnNumber: 22
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 262,
+                                                    lineNumber: 292,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                            lineNumber: 252,
+                                            lineNumber: 282,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 281,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1881,7 +1972,7 @@ function MythologyPage() {
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 270,
+                                                    lineNumber: 300,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1889,7 +1980,7 @@ function MythologyPage() {
                                                     children: "节日庆典"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 277,
+                                                    lineNumber: 307,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1897,7 +1988,7 @@ function MythologyPage() {
                                                     children: "庆祝与神话相关的重要节日"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 278,
+                                                    lineNumber: 308,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1909,24 +2000,24 @@ function MythologyPage() {
                                                             className: "ml-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                                            lineNumber: 280,
+                                                            lineNumber: 310,
                                                             columnNumber: 22
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 279,
+                                                    lineNumber: 309,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                            lineNumber: 269,
+                                            lineNumber: 299,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 268,
+                                        lineNumber: 298,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1942,7 +2033,7 @@ function MythologyPage() {
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 287,
+                                                    lineNumber: 317,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1950,7 +2041,7 @@ function MythologyPage() {
                                                     children: "建筑艺术"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 294,
+                                                    lineNumber: 324,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1958,7 +2049,7 @@ function MythologyPage() {
                                                     children: "寺庙中的神话艺术展现"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 295,
+                                                    lineNumber: 325,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1970,53 +2061,53 @@ function MythologyPage() {
                                                             className: "ml-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                                            lineNumber: 297,
+                                                            lineNumber: 327,
                                                             columnNumber: 22
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 296,
+                                                    lineNumber: 326,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                            lineNumber: 286,
+                                            lineNumber: 316,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 285,
+                                        lineNumber: 315,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 250,
+                                lineNumber: 280,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 248,
+                        lineNumber: 278,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 176,
+                lineNumber: 206,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 305,
+                lineNumber: 335,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/explore/mythology/page.tsx",
-        lineNumber: 173,
+        lineNumber: 203,
         columnNumber: 5
     }, this);
 }

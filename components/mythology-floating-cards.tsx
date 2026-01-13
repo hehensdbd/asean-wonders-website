@@ -32,15 +32,23 @@ export function MythologyFloatingCards({
     return () => clearInterval(timer)
   }, [isAutoPlay, characters.length])
 
-  const handleCardClick = (index: number) => {
+  const handleMainCardClick = (character: MythologyCharacter, index: number) => {
     if (index === currentIndex) {
+      // 当点击中心卡片时，触发跳转
       if (onCardClick) {
-        onCardClick(characters[index])
+        onCardClick(character)
       }
     } else {
+      // 当点击非中心卡片时，只切换到该卡片
       setCurrentIndex(index)
       setIsAutoPlay(false)
     }
+  }
+
+  const handleThumbnailClick = (character: MythologyCharacter, index: number) => {
+    setCurrentIndex(index)
+    setIsAutoPlay(false)
+    // 缩略图点击只切换卡片，不跳转
   }
 
   const getCardPosition = (index: number): { position: string; zIndex: number; style: any } => {
@@ -112,7 +120,7 @@ export function MythologyFloatingCards({
                   {/* Card - only show if not hidden */}
                   {style.opacity > 0 && (
                     <div
-                      onClick={() => handleCardClick(index)}
+                      onClick={() => handleMainCardClick(character, index)}
                       style={{
                         zIndex,
                         ...style,
@@ -161,7 +169,7 @@ export function MythologyFloatingCards({
         {characters.map((character, index) => (
           <button
             key={character.id}
-            onClick={() => handleCardClick(index)}
+            onClick={() => handleThumbnailClick(character, index)}
             className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${
               index === currentIndex
                 ? "border-yellow-400 ring-2 ring-yellow-400/50 scale-100 shadow-lg"
@@ -177,8 +185,6 @@ export function MythologyFloatingCards({
             </span>
           </button>
         ))}
-
-        
       </div>
     </div>
   )

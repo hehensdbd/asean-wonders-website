@@ -15,7 +15,7 @@ const dishes = [
     thai: "Tom Yum Goong (ต้มยำกุ้ง)",
     type: "汤类",
     description: "最著名的泰国汤，以酸、辣、咸、甜四种味道的完美平衡著称。",
-    image: "/placeholder.svg?key=food1&height=300&width=300",
+    image: "/images/冬阴功汤.png",
     ingredients: ["虾", "柠檬草", "高良姜", "辣椒", "柠檬", "鱼露"],
   },
   {
@@ -24,7 +24,7 @@ const dishes = [
     thai: "Gaeng Keow Wan Gai (แกงเขียวหวาน)",
     type: "咖喱类",
     description: "用绿辣椒制成的浓郁咖喱，带有特有的香气和热度。",
-    image: "/placeholder.svg?key=food2&height=300&width=300",
+    image: "/images/绿咖喱鸡.png",
     ingredients: ["鸡肉", "绿辣椒", "椰浆", "泰国罗勒", "鱼露"],
   },
   {
@@ -32,7 +32,7 @@ const dishes = [
     name: "泰式炒河粉",
     thai: "Pad Thai (ผัดไทย)",
     description: "泰国最受欢迎的面食，结合了酸、甜、咸、辣的完美风味。",
-    image: "/placeholder.svg?key=food3&height=300&width=300",
+    image: "/images/泰式炒河粉.png",
     ingredients: ["河粉", "鸡蛋", "豆芽", "花生", "柠檬", "辣椒"],
   },
   {
@@ -41,7 +41,7 @@ const dishes = [
     thai: "Gai Yang (ไก่ย่าง)",
     type: "烧烤类",
     description: "用香草和香料腌制后烤制的嫩鸡，风味独特。",
-    image: "/placeholder.svg?key=food4&height=300&width=300",
+    image: "/images/泰式烤鸡.png",
     ingredients: ["鸡肉", "大蒜", "香茅", "泰国罗勒", "鱼露"],
   },
 ]

@@ -1256,11 +1256,11 @@ const products = [
     {
         id: 101,
         name: "泰国红咖啡",
-        category: "饮品",
+        category: "食品",
         price: "¥89",
         rating: 4.7,
         reviews: 203,
-        image: "/placeholder.svg?key=local1&height=300&width=300",
+        image: "/images/泰国红咖啡.png",
         description: "地道的泰国高山咖啡，采用传统烘焙技艺。"
     },
     {
@@ -1270,7 +1270,7 @@ const products = [
         price: "¥45",
         rating: 4.6,
         reviews: 87,
-        image: "/placeholder.svg?key=local2&height=300&width=300",
+        image: "/images/鱼露.png",
         description: "传统泰国鱼露，是烹饪的必备调料。"
     },
     {
@@ -1280,7 +1280,7 @@ const products = [
         price: "¥599",
         rating: 4.9,
         reviews: 142,
-        image: "/placeholder.svg?key=local3&height=300&width=300",
+        image: "/images/泰国丝绸面料.png",
         description: "手工织造的泰国丝绸，质量上乘。"
     },
     {
@@ -1290,7 +1290,7 @@ const products = [
         price: "¥129",
         rating: 4.8,
         reviews: 95,
-        image: "/placeholder.svg?key=local4&height=300&width=300",
+        image: "/images/手工香皂套装.png",
         description: "用天然泰国草本制作的手工香皂。"
     },
     {
@@ -1300,13 +1300,33 @@ const products = [
         price: "¥199",
         rating: 4.7,
         reviews: 76,
-        image: "/placeholder.svg?key=local5&height=300&width=300",
+        image: "/images/竹编工艺品.png",
         description: "精美的竹编装饰品，展现泰国民间艺术。"
+    },
+    {
+        id: 106,
+        name: "椰糖甜点",
+        category: "食品",
+        price: "¥45",
+        rating: 4.8,
+        reviews: 178,
+        image: "/images/椰糖甜点.png",
+        description: "传统手工制作的椰糖甜点，甜蜜可口。"
+    },
+    {
+        id: 107,
+        name: "干蝦醬",
+        category: "食品",
+        price: "¥38",
+        rating: 4.5,
+        reviews: 92,
+        image: "/images/干蝦醬.png",
+        description: "泰国特色调味品，提升菜肴风味"
     }
 ];
 const categories = [
     "全部",
-    "饮品",
+    "食品",
     "调味料",
     "纺织品",
     "护理",
@@ -1328,7 +1348,7 @@ function LocalSpecialtiesPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navigation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                lineNumber: 80,
+                lineNumber: 100,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1342,14 +1362,14 @@ function LocalSpecialtiesPage() {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                lineNumber: 88,
+                                lineNumber: 108,
                                 columnNumber: 11
                             }, this),
                             "返回"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                        lineNumber: 84,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1360,7 +1380,7 @@ function LocalSpecialtiesPage() {
                                 children: "本地特产"
                             }, void 0, false, {
                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                lineNumber: 94,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1368,13 +1388,13 @@ function LocalSpecialtiesPage() {
                                 children: "品尝和购买地道的泰国特产，从传统调味料到特色商品，每一样都承载着泰国的文化和风味。"
                             }, void 0, false, {
                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                lineNumber: 95,
+                                lineNumber: 115,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                        lineNumber: 93,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1385,12 +1405,12 @@ function LocalSpecialtiesPage() {
                                 children: category
                             }, category, false, {
                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                lineNumber: 103,
+                                lineNumber: 123,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                        lineNumber: 101,
+                        lineNumber: 121,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1408,7 +1428,7 @@ function LocalSpecialtiesPage() {
                                                 className: "object-cover group-hover:scale-105 transition-transform"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 145,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1419,18 +1439,18 @@ function LocalSpecialtiesPage() {
                                                     className: favorites.includes(product.id) ? "fill-red-500 text-red-500" : "text-foreground"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                    lineNumber: 135,
+                                                    lineNumber: 155,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 151,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 144,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1441,7 +1461,7 @@ function LocalSpecialtiesPage() {
                                                 children: product.category
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                lineNumber: 142,
+                                                lineNumber: 162,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1449,7 +1469,7 @@ function LocalSpecialtiesPage() {
                                                 children: product.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 165,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1457,7 +1477,7 @@ function LocalSpecialtiesPage() {
                                                 children: product.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                lineNumber: 146,
+                                                lineNumber: 166,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1472,12 +1492,12 @@ function LocalSpecialtiesPage() {
                                                                 className: i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
                                                             }, i, false, {
                                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                                lineNumber: 150,
+                                                                lineNumber: 170,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                        lineNumber: 148,
+                                                        lineNumber: 168,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1490,13 +1510,13 @@ function LocalSpecialtiesPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                        lineNumber: 159,
+                                                        lineNumber: 179,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                lineNumber: 147,
+                                                lineNumber: 167,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1507,7 +1527,7 @@ function LocalSpecialtiesPage() {
                                                         children: product.price
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                        lineNumber: 164,
+                                                        lineNumber: 184,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1516,62 +1536,62 @@ function LocalSpecialtiesPage() {
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                            lineNumber: 166,
+                                                            lineNumber: 186,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                        lineNumber: 165,
+                                                        lineNumber: 185,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                                lineNumber: 163,
+                                                lineNumber: 183,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, product.id, true, {
                                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                                lineNumber: 120,
+                                lineNumber: 140,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/cultural-products/local/page.tsx",
-                        lineNumber: 118,
+                        lineNumber: 138,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                lineNumber: 82,
+                lineNumber: 102,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                lineNumber: 175,
+                lineNumber: 195,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$scroll$2d$to$2d$top$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                lineNumber: 176,
+                lineNumber: 196,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$back$2d$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/local/page.tsx",
-                lineNumber: 177,
+                lineNumber: 197,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/cultural-products/local/page.tsx",
-        lineNumber: 79,
+        lineNumber: 99,
         columnNumber: 5
     }, this);
 }

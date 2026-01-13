@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react" // 添加useEffect
 import { Play } from "lucide-react"
 import Image from "next/image"
 
@@ -26,16 +26,36 @@ export interface MythologyVideo {
 export function MythologyVideoSection({
   characters,
   videos,
+  initialCharacterId,
   onCharacterChange,
 }: {
   characters: MythologyCharacter[]
   videos: MythologyVideo[]
+  initialCharacterId?: number
   onCharacterChange?: (characterId: number) => void
 }) {
-  const [selectedCharacterId, setSelectedCharacterId] = useState<number>(characters[0]?.id || 1)
-  const [selectedVideo, setSelectedVideo] = useState<MythologyVideo | null>(
-    videos.find((v) => v.characterId === selectedCharacterId) || null,
+  // 使用initialCharacterId作为初始值
+  const [selectedCharacterId, setSelectedCharacterId] = useState<number>(
+    initialCharacterId || characters[0]?.id || 1
   )
+  const [selectedVideo, setSelectedVideo] = useState<MythologyVideo | null>(null)
+
+  // 当initialCharacterId变化时，更新选中的角色和视频
+  useEffect(() => {
+    if (initialCharacterId && initialCharacterId !== selectedCharacterId) {
+      setSelectedCharacterId(initialCharacterId)
+      const firstVideo = videos.find((v) => v.characterId === initialCharacterId)
+      setSelectedVideo(firstVideo || null)
+    }
+  }, [initialCharacterId, selectedCharacterId, videos])
+
+  // 初始化或重新设置选中的视频
+  useEffect(() => {
+    if (!selectedVideo) {
+      const firstVideo = videos.find((v) => v.characterId === selectedCharacterId)
+      setSelectedVideo(firstVideo || null)
+    }
+  }, [selectedCharacterId, selectedVideo, videos])
 
   const handleCharacterSelect = (characterId: number) => {
     setSelectedCharacterId(characterId)

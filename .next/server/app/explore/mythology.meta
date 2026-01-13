@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/explore/layout,_N_T_/explore/mythology/layout,_N_T_/explore/mythology/page,_N_T_/explore/mythology"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/explore/mythology/__PAGE__",
+    "/explore/mythology",
+    "/explore",
+    "/_index",
+    "/_head"
+  ]
+}

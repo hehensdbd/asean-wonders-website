@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/cultural-products/layout,_N_T_/cultural-products/wallpapers/layout,_N_T_/cultural-products/wallpapers/page,_N_T_/cultural-products/wallpapers"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/cultural-products/wallpapers/__PAGE__",
+    "/cultural-products/wallpapers",
+    "/cultural-products",
+    "/_index",
+    "/_head"
+  ]
+}

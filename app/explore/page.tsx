@@ -17,7 +17,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     title: "树神女神",
     description: "泰国民间中的诗意女神，是榕树神话中的中心人物。",
     image: "/images/南塔尼1.png",
-    detailHref: "/explore/mythology",
+    detailHref: "/explore/mythology?character=1#video-section", // 添加锚点
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     title: "神圣的猴子战士",
     description: "源自《罗摩衍那》的英雄人物，象征忠诚、勇气和智慧。",
     image: "/images/哈奴曼.png",
-    detailHref: "/explore/mythology",
+    detailHref: "/explore/mythology?character=2#video-section", // 添加锚点
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     title: "王子与英雄",
     description: "泰国版《罗摩衍那》中的中心人物，代表正义和王权。",
     image: "/images/罗摩.png",
-    detailHref: "/explore/mythology",
+    detailHref: "/explore/mythology?character=3#video-section", // 添加锚点
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     title: "强大的反派",
     description: "泰国罗摩衍那中的主要反派角色，象征邪恶的力量。",
     image: "/images/十面魔王.png",
-    detailHref: "/explore/mythology",
+    detailHref: "/explore/mythology?character=4#video-section", // 添加锚点
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     title: "天国歌者与舞者",
     description: "上半身为绝世美女，下半身为天鹅或孔雀的神话生物，以美妙歌喉与舞姿著称。",
     image: "/images/金娜丽.png",
-    detailHref: "/explore/mythology",
+    detailHref: "/explore/mythology?character=5#video-section", // 添加锚点
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ const mythologyCharacters: MythologyCharacter[] = [
     title: "毗湿奴的坐骑",
     description: "半人半鹰的金翅神鸟，拥有无上神力，是忠诚、力量与速度的化身。",
     image: "/images/伽鲁达.png",
-    detailHref: "/explore/mythology",
+    detailHref: "/explore/mythology?character=6#video-section", // 添加锚点
   },
 ]
 
@@ -105,7 +105,8 @@ export default function ExplorePage() {
   const router = useRouter()
 
   const handleMythologyCardClick = (character: MythologyCharacter) => {
-    router.push(`/explore/mythology?character=${character.id}`)
+    // 使用新链接，包含锚点
+    router.push(character.detailHref)
   }
 
   return (

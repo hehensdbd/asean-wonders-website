@@ -1098,15 +1098,22 @@ function MythologyFloatingCards({ characters, onCardClick }) {
         isAutoPlay,
         characters.length
     ]);
-    const handleCardClick = (index)=>{
+    const handleMainCardClick = (character, index)=>{
         if (index === currentIndex) {
+            // 当点击中心卡片时，触发跳转
             if (onCardClick) {
-                onCardClick(characters[index]);
+                onCardClick(character);
             }
         } else {
+            // 当点击非中心卡片时，只切换到该卡片
             setCurrentIndex(index);
             setIsAutoPlay(false);
         }
+    };
+    const handleThumbnailClick = (character, index)=>{
+        setCurrentIndex(index);
+        setIsAutoPlay(false);
+    // 缩略图点击只切换卡片，不跳转
     };
     const getCardPosition = (index)=>{
         const diff = (index - currentIndex + characters.length) % characters.length;
@@ -1162,7 +1169,7 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                         className: "absolute inset-0 rounded-3xl bg-black/5 backdrop-blur-xl border border-white/10 shadow-2xl"
                     }, void 0, false, {
                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                        lineNumber: 100,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1174,7 +1181,7 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                 const isCurrentCard = index === currentIndex;
                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: style.opacity > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        onClick: ()=>handleCardClick(index),
+                                        onClick: ()=>handleMainCardClick(character, index),
                                         style: {
                                             zIndex,
                                             ...style
@@ -1191,20 +1198,20 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                                         className: "object-cover"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 134,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 141,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 133,
                                                 columnNumber: 23
                                             }, this),
                                             isCurrentCard && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1212,7 +1219,7 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {}, void 0, false, {
                                                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                        lineNumber: 139,
+                                                        lineNumber: 147,
                                                         columnNumber: 27
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1223,7 +1230,7 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                                                 children: character.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                                lineNumber: 142,
+                                                                lineNumber: 150,
                                                                 columnNumber: 29
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1231,7 +1238,7 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                                                 children: character.thai
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                                lineNumber: 143,
+                                                                lineNumber: 151,
                                                                 columnNumber: 29
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1239,7 +1246,7 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                                                 children: character.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                                lineNumber: 144,
+                                                                lineNumber: 152,
                                                                 columnNumber: 29
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1247,53 +1254,53 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                                                 children: character.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                                lineNumber: 145,
+                                                                lineNumber: 153,
                                                                 columnNumber: 29
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                        lineNumber: 141,
+                                                        lineNumber: 149,
                                                         columnNumber: 27
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                                lineNumber: 138,
+                                                lineNumber: 146,
                                                 columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 122,
                                         columnNumber: 21
                                     }, this)
                                 }, character.id, false, {
                                     fileName: "[project]/components/mythology-floating-cards.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 119,
                                     columnNumber: 17
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/components/mythology-floating-cards.tsx",
-                            lineNumber: 104,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                        lineNumber: 103,
+                        lineNumber: 111,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                lineNumber: 94,
+                lineNumber: 102,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex gap-2 md:gap-3 justify-center flex-wrap items-center",
                 children: characters.map((character, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: ()=>handleCardClick(index),
+                        onClick: ()=>handleThumbnailClick(character, index),
                         className: `relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${index === currentIndex ? "border-yellow-400 ring-2 ring-yellow-400/50 scale-100 shadow-lg" : "border-gray-300 hover:border-yellow-300 hover:scale-105"}`,
                         "aria-label": `Select ${character.name}`,
                         "aria-pressed": index === currentIndex,
@@ -1305,14 +1312,14 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                 className: "object-cover"
                             }, void 0, false, {
                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                lineNumber: 173,
+                                lineNumber: 181,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
                             }, void 0, false, {
                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                lineNumber: 174,
+                                lineNumber: 182,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1320,24 +1327,24 @@ function MythologyFloatingCards({ characters, onCardClick }) {
                                 children: character.name
                             }, void 0, false, {
                                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                                lineNumber: 175,
+                                lineNumber: 183,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, character.id, true, {
                         fileName: "[project]/components/mythology-floating-cards.tsx",
-                        lineNumber: 162,
+                        lineNumber: 170,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/mythology-floating-cards.tsx",
-                lineNumber: 160,
+                lineNumber: 168,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/mythology-floating-cards.tsx",
-        lineNumber: 92,
+        lineNumber: 100,
         columnNumber: 5
     }, this);
 }
@@ -1430,7 +1437,7 @@ const mythologyCharacters = [
         title: "树神女神",
         description: "泰国民间中的诗意女神，是榕树神话中的中心人物。",
         image: "/images/南塔尼1.png",
-        detailHref: "/explore/mythology"
+        detailHref: "/explore/mythology?character=1#video-section"
     },
     {
         id: 2,
@@ -1439,7 +1446,7 @@ const mythologyCharacters = [
         title: "神圣的猴子战士",
         description: "源自《罗摩衍那》的英雄人物，象征忠诚、勇气和智慧。",
         image: "/images/哈奴曼.png",
-        detailHref: "/explore/mythology"
+        detailHref: "/explore/mythology?character=2#video-section"
     },
     {
         id: 3,
@@ -1448,7 +1455,7 @@ const mythologyCharacters = [
         title: "王子与英雄",
         description: "泰国版《罗摩衍那》中的中心人物，代表正义和王权。",
         image: "/images/罗摩.png",
-        detailHref: "/explore/mythology"
+        detailHref: "/explore/mythology?character=3#video-section"
     },
     {
         id: 4,
@@ -1457,7 +1464,7 @@ const mythologyCharacters = [
         title: "强大的反派",
         description: "泰国罗摩衍那中的主要反派角色，象征邪恶的力量。",
         image: "/images/十面魔王.png",
-        detailHref: "/explore/mythology"
+        detailHref: "/explore/mythology?character=4#video-section"
     },
     {
         id: 5,
@@ -1466,7 +1473,7 @@ const mythologyCharacters = [
         title: "天国歌者与舞者",
         description: "上半身为绝世美女，下半身为天鹅或孔雀的神话生物，以美妙歌喉与舞姿著称。",
         image: "/images/金娜丽.png",
-        detailHref: "/explore/mythology"
+        detailHref: "/explore/mythology?character=5#video-section"
     },
     {
         id: 6,
@@ -1475,7 +1482,7 @@ const mythologyCharacters = [
         title: "毗湿奴的坐骑",
         description: "半人半鹰的金翅神鸟，拥有无上神力，是忠诚、力量与速度的化身。",
         image: "/images/伽鲁达.png",
-        detailHref: "/explore/mythology"
+        detailHref: "/explore/mythology?character=6#video-section"
     }
 ];
 const categories = [
@@ -1515,7 +1522,8 @@ const categories = [
 function ExplorePage() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const handleMythologyCardClick = (character)=>{
-        router.push(`/explore/mythology?character=${character.id}`);
+        // 使用新链接，包含锚点
+        router.push(character.detailHref);
     };
     return(// 使用组合类名：bg-image-base + 特定页面背景类
     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1525,7 +1533,7 @@ function ExplorePage() {
                 className: "bg-overlay overlay-dark-5"
             }, void 0, false, {
                 fileName: "[project]/app/explore/page.tsx",
-                lineNumber: 115,
+                lineNumber: 116,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1533,7 +1541,7 @@ function ExplorePage() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                         fileName: "[project]/app/explore/page.tsx",
-                        lineNumber: 119,
+                        lineNumber: 120,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1547,7 +1555,7 @@ function ExplorePage() {
                                         children: "探索泰国文化"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/page.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 125,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1555,13 +1563,13 @@ function ExplorePage() {
                                         children: "发现东盟万象中最迷人的文化瑰宝。从古老的神话到现代的艺术表演，每一页都讲述了一个独特的故事。"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/page.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 126,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/explore/page.tsx",
-                                lineNumber: 123,
+                                lineNumber: 124,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1574,7 +1582,7 @@ function ExplorePage() {
                                                 children: "神话传说"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/page.tsx",
-                                                lineNumber: 133,
+                                                lineNumber: 134,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1582,13 +1590,13 @@ function ExplorePage() {
                                                 children: "探索泰国古老的神话人物和传说故事"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/page.tsx",
-                                                lineNumber: 134,
+                                                lineNumber: 135,
                                                 columnNumber: 13
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/explore/page.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 133,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1599,7 +1607,7 @@ function ExplorePage() {
                                                 onCardClick: handleMythologyCardClick
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/page.tsx",
-                                                lineNumber: 137,
+                                                lineNumber: 138,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1614,35 +1622,35 @@ function ExplorePage() {
                                                                 size: 20
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/explore/page.tsx",
-                                                                lineNumber: 141,
+                                                                lineNumber: 142,
                                                                 columnNumber: 22
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/explore/page.tsx",
-                                                        lineNumber: 140,
+                                                        lineNumber: 141,
                                                         columnNumber: 17
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/page.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 140,
                                                     columnNumber: 15
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/page.tsx",
-                                                lineNumber: 138,
+                                                lineNumber: 139,
                                                 columnNumber: 13
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/explore/page.tsx",
-                                        lineNumber: 136,
+                                        lineNumber: 137,
                                         columnNumber: 11
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/explore/page.tsx",
-                                lineNumber: 131,
+                                lineNumber: 132,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1664,17 +1672,17 @@ function ExplorePage() {
                                                             className: "object-cover"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/page.tsx",
-                                                            lineNumber: 163,
+                                                            lineNumber: 164,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/page.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 163,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/page.tsx",
-                                                    lineNumber: 161,
+                                                    lineNumber: 162,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1685,7 +1693,7 @@ function ExplorePage() {
                                                             children: category.subtitle
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/page.tsx",
-                                                            lineNumber: 174,
+                                                            lineNumber: 175,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1693,7 +1701,7 @@ function ExplorePage() {
                                                             children: category.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/page.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 178,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1701,7 +1709,7 @@ function ExplorePage() {
                                                             children: category.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/page.tsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 179,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1712,63 +1720,63 @@ function ExplorePage() {
                                                                     size: 20
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/explore/page.tsx",
-                                                                    lineNumber: 180,
+                                                                    lineNumber: 181,
                                                                     columnNumber: 28
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/explore/page.tsx",
-                                                            lineNumber: 179,
+                                                            lineNumber: 180,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/explore/page.tsx",
-                                                    lineNumber: 173,
+                                                    lineNumber: 174,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/page.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 155,
                                             columnNumber: 17
                                         }, this)
                                     }, category.id, false, {
                                         fileName: "[project]/app/explore/page.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 154,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/page.tsx",
-                                lineNumber: 149,
+                                lineNumber: 150,
                                 columnNumber: 9
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/page.tsx",
-                        lineNumber: 121,
+                        lineNumber: 122,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                         fileName: "[project]/app/explore/page.tsx",
-                        lineNumber: 189,
+                        lineNumber: 190,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$scroll$2d$to$2d$top$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/app/explore/page.tsx",
-                        lineNumber: 191,
+                        lineNumber: 192,
                         columnNumber: 7
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/explore/page.tsx",
-                lineNumber: 118,
+                lineNumber: 119,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/explore/page.tsx",
-        lineNumber: 113,
+        lineNumber: 114,
         columnNumber: 5
     }, this));
 }

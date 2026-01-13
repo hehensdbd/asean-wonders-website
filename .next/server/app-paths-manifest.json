@@ -1,0 +1,21 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/auth/register/page": "app/auth/register/page.js",
+  "/community/page": "app/community/page.js",
+  "/cultural-products/creative/page": "app/cultural-products/creative/page.js",
+  "/cultural-products/local/page": "app/cultural-products/local/page.js",
+  "/cultural-products/page": "app/cultural-products/page.js",
+  "/cultural-products/wallpapers/page": "app/cultural-products/wallpapers/page.js",
+  "/explore/architecture/page": "app/explore/architecture/page.js",
+  "/explore/art/page": "app/explore/art/page.js",
+  "/explore/festivals/page": "app/explore/festivals/page.js",
+  "/explore/food/page": "app/explore/food/page.js",
+  "/explore/mythology/page": "app/explore/mythology/page.js",
+  "/explore/page": "app/explore/page.js",
+  "/news/page": "app/news/page.js",
+  "/page": "app/page.js",
+  "/travel/page": "app/travel/page.js"
+}

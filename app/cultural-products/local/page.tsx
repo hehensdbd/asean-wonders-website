@@ -13,11 +13,11 @@ const products = [
   {
     id: 101,
     name: "泰国红咖啡",
-    category: "饮品",
+    category: "食品",
     price: "¥89",
     rating: 4.7,
     reviews: 203,
-    image: "/placeholder.svg?key=local1&height=300&width=300",
+    image: "/images/泰国红咖啡.png",
     description: "地道的泰国高山咖啡，采用传统烘焙技艺。",
   },
   {
@@ -27,7 +27,7 @@ const products = [
     price: "¥45",
     rating: 4.6,
     reviews: 87,
-    image: "/placeholder.svg?key=local2&height=300&width=300",
+    image: "/images/鱼露.png",
     description: "传统泰国鱼露，是烹饪的必备调料。",
   },
   {
@@ -37,7 +37,7 @@ const products = [
     price: "¥599",
     rating: 4.9,
     reviews: 142,
-    image: "/placeholder.svg?key=local3&height=300&width=300",
+    image: "/images/泰国丝绸面料.png",
     description: "手工织造的泰国丝绸，质量上乘。",
   },
   {
@@ -47,7 +47,7 @@ const products = [
     price: "¥129",
     rating: 4.8,
     reviews: 95,
-    image: "/placeholder.svg?key=local4&height=300&width=300",
+    image: "/images/手工香皂套装.png",
     description: "用天然泰国草本制作的手工香皂。",
   },
   {
@@ -57,12 +57,32 @@ const products = [
     price: "¥199",
     rating: 4.7,
     reviews: 76,
-    image: "/placeholder.svg?key=local5&height=300&width=300",
+    image: "/images/竹编工艺品.png",
     description: "精美的竹编装饰品，展现泰国民间艺术。",
+  },
+  {
+    id: 106,
+    name: "椰糖甜点",
+    category: "食品",
+    price: "¥45",
+    rating: 4.8,
+    reviews: 178,
+    image: "/images/椰糖甜点.png",
+    description: "传统手工制作的椰糖甜点，甜蜜可口。",
+  },
+  {
+    id: 107,
+    name: "干蝦醬",
+    category: "食品",
+    price: "¥38",
+    rating: 4.5,
+    reviews: 92,
+    image: "/images/干蝦醬.png",
+    description: "泰国特色调味品，提升菜肴风味",
   },
 ]
 
-const categories = ["全部", "饮品", "调味料", "纺织品", "护理", "工艺品"]
+const categories = ["全部", "食品", "调味料", "纺织品", "护理", "工艺品"]
 
 export default function LocalSpecialtiesPage() {
   const [selectedCategory, setSelectedCategory] = useState("全部")

@@ -53,39 +53,37 @@ export function CreativeProductsSection() {
 
   const items = [...products, ...placeholders];
 
+  // 文创产品的图片名称数组（根据你的实际图片文件名调整）
+  const productImages = [
+    "/images/竹编工艺品.png",  // 对应第一个产品
+    "/images/金箔陶瓷器皿.png",  // 对应第二个产品
+    "/images/泰国丝绸围巾.png",  // 对应第三个产品
+    "/images/泰国红咖啡.png",  // 对应第一个占位符
+    "/images/椰糖甜点.png",  // 对应第二个占位符
+    "/images/暹罗猫陶瓷摆件.png",  // 对应第三个占位符
+  ];
+
   return (
-    // 【改动1】：最外层添加 flex flex-col h-full
-    // flex-col: 让内部元素垂直排列
-    // h-full: 确保这个卡片占满父容器的高度（配合左侧资讯栏的高度）
     <div className="bg-card border border-border rounded-lg p-6 flex flex-col h-full">
-      
-      {/* 标题部分添加 shrink-0，防止空间不够时标题被压缩 */}
       <div className="flex items-center justify-between mb-6 shrink-0">
         <h3 className="text-2xl font-bold text-foreground">文创</h3>
         <Link href="/cultural-products" className="text-secondary hover:text-accent flex items-center gap-1">
           更多 <ArrowRight size={16} />
         </Link>
       </div>
-
-      {/* 【改动2】：Grid 容器添加 flex-1 和 content-stretch */}
-      {/* flex-1: 让这个 Grid 区域自动占据卡片剩下的所有垂直空白 */}
-      {/* mb-0: 移除底部的 margin，因为已经填满了 */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 flex-1 mb-0">
         {items.map((item, index) => (
           <div
             key={index}
-            // 【改动3】：将固定高度 h-40 改为 h-full
-            // 这样每个格子就会自动拉伸，平分 Grid 容器的高度
             className="bg-muted rounded-lg h-full flex items-center justify-center hover:bg-muted/80 transition-colors cursor-pointer overflow-hidden relative"
           >
+            {/* 修改图片路径 */}
             <Image
-              src={`/thai-cultural-product-.jpg?key=${index}&height=160&width=160&query=Thai cultural product ${index}`}
+              src={productImages[index] || "/images/default.jpg"} // 添加默认图片以防万一
               alt={item.title}
               width={160}
               height={160}
-              className="rounded"
-              // 如果你想让图片也稍微大一点，可以适当调整 width/height 或者 object-fit，
-              // 但通常保持居中显示的方图（如目前设置）在拉长的格子里也很好看。
+              className="rounded object-cover w-full h-full" // 添加 object-cover 使图片填充
             />
           </div>
         ))}
@@ -95,6 +93,13 @@ export function CreativeProductsSection() {
 }
 
 export function TravelSection() {
+  // 旅游图片数组（根据你的实际图片文件名调整）
+  const travelImages = [
+    "/images/曼谷.png",
+    "/images/普吉岛.png",
+    "/images/清迈.png",
+  ];
+
   return (
     <div className="bg-card border border-border rounded-lg p-6">
       <div className="flex items-center justify-between mb-6">
@@ -104,23 +109,24 @@ export function TravelSection() {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {[1, 2, 3].map((i) => (
+        {travelImages.map((imageSrc, index) => (
           <div
-            key={i}
-            className="bg-muted rounded-lg h-40 flex items-center justify-center hover:bg-muted/80 transition-colors cursor-pointer"
+            key={index}
+            className="bg-muted rounded-lg h-60 flex items-center justify-center hover:bg-muted/80 transition-colors cursor-pointer overflow-hidden"
           >
+            {/* 修改图片路径 */}
             <Image
-              src={`/thailand-travel-destination-.jpg?height=160&width=160&query=Thailand travel destination ${i}`}
-              alt={`Travel destination ${i}`}
+              src={imageSrc}
+              alt={`Travel destination ${index + 1}`}
               width={160}
               height={160}
-              className="rounded"
+              className="rounded object-cover w-full h-full" // 使图片填充整个容器
             />
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export function CommunitySection() {

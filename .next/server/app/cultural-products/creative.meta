@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/cultural-products/layout,_N_T_/cultural-products/creative/layout,_N_T_/cultural-products/creative/page,_N_T_/cultural-products/creative"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/cultural-products/creative/__PAGE__",
+    "/cultural-products/creative",
+    "/cultural-products",
+    "/_index",
+    "/_head"
+  ]
+}

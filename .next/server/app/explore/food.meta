@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/explore/layout,_N_T_/explore/food/layout,_N_T_/explore/food/page,_N_T_/explore/food"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/explore/food/__PAGE__",
+    "/explore/food",
+    "/explore",
+    "/_index",
+    "/_head"
+  ]
+}

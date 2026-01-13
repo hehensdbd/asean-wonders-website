@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react" // 添加 useRef
 import { useSearchParams } from "next/navigation"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -12,14 +12,15 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import type { MythologyCharacter } from "@/components/mythology-video-section"
 import { MythologyVideoSection, type MythologyVideo } from "@/components/mythology-video-section"
 
-const characters: MythologyCharacter[] = [
+// 神话视频讲堂中可选择的人物（6位原始人物）
+const charactersForSelection: MythologyCharacter[] = [
   {
     id: 1,
     name: "南塔尼",
     thai: "Nang Tani (นางทานี)",
     title: "树神女神",
     description: "泰国民间中的诗意女神，是榕树神话中的中心人物。她象征着自然的神圣与女性的魅力。",
-    image: "/thai-mythology-goddess-nang-tani.jpg",
+    image: "/images/南塔尼1.png",
   },
   {
     id: 2,
@@ -27,7 +28,7 @@ const characters: MythologyCharacter[] = [
     thai: "Hanuman (หนุมาน)",
     title: "神圣的猴子战士",
     description: "源自《罗摩衍那》的英雄人物，象征忠诚、勇气和智慧。在泰国文化中被广泛崇拜。",
-    image: "/thai-mythology-hanuman-monkey-warrior.jpg",
+    image: "/images/哈奴曼.png",
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ const characters: MythologyCharacter[] = [
     thai: "Rama (พระราม)",
     title: "王子与英雄",
     description: "泰国版《罗摩衍那》（Ramakien）中的中心人物，代表正义和王权。",
-    image: "/thai-mythology-prince-rama.jpg",
+    image: "/images/罗摩.png",
   },
   {
     id: 4,
@@ -43,23 +44,68 @@ const characters: MythologyCharacter[] = [
     thai: "Ravana (ทศกัณฐ)",
     title: "强大的反派",
     description: "泰国罗摩衍那中的主要反派角色，象征邪恶的力量和欲望。",
-    image: "/thai-mythology-ravana-demon-king.jpg",
+    image: "/images/十面魔王.png",
   },
   {
     id: 5,
-    name: "娜娜",
-    thai: "Nang Nana (นางนนา)",
-    title: "高贵的女性战士",
-    description: "泰国神话中的女性英雄，以其智慧、勇气和高贵的品质闻名。她象征女性的力量和独立精神。",
-    image: "/thai-mythology-nang-nana.jpg",
+    name: "金娜丽",
+    thai: "Kinnari(กินรี)",
+    title: "天国歌者与舞者",
+    description: "上半身为绝世美女，下半身为天鹅或孔雀的神话生物，以美妙歌喉与舞姿著称。",
+    image: "/images/金娜丽.png",
   },
   {
     id: 6,
-    name: "拉玛",
-    thai: "Rama (พระลาหม)",
-    title: "命运的守护者",
-    description: "泰国民间传说中的神秘人物，被认为是命运的引导者和变革的象征。",
-    image: "/thai-mythology-rama-guardian.jpg",
+    name: "伽鲁达",
+    thai: "Garuda (ครุฑ)",
+    title: "毗湿奴的坐骑",
+    description: "半人半鹰的金翅神鸟，拥有无上神力，是忠诚、力量与速度的化身。",
+    image: "/images/伽鲁达.png",
+  },
+]
+
+// 所有人物（包括新增的隐藏人物）
+const allCharacters: MythologyCharacter[] = [
+  ...charactersForSelection,
+  {
+    id: 7,
+    name: "阿肯",
+    thai: "Phraya Sangkhathep (พระยาสังขเทพ)",
+    title: "一个人",
+    description: "一个人",
+    image: "/images/阿肯.png",
+  },
+  {
+    id: 8,
+    name: "娜迦龙王",
+    thai: "Phaya Nak (พญานาค)",
+    title: "水域守护神",
+    description: "泰国神话中的蛇神，掌管河流与水域，既是保护神也是财富的象征，在泰国文化中地位崇高。",
+    image: "/images/娜迦龙王.png",
+  },
+  {
+    id: 9,
+    name: "因陀罗",
+    thai: "Indra (พระอินทร์)",
+    title: "天界之王",
+    description: "源自印度神话，在泰国神话中掌管天界与雨水，是雷电与战争之神，常以骑象形象出现。",
+    image: "/images/因陀罗.png",
+  },
+  {
+    id: 10,
+    name: "苏梵娜玛奇",
+    thai: "Suvannamachha (สุพรรณมัจฉา)",
+    title: "美人鱼公主",
+    description: "娜迦龙族的公主，上半身为美丽女子，下半身为鱼尾，掌管海洋生物，善良而神秘。",
+    image: "/images/苏梵娜玛奇.png",
+  },
+  {
+    id: 11,
+    name: "蒙克利",
+    thai: "Mangklip (มังคลีบ)",
+    title: "森林守护者",
+    description: "古老的森林精魂，形态似鹿似马，拥有治愈能力，保护森林中的生灵免受伤害。",
+    image: "/images/蒙克利.png",
   },
 ]
 
@@ -72,7 +118,7 @@ const videos: MythologyVideo[] = [
       "探索关于南塔尼的经典民间故事。这个视频讲述了美丽的树神与凡人之间的爱情传说，以及她如何成为榕树的保护神。",
     duration: "12:34",
     thumbnail: "/thai-tree-goddess-nang-tani.jpg",
-    characters: [1], // Only Nang Tani appears
+    characters: [1, 7], // 南塔尼的第一个视频包含6位人物
   },
   {
     id: 2,
@@ -140,8 +186,8 @@ const videos: MythologyVideo[] = [
   {
     id: 9,
     characterId: 5,
-    title: "娜娜：女性战士的传说",
-    description: "探索泰国神话中的女性英雄娜娜的故事。这个视频讲述了她如何通过智慧和勇气赢得尊重。",
+    title: "金娜丽：女性战士的传说",
+    description: "探索泰国神话中的金娜丽的故事。这个视频讲述了她如何通过智慧和勇气赢得尊重。",
     duration: "16:20",
     thumbnail: "/thai-female-warrior.jpg",
     characters: [5],
@@ -149,8 +195,8 @@ const videos: MythologyVideo[] = [
   {
     id: 10,
     characterId: 5,
-    title: "娜娜与古代泰国女性权力",
-    description: "了解娜娜如何代表泰国文化中女性的力量和地位。",
+    title: "金娜丽与古代泰国女性权力",
+    description: "了解金娜丽如何代表泰国文化中女性的力量和地位。",
     duration: "14:30",
     thumbnail: "/ancient-thai-women-power.jpg",
     characters: [5],
@@ -158,8 +204,8 @@ const videos: MythologyVideo[] = [
   {
     id: 11,
     characterId: 6,
-    title: "拉玛：命运之书",
-    description: "深入探索神秘的拉玛形象如何在泰国民间传说和现代文化中发挥重要作用。",
+    title: "伽鲁达：命运之书",
+    description: "深入探索神秘的伽鲁达形象如何在泰国民间传说和现代文化中发挥重要作用。",
     duration: "19:45",
     thumbnail: "/thai-destiny-guardian.jpg",
     characters: [6],
@@ -167,8 +213,8 @@ const videos: MythologyVideo[] = [
   {
     id: 12,
     characterId: 6,
-    title: "拉玛与命运的转变",
-    description: "揭示拉玛如何作为命运的守护者影响泰国人民的精神信仰。",
+    title: "伽鲁达与命运的转变",
+    description: "揭示伽鲁达如何作为命运的守护者影响泰国人民的精神信仰。",
     duration: "18:00",
     thumbnail: "/thai-spiritual-belief-destiny.jpg",
     characters: [6],
@@ -178,17 +224,31 @@ const videos: MythologyVideo[] = [
 export default function MythologyPage() {
   const searchParams = useSearchParams()
   const characterId = searchParams.get("character")
+  
+  // 添加 useRef 用于视频区域
+  const videoSectionRef = useRef<HTMLDivElement>(null)
+  
+  // 添加自动滚动效果
+  useEffect(() => {
+    // 如果URL中有锚点，滚动到视频区域
+    if (window.location.hash === '#video-section' && videoSectionRef.current) {
+      setTimeout(() => {
+        videoSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+      }, 100) // 延迟100ms确保内容已加载
+    }
+  }, [])
 
-  const initialCharacter = characterId ? characters.find((c) => c.id === Number.parseInt(characterId)) : characters[0]
+  const initialCharacter = characterId ? charactersForSelection.find((c) => c.id === Number.parseInt(characterId)) : charactersForSelection[0]
 
   const [selectedCharacterId, setSelectedCharacterId] = useState<number>(initialCharacter?.id || 1)
   const [currentVideo, setCurrentVideo] = useState<MythologyVideo | null>(
     videos.find((v) => v.characterId === selectedCharacterId) || null,
   )
 
+  // 获取当前视频中出现的所有人物（包括隐藏人物）
   const getCharactersInCurrentVideo = () => {
-    if (!currentVideo || !currentVideo.characters) return [characters.find((c) => c.id === selectedCharacterId)!]
-    return characters.filter((c) => currentVideo.characters?.includes(c.id))
+    if (!currentVideo || !currentVideo.characters) return []
+    return allCharacters.filter((c) => currentVideo.characters?.includes(c.id))
   }
 
   const displayedCharacters = getCharactersInCurrentVideo()
@@ -215,8 +275,14 @@ export default function MythologyPage() {
           </p>
         </div>
 
-        <section className="mb-16">
-          <MythologyVideoSection characters={characters} videos={videos} onCharacterChange={handleCharacterChange} />
+        {/* 添加ref到视频区域 */}
+        <section id="video-section" ref={videoSectionRef} className="mb-16">
+          <MythologyVideoSection 
+            characters={charactersForSelection} 
+            videos={videos} 
+            initialCharacterId={selectedCharacterId} // 传递当前选中的角色ID
+            onCharacterChange={handleCharacterChange} 
+          />
         </section>
 
         {/* Introduction */}
@@ -237,30 +303,37 @@ export default function MythologyPage() {
 
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-4">主要人物详情</h2>
-          <p className="text-muted-foreground mb-8">以下是当前视频中出现的神话人物：</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {displayedCharacters.map((character) => (
-              <div
-                key={character.id}
-                className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
-              >
-                <div className="relative w-full h-64">
-                  <Image
-                    src={character.image || "/placeholder.svg"}
-                    alt={character.name}
-                    fill
-                    className="object-cover"
-                  />
+          <p className="text-muted-foreground mb-8">以下是当前视频中出现的人物介绍：</p>
+          
+          {displayedCharacters.length === 0 ? (
+            <div className="text-center py-12 bg-card border border-border rounded-lg">
+              <p className="text-muted-foreground">暂无相关人物信息</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {displayedCharacters.map((character) => (
+                <div
+                  key={character.id}
+                  className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="relative w-full h-56">
+                    <Image
+                      src={character.image || "/placeholder.svg"}
+                      alt={character.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-1">{character.name}</h3>
+                    <p className="text-sm text-secondary font-semibold mb-2">{character.thai}</p>
+                    <p className="text-sm font-semibold text-muted-foreground mb-3">{character.title}</p>
+                    <p className="text-muted-foreground text-sm">{character.description}</p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-1">{character.name}</h3>
-                  <p className="text-sm text-secondary font-semibold mb-3">{character.thai}</p>
-                  <p className="text-sm font-semibold text-muted-foreground mb-4">{character.title}</p>
-                  <p className="text-muted-foreground">{character.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* Related Sections */}

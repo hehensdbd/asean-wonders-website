@@ -1,0 +1,158 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/auth/login",
+      "regex": "^/auth/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/login(?:/)?$"
+    },
+    {
+      "page": "/auth/register",
+      "regex": "^/auth/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/register(?:/)?$"
+    },
+    {
+      "page": "/community",
+      "regex": "^/community(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/community(?:/)?$"
+    },
+    {
+      "page": "/cultural-products",
+      "regex": "^/cultural\\-products(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cultural\\-products(?:/)?$"
+    },
+    {
+      "page": "/cultural-products/creative",
+      "regex": "^/cultural\\-products/creative(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cultural\\-products/creative(?:/)?$"
+    },
+    {
+      "page": "/cultural-products/local",
+      "regex": "^/cultural\\-products/local(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cultural\\-products/local(?:/)?$"
+    },
+    {
+      "page": "/cultural-products/wallpapers",
+      "regex": "^/cultural\\-products/wallpapers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cultural\\-products/wallpapers(?:/)?$"
+    },
+    {
+      "page": "/explore",
+      "regex": "^/explore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/explore(?:/)?$"
+    },
+    {
+      "page": "/explore/architecture",
+      "regex": "^/explore/architecture(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/explore/architecture(?:/)?$"
+    },
+    {
+      "page": "/explore/art",
+      "regex": "^/explore/art(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/explore/art(?:/)?$"
+    },
+    {
+      "page": "/explore/festivals",
+      "regex": "^/explore/festivals(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/explore/festivals(?:/)?$"
+    },
+    {
+      "page": "/explore/food",
+      "regex": "^/explore/food(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/explore/food(?:/)?$"
+    },
+    {
+      "page": "/explore/mythology",
+      "regex": "^/explore/mythology(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/explore/mythology(?:/)?$"
+    },
+    {
+      "page": "/news",
+      "regex": "^/news(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/news(?:/)?$"
+    },
+    {
+      "page": "/travel",
+      "regex": "^/travel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/travel(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

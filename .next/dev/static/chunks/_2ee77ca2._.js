@@ -1541,7 +1541,7 @@ const creativeProducts = [
         price: "¥299",
         rating: 4.8,
         reviews: 156,
-        image: "/placeholder.svg?key=creative1&height=300&width=300",
+        image: "/images/泰国丝绸围巾.png",
         description: "采用传统织造工艺，展现泰国文化魅力的高级丝绸围巾"
     },
     {
@@ -1550,7 +1550,7 @@ const creativeProducts = [
         price: "¥599",
         rating: 4.9,
         reviews: 89,
-        image: "/placeholder.svg?key=creative2&height=300&width=300",
+        image: "/images/金箔陶瓷器皿.png",
         description: "精美的手工陶瓷，每件都是独一无二的艺术品"
     },
     {
@@ -1559,7 +1559,7 @@ const creativeProducts = [
         price: "¥899",
         rating: 5.0,
         reviews: 124,
-        image: "/placeholder.svg?key=creative3&height=300&width=300",
+        image: "/images/木雕佛像.png",
         description: "传统木雕工艺，栩栩如生的佛像雕刻"
     },
     {
@@ -1588,7 +1588,7 @@ const localSpecialties = [
         price: "¥89",
         rating: 4.7,
         reviews: 203,
-        image: "/placeholder.svg?key=local1&height=300&width=300",
+        image: "/images/泰国红咖啡.png",
         description: "来自泰国北部的特色咖啡豆，风味醇厚"
     },
     {
@@ -1597,7 +1597,7 @@ const localSpecialties = [
         price: "¥45",
         rating: 4.6,
         reviews: 87,
-        image: "/placeholder.svg?key=local2&height=300&width=300",
+        image: "/images/鱼露.png",
         description: "传统泰国调味料，增添地道风味"
     },
     {
@@ -1606,16 +1606,16 @@ const localSpecialties = [
         price: "¥599",
         rating: 4.9,
         reviews: 142,
-        image: "/placeholder.svg?key=local3&height=300&width=300",
+        image: "/images/泰国丝绸面料.png",
         description: "高质量的泰国丝绸，适合服装制作"
     },
     {
         id: 104,
         name: "椰糖甜点",
-        price: "¥65",
+        price: "¥45",
         rating: 4.8,
         reviews: 178,
-        image: "/placeholder.svg?key=local4&height=300&width=300",
+        image: "/images/椰糖甜点.png",
         description: "传统手工制作的椰糖甜点，甜蜜可口"
     },
     {
@@ -1624,7 +1624,7 @@ const localSpecialties = [
         price: "¥38",
         rating: 4.5,
         reviews: 92,
-        image: "/placeholder.svg?key=local5&height=300&width=300",
+        image: "/images/干蝦醬.png",
         description: "泰国特色调味品，提升菜肴风味"
     }
 ];

@@ -394,10 +394,16 @@ function CreativeProductsSection() {
         ...products,
         ...placeholders
     ];
-    return(// 【改动1】：最外层添加 flex flex-col h-full
-    // flex-col: 让内部元素垂直排列
-    // h-full: 确保这个卡片占满父容器的高度（配合左侧资讯栏的高度）
-    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    // 文创产品的图片名称数组（根据你的实际图片文件名调整）
+    const productImages = [
+        "/images/竹编工艺品.png",
+        "/images/金箔陶瓷器皿.png",
+        "/images/泰国丝绸围巾.png",
+        "/images/泰国红咖啡.png",
+        "/images/椰糖甜点.png",
+        "/images/暹罗猫陶瓷摆件.png"
+    ];
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "bg-card border border-border rounded-lg p-6 flex flex-col h-full",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -408,7 +414,7 @@ function CreativeProductsSection() {
                         children: "文创"
                     }, void 0, false, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 64,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -420,33 +426,31 @@ function CreativeProductsSection() {
                                 size: 16
                             }, void 0, false, {
                                 fileName: "[project]/components/content-sections.tsx",
-                                lineNumber: 66,
+                                lineNumber: 71,
                                 columnNumber: 14
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 65,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/content-sections.tsx",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid grid-cols-2 md:grid-cols-3 gap-4 flex-1 mb-0",
                 children: items.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        // 【改动3】：将固定高度 h-40 改为 h-full
-                        // 这样每个格子就会自动拉伸，平分 Grid 容器的高度
                         className: "bg-muted rounded-lg h-full flex items-center justify-center hover:bg-muted/80 transition-colors cursor-pointer overflow-hidden relative",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                            src: `/thai-cultural-product-.jpg?key=${index}&height=160&width=160&query=Thai cultural product ${index}`,
+                            src: productImages[index] || "/images/default.jpg",
                             alt: item.title,
                             width: 160,
                             height: 160,
-                            className: "rounded"
+                            className: "rounded object-cover w-full h-full"
                         }, void 0, false, {
                             fileName: "[project]/components/content-sections.tsx",
                             lineNumber: 81,
@@ -454,22 +458,28 @@ function CreativeProductsSection() {
                         }, this)
                     }, index, false, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 75,
+                        lineNumber: 76,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/content-sections.tsx",
-                lineNumber: 73,
+                lineNumber: 74,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/content-sections.tsx",
-        lineNumber: 60,
+        lineNumber: 67,
         columnNumber: 5
-    }, this));
+    }, this);
 }
 function TravelSection() {
+    // 旅游图片数组（根据你的实际图片文件名调整）
+    const travelImages = [
+        "/images/曼谷.png",
+        "/images/普吉岛.png",
+        "/images/清迈.png"
+    ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "bg-card border border-border rounded-lg p-6",
         children: [
@@ -481,7 +491,7 @@ function TravelSection() {
                         children: "旅游"
                     }, void 0, false, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 101,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -493,54 +503,50 @@ function TravelSection() {
                                 size: 16
                             }, void 0, false, {
                                 fileName: "[project]/components/content-sections.tsx",
-                                lineNumber: 103,
+                                lineNumber: 108,
                                 columnNumber: 14
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 102,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/content-sections.tsx",
-                lineNumber: 100,
+                lineNumber: 105,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid grid-cols-1 md:grid-cols-3 gap-4",
-                children: [
-                    1,
-                    2,
-                    3
-                ].map((i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-muted rounded-lg h-40 flex items-center justify-center hover:bg-muted/80 transition-colors cursor-pointer",
+                children: travelImages.map((imageSrc, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-muted rounded-lg h-60 flex items-center justify-center hover:bg-muted/80 transition-colors cursor-pointer overflow-hidden",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                            src: `/thailand-travel-destination-.jpg?height=160&width=160&query=Thailand travel destination ${i}`,
-                            alt: `Travel destination ${i}`,
+                            src: imageSrc,
+                            alt: `Travel destination ${index + 1}`,
                             width: 160,
                             height: 160,
-                            className: "rounded"
+                            className: "rounded object-cover w-full h-full"
                         }, void 0, false, {
                             fileName: "[project]/components/content-sections.tsx",
-                            lineNumber: 112,
+                            lineNumber: 118,
                             columnNumber: 13
                         }, this)
-                    }, i, false, {
+                    }, index, false, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 108,
+                        lineNumber: 113,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/content-sections.tsx",
-                lineNumber: 106,
+                lineNumber: 111,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/content-sections.tsx",
-        lineNumber: 99,
+        lineNumber: 104,
         columnNumber: 5
     }, this);
 }
@@ -556,7 +562,7 @@ function CommunitySection() {
                         children: "交流"
                     }, void 0, false, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 130,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -568,19 +574,19 @@ function CommunitySection() {
                                 size: 16
                             }, void 0, false, {
                                 fileName: "[project]/components/content-sections.tsx",
-                                lineNumber: 132,
+                                lineNumber: 138,
                                 columnNumber: 14
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 131,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/content-sections.tsx",
-                lineNumber: 129,
+                lineNumber: 135,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -600,23 +606,23 @@ function CommunitySection() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/content-sections.tsx",
-                            lineNumber: 141,
+                            lineNumber: 147,
                             columnNumber: 13
                         }, this)
                     }, i, false, {
                         fileName: "[project]/components/content-sections.tsx",
-                        lineNumber: 137,
+                        lineNumber: 143,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/content-sections.tsx",
-                lineNumber: 135,
+                lineNumber: 141,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/content-sections.tsx",
-        lineNumber: 128,
+        lineNumber: 134,
         columnNumber: 5
     }, this);
 }

@@ -233,6 +233,10 @@
   background-image: url('/images/backgrounds/dl.png');
 }
 
+.bg-zy {
+  background-image: url('/images/backgrounds/zy.png');
+}
+
 /* 通用遮罩层样式 */
 .bg-overlay {
   position: absolute;

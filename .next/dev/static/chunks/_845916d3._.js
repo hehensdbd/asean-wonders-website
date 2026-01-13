@@ -1260,17 +1260,17 @@ const products = [
         price: "¥299",
         rating: 4.8,
         reviews: 156,
-        image: "/placeholder.svg?key=prod1&height=300&width=300",
+        image: "/images/泰国丝绸围巾.png",
         description: "手工制作的传统泰国丝绸围巾，采用传统染料和编织技术。"
     },
     {
         id: 2,
         name: "金箔陶瓷器皿",
-        category: "陶瓷艺术",
+        category: "工艺品",
         price: "¥599",
         rating: 4.9,
         reviews: 89,
-        image: "/placeholder.svg?key=prod2&height=300&width=300",
+        image: "/images/金箔陶瓷器皿.png",
         description: "精美的手工陶瓷餐具，装饰有传统泰国图案和金箔。"
     },
     {
@@ -1280,7 +1280,7 @@ const products = [
         price: "¥899",
         rating: 5.0,
         reviews: 124,
-        image: "/placeholder.svg?key=prod3&height=300&width=300",
+        image: "/images/木雕佛像.png",
         description: "用柚木手工雕刻的精美佛像，体现泰国工艺的精湛技艺。"
     },
     {
@@ -1290,7 +1290,7 @@ const products = [
         price: "¥199",
         rating: 4.7,
         reviews: 203,
-        image: "/placeholder.svg?key=prod4&height=300&width=300",
+        image: "/images/香茅精油套装.png",
         description: "用传统泰国香草和精油制成的护理产品套装。"
     },
     {
@@ -1300,28 +1300,26 @@ const products = [
         price: "¥449",
         rating: 4.6,
         reviews: 87,
-        image: "/placeholder.svg?key=prod5&height=300&width=300",
+        image: "/images/传统竹编包.png",
         description: "用竹子手工编制的传统泰国背包，独特且实用。"
     },
     {
         id: 6,
         name: "暹罗猫陶瓷摆件",
-        category: "装饰品",
+        category: "工艺品",
         price: "¥349",
         rating: 4.9,
         reviews: 142,
-        image: "/placeholder.svg?key=prod6&height=300&width=300",
+        image: "/images/暹罗猫陶瓷摆件.png",
         description: "精美的陶瓷暹罗猫摆件，是泰国文化的象征。"
     }
 ];
 const categories = [
     "全部",
     "纺织品",
-    "陶瓷艺术",
     "工艺品",
     "护理产品",
-    "配饰",
-    "装饰品"
+    "配饰"
 ];
 function CreativeProductsPage() {
     _s();

@@ -1,100 +1,190 @@
-[00:00:01.592] Server  LOG      ✓ Ready in 1183ms
-[00:00:10.482] Server  LOG      ○ Compiling / ...
-[00:00:13.775] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+[00:00:01.355] Server  LOG     ✓ Ready in 926ms
+[00:00:06.296] Server  LOG     ○ Compiling / ...
+[00:00:08.434] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:14.297] Server  ERROR   E:\2\asean-wonders-website\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:14.299] Server  ERROR    ⨯ TypeError: Cannot convert argument to a ByteString because the character at index 465 has a value of 27888 which is greater than 255.
-[00:00:14.754] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:14.943] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:14.943] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:14.943] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782400258}
-[00:00:35.140] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+[00:00:09.214] Server  ERROR   ⨯ TypeError: Cannot convert argument to a ByteString because the character at index 465 has a value of 27888 which is greater than 255.
+[00:00:09.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:10.498] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:10.498] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:10.498] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394262020}
+[00:00:15.650] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:37.456] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore. Please move it to viewport export instead.
+[00:00:15.787] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394267302}
+[00:00:18.137] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore/mythology. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:37.577] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782422887}
-[00:00:45.120] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore/mythology. Please move it to viewport export instead.
+[00:00:18.256] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394269776}
+[00:00:19.173] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:45.266] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology?character=1#video-section color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology?character=1#video-section","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782430565}
-[00:00:46.136] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
+[00:00:19.247] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:46.166] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
+[00:01:07.849] Server  LOG     ✓ Compiled in 64ms
+[00:01:10.336] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore/mythology. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:54.061] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore/art. Please move it to viewport export instead.
+[00:01:10.792] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:10.994] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:10.994] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/explore/mythology","route":"/explore/mythology"}
+[00:01:10.994] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394322452}
+[00:01:10.994] Browser WARN    Image with src "/images/南塔尼视频1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:02:48.563] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:54.309] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/art color: rgb(120, 120, 120) color: inherit {"dp":"/explore/art","o":"http://localhost:3000/explore/art","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782439570}
-[00:00:58.204] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
+[00:02:48.687] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394420194}
+[00:03:06.190] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:58.245] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
+[00:03:06.337] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394437833}
+[00:03:12.898] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:58.325] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology?character=1#video-section color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology?character=1#video-section","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782443530}
-[00:00:58.631] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782443943}
-[00:01:01.728] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore/art. Please move it to viewport export instead.
+[00:03:13.097] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394444588}
+[00:03:57.735] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore/mythology. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:01:01.872] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/art color: rgb(120, 120, 120) color: inherit {"dp":"/explore/art","o":"http://localhost:3000/explore/art","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782447178}
-[00:01:06.257] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782451571}
-[00:01:08.215] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore/festivals. Please move it to viewport export instead.
+[00:03:57.881] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394489375}
+[00:08:06.923] Server  LOG     ✓ Compiled in 54ms
+[00:08:23.971] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore/mythology. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:01:08.416] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/festivals color: rgb(120, 120, 120) color: inherit {"dp":"/explore/festivals","o":"http://localhost:3000/explore/festivals","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782453718}
-[00:01:13.007] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782458310}
-[00:01:15.067] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore/food. Please move it to viewport export instead.
+[00:08:24.470] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:24.665] Browser WARN    Image with src "/images/南塔尼视频1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:08:24.841] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:08:24.841] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/explore/mythology","route":"/explore/mythology"}
+[00:08:24.841] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394756304}
+[00:09:01.679] Server  LOG     ✓ Compiled in 66ms
+[00:09:05.046] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore/mythology. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:01:15.244] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/food color: rgb(120, 120, 120) color: inherit {"dp":"/explore/food","o":"http://localhost:3000/explore/food","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782460556}
-[00:01:19.510] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782464814}
-[00:01:23.218] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore/architecture. Please move it to viewport export instead.
+[00:09:05.314] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:05.507] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:09:05.507] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/explore/mythology","route":"/explore/mythology"}
+[00:09:05.507] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394796921}
+[00:09:05.507] Browser WARN    Image with src "/images/南塔尼视频1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:11:14.777] Server  LOG     ✓ Compiled in 53ms
+[00:11:17.295] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore/mythology. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:01:23.440] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/architecture color: rgb(120, 120, 120) color: inherit {"dp":"/explore/architecture","o":"http://localhost:3000/explore/architecture","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782468720}
-[00:01:32.921] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782478236}
-[00:01:38.655] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /news. Please move it to viewport export instead.
+[00:11:17.729] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:17.868] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:17.868] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/explore/mythology","route":"/explore/mythology"}
+[00:11:17.868] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/mythology color: rgb(120, 120, 120) color: inherit {"dp":"/explore/mythology","o":"http://localhost:3000/explore/mythology","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768394929312}
+[00:15:16.748] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:01:38.773] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/news color: rgb(120, 120, 120) color: inherit {"dp":"/news","o":"http://localhost:3000/news","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782484086}
-[00:01:42.613] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+[00:15:16.887] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768395168310}
+[00:18:50.799] Server  LOG     ✓ Compiled in 47ms
+[00:19:48.220] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:01:42.728] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782488041}
-[00:01:48.962] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/creative. Please move it to viewport export instead.
+[00:19:49.347] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:01:49.150] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/creative color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/creative","o":"http://localhost:3000/cultural-products/creative","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782494463}
-[00:01:51.346] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782496660}
-[00:02:00.647] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/local. Please move it to viewport export instead.
+[00:43:50.950] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/creative. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:00.832] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/local color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/local","o":"http://localhost:3000/cultural-products/local","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782506144}
-[00:02:03.755] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782509069}
-[00:02:05.654] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/wallpapers. Please move it to viewport export instead.
+[00:43:51.149] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/creative color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/creative","o":"http://localhost:3000/cultural-products/creative","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768396882443}
+[00:43:55.872] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:05.817] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/wallpapers color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/wallpapers","o":"http://localhost:3000/cultural-products/wallpapers","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782511130}
-[00:02:07.709] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782512952}
-[00:02:09.227] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /travel. Please move it to viewport export instead.
+[00:43:56.004] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768396887310}
+[00:43:59.434] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/local. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:09.350] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/travel color: rgb(120, 120, 120) color: inherit {"dp":"/travel","o":"http://localhost:3000/travel","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782514661}
-[00:02:15.722] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /community. Please move it to viewport export instead.
+[00:43:59.612] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/local color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/local","o":"http://localhost:3000/cultural-products/local","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768396890911}
+[00:46:33.687] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:15.844] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/community color: rgb(120, 120, 120) color: inherit {"dp":"/community","o":"http://localhost:3000/community","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782521153}
-[00:02:25.709] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /about. Please move it to viewport export instead.
+[00:46:33.841] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768397045137}
+[00:46:47.910] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/creative. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:25.841] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782531143}
-[00:02:27.525] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+[00:46:48.054] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/creative color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/creative","o":"http://localhost:3000/cultural-products/creative","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768397059349}
+[00:46:54.706] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:27.707] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782532993}
-[00:02:30.823] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /auth/login. Please move it to viewport export instead.
+[00:46:54.852] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768397066150}
+[01:08:19.596] Server  LOG     ✓ Compiled in 264ms
+[01:08:23.319] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:30.947] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/login color: rgb(120, 120, 120) color: inherit {"dp":"/auth/login","o":"http://localhost:3000/auth/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782536255}
-[00:02:39.128] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+[01:08:24.047] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:24.245] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:08:24.245] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/cultural-products","route":"/cultural-products"}
+[01:08:24.245] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398355494}
+[01:08:25.172] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/creative. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:39.363] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782544599}
-[00:02:50.201] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+[01:08:25.350] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/creative color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/creative","o":"http://localhost:3000/cultural-products/creative","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398356596}
+[01:08:27.513] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/local. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:51.746] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /auth/register. Please move it to viewport export instead.
+[01:08:27.689] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/local color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/local","o":"http://localhost:3000/cultural-products/local","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398358931}
+[01:08:30.451] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/wallpapers. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:51.865] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/register color: rgb(120, 120, 120) color: inherit {"dp":"/auth/register","o":"http://localhost:3000/auth/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782557177}
-[00:02:59.162] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+[01:08:30.631] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/wallpapers color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/wallpapers","o":"http://localhost:3000/cultural-products/wallpapers","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398361877}
+[01:08:41.202] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:02:59.380] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782564646}
-[00:03:05.736] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /travel. Please move it to viewport export instead.
+[01:08:41.454] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398372687}
+[01:08:53.465] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:03:05.879] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/travel color: rgb(120, 120, 120) color: inherit {"dp":"/travel","o":"http://localhost:3000/travel","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782571191}
-[00:03:12.123] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /explore/art. Please move it to viewport export instead.
+[01:08:53.609] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398384855}
+[01:15:46.538] Server  LOG     ✓ Compiled in 58ms
+[01:15:46.653] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:03:12.258] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore/art color: rgb(120, 120, 120) color: inherit {"dp":"/explore/art","o":"http://localhost:3000/explore/art","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782577573}
-[00:03:14.313] Server  WARN     ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+[01:15:50.668] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
 Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:03:14.458] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products?category=local color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products?category=local","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767782579768}
+[01:15:51.069] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:15:51.109] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:15:51.283] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:15:51.283] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/cultural-products","route":"/cultural-products"}
+[01:15:51.283] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398802513}
+[01:15:54.938] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:16:13.286] Server  LOG     ✓ Compiled in 68ms
+[01:16:15.562] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:16:15.980] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:16.511] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:16:16.511] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/cultural-products","route":"/cultural-products"}
+[01:16:16.511] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768398827556}
+[01:20:02.383] Server  LOG     ✓ Compiled in 49ms
+[01:20:05.395] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:20:05.838] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:20:05.996] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:20:05.996] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/cultural-products","route":"/cultural-products"}
+[01:20:05.996] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768399057213}
+[01:26:47.335] Server  LOG     ✓ Compiled in 56ms
+[01:26:50.176] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:26:50.654] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:26:50.826] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:26:50.826] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/cultural-products","route":"/cultural-products"}
+[01:26:50.827] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768399462043}
+[01:27:08.971] Server  LOG     ✓ Compiled in 50ms
+[01:27:11.126] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:27:11.526] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:27:11.683] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:27:11.683] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/cultural-products","route":"/cultural-products"}
+[01:27:11.683] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768399482892}
+[01:28:17.104] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/creative. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:28:17.315] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/creative color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/creative","o":"http://localhost:3000/cultural-products/creative","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768399548527}
+[01:29:36.327] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:29:36.648] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768399627685}
+[01:52:22.125] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:52:22.390] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768400993572}
+[01:52:46.803] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /explore. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:52:46.952] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/explore color: rgb(120, 120, 120) color: inherit {"dp":"/explore","o":"http://localhost:3000/explore","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768401018135}
+[01:52:52.428] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[01:52:52.646] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768401023793}
+[02:14:57.166] Server  LOG     ✓ Compiled in 383ms
+[02:15:00.152] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[02:15:01.180] Server  ERROR   ⨯ TypeError: Cannot convert argument to a ByteString because the character at index 465 has a value of 27888 which is greater than 255.
+[02:15:01.640] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:01.910] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:15:01.910] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[02:15:01.910] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768402353080}
+[02:52:53.196] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[02:52:54.394] Server  ERROR   ⨯ TypeError: Cannot convert argument to a ByteString because the character at index 465 has a value of 27888 which is greater than 255.
+[02:52:55.171] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:52:55.428] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:52:55.428] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[02:52:55.428] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768404626588}
+[02:53:01.325] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[02:53:01.512] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products","o":"http://localhost:3000/cultural-products","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768404632663}
+[02:53:27.158] Server  WARN    ⚠ Unsupported metadata viewport is configured in metadata export in /cultural-products/creative. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[02:53:27.451] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/cultural-products/creative color: rgb(120, 120, 120) color: inherit {"dp":"/cultural-products/creative","o":"http://localhost:3000/cultural-products/creative","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1768404658607}

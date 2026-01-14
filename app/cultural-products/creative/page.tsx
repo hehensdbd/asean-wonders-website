@@ -62,6 +62,36 @@ const products = [
   },
   {
     id: 6,
+    name: "泰式少女一周幸运色系列手办盲盒摆件礼物",
+    category: "文创产品",
+    price: "¥58.8",
+    rating: 5.0,
+    reviews: 124,
+    image: "/images/IP2.jpg",
+    description: "泰式少女，装点美好生活",
+  },
+  {
+    id: 7,
+    name: "THAI STYLE COLLECTION系列文创",
+    category: "文创产品",
+    price: "¥8.8-99",
+    rating: 4.8,
+    reviews: 156,
+    image: "/images/IP1.jpg",
+    description: "寻泰国风情，拾异域美好。",
+  },
+  {
+    id: 8,
+    name: "泰国少女可爱贴纸高颜值IP周边手账DIY防水贴纸",
+    category: "文创产品",
+    price: "¥8.8",
+    rating: 4.9,
+    reviews: 142,
+    image: "/images/IP3.jpg",
+    description: "手账里的打工人一周情绪搭子，每天状态贴贴贴！",
+  },
+  {
+    id: 9,
     name: "暹罗猫陶瓷摆件",
     category: "工艺品",
     price: "¥349",
@@ -72,7 +102,7 @@ const products = [
   },
 ]
 
-const categories = ["全部", "纺织品", "工艺品", "护理产品", "配饰"]
+const categories = ["全部", "文创产品","纺织品", "工艺品", "护理产品", "配饰"]
 
 export default function CreativeProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("全部")

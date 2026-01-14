@@ -70,9 +70,9 @@ const allCharacters: MythologyCharacter[] = [
   {
     id: 7,
     name: "阿肯",
-    thai: "Phraya Sangkhathep (พระยาสังขเทพ)",
-    title: "一个人",
-    description: "一个人",
+    thai: "Ark (อัคน์)",
+    title: "守树者",
+    description: "童年时纯真无邪，受阿婆教导敬畏自然，立誓守护塔尼树；青年时期却在旱灾饥荒中迷失本心，背弃承诺，变得暴戾；直至老年白发幡然醒悟，历经神启与救赎，终将“守树即守心”化为信念，成为指引下一代的领路者。",
     image: "/images/阿肯.png",
   },
   {
@@ -91,42 +91,26 @@ const allCharacters: MythologyCharacter[] = [
     description: "源自印度神话，在泰国神话中掌管天界与雨水，是雷电与战争之神，常以骑象形象出现。",
     image: "/images/因陀罗.png",
   },
-  {
-    id: 10,
-    name: "苏梵娜玛奇",
-    thai: "Suvannamachha (สุพรรณมัจฉา)",
-    title: "美人鱼公主",
-    description: "娜迦龙族的公主，上半身为美丽女子，下半身为鱼尾，掌管海洋生物，善良而神秘。",
-    image: "/images/苏梵娜玛奇.png",
-  },
-  {
-    id: 11,
-    name: "蒙克利",
-    thai: "Mangklip (มังคลีบ)",
-    title: "森林守护者",
-    description: "古老的森林精魂，形态似鹿似马，拥有治愈能力，保护森林中的生灵免受伤害。",
-    image: "/images/蒙克利.png",
-  },
 ]
 
 const videos: MythologyVideo[] = [
   {
     id: 1,
     characterId: 1,
-    title: "南塔尼：树神的爱情故事",
+    title: "南塔尼的惩戒",
     description:
-      "探索关于南塔尼的经典民间故事。这个视频讲述了美丽的树神与凡人之间的爱情传说，以及她如何成为榕树的保护神。",
-    duration: "12:34",
-    thumbnail: "/thai-tree-goddess-nang-tani.jpg",
-    characters: [1, 7], // 南塔尼的第一个视频包含6位人物
+      "以“守树即守心”为核心主题，讲述了关于自然敬畏与初心救赎的故事 。",
+    duration: "4:30",
+    thumbnail: "/images/南塔尼视频1.png",
+    characters: [1, 7], 
   },
   {
     id: 2,
     characterId: 1,
     title: "泰国民间中的南塔尼信仰",
     description: "了解泰国人民如何崇拜南塔尼，以及这个女神在现代泰国文化中的重要性。",
-    duration: "18:45",
-    thumbnail: "/thai-shrine-worship.jpg",
+    duration: "8:45",
+    thumbnail: "/images/南塔尼视频4.png",
     characters: [1],
   },
   {
@@ -136,7 +120,7 @@ const videos: MythologyVideo[] = [
     description: "深入了解哈奴曼的史诗冒险，他如何帮助罗摩拯救妻子，以及他在泰国古典舞蹈中的表现。",
     duration: "22:15",
     thumbnail: "/hanuman-monkey-warrior.jpg",
-    characters: [2, 3], // Hanuman and Rama appear together
+    characters: [2, 3], 
   },
   {
     id: 4,

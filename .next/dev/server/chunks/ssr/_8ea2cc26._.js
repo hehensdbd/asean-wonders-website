@@ -106,15 +106,15 @@ function Navigation() {
             submenu: [
                 {
                     label: "文创产品",
-                    href: "/cultural-products?category=creative"
+                    href: "/cultural-products/creative"
                 },
                 {
                     label: "本地特产",
-                    href: "/cultural-products?category=local"
+                    href: "/cultural-products/local"
                 },
                 {
                     label: "精美壁纸",
-                    href: "/cultural-products?category=wallpapers"
+                    href: "/cultural-products/wallpapers"
                 }
             ]
         },

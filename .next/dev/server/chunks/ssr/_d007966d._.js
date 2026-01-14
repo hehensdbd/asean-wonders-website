@@ -106,15 +106,15 @@ function Navigation() {
             submenu: [
                 {
                     label: "文创产品",
-                    href: "/cultural-products?category=creative"
+                    href: "/cultural-products/creative"
                 },
                 {
                     label: "本地特产",
-                    href: "/cultural-products?category=local"
+                    href: "/cultural-products/local"
                 },
                 {
                     label: "精美壁纸",
-                    href: "/cultural-products?category=wallpapers"
+                    href: "/cultural-products/wallpapers"
                 }
             ]
         },
@@ -1625,9 +1625,9 @@ const allCharacters = [
     {
         id: 7,
         name: "阿肯",
-        thai: "Phraya Sangkhathep (พระยาสังขเทพ)",
-        title: "一个人",
-        description: "一个人",
+        thai: "Ark (อัคน์)",
+        title: "守树者",
+        description: "童年时纯真无邪，受阿婆教导敬畏自然，立誓守护塔尼树；青年时期却在旱灾饥荒中迷失本心，背弃承诺，变得暴戾；直至老年白发幡然醒悟，历经神启与救赎，终将“守树即守心”化为信念，成为指引下一代的领路者。",
         image: "/images/阿肯.png"
     },
     {
@@ -1645,32 +1645,16 @@ const allCharacters = [
         title: "天界之王",
         description: "源自印度神话，在泰国神话中掌管天界与雨水，是雷电与战争之神，常以骑象形象出现。",
         image: "/images/因陀罗.png"
-    },
-    {
-        id: 10,
-        name: "苏梵娜玛奇",
-        thai: "Suvannamachha (สุพรรณมัจฉา)",
-        title: "美人鱼公主",
-        description: "娜迦龙族的公主，上半身为美丽女子，下半身为鱼尾，掌管海洋生物，善良而神秘。",
-        image: "/images/苏梵娜玛奇.png"
-    },
-    {
-        id: 11,
-        name: "蒙克利",
-        thai: "Mangklip (มังคลีบ)",
-        title: "森林守护者",
-        description: "古老的森林精魂，形态似鹿似马，拥有治愈能力，保护森林中的生灵免受伤害。",
-        image: "/images/蒙克利.png"
     }
 ];
 const videos = [
     {
         id: 1,
         characterId: 1,
-        title: "南塔尼：树神的爱情故事",
-        description: "探索关于南塔尼的经典民间故事。这个视频讲述了美丽的树神与凡人之间的爱情传说，以及她如何成为榕树的保护神。",
-        duration: "12:34",
-        thumbnail: "/thai-tree-goddess-nang-tani.jpg",
+        title: "南塔尼的惩戒",
+        description: "以“守树即守心”为核心主题，讲述了关于自然敬畏与初心救赎的故事 。",
+        duration: "4:30",
+        thumbnail: "/images/南塔尼视频1.png",
         characters: [
             1,
             7
@@ -1681,8 +1665,8 @@ const videos = [
         characterId: 1,
         title: "泰国民间中的南塔尼信仰",
         description: "了解泰国人民如何崇拜南塔尼，以及这个女神在现代泰国文化中的重要性。",
-        duration: "18:45",
-        thumbnail: "/thai-shrine-worship.jpg",
+        duration: "8:45",
+        thumbnail: "/images/南塔尼视频4.png",
         characters: [
             1
         ]
@@ -1836,7 +1820,7 @@ function MythologyPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 264,
+                lineNumber: 248,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1850,7 +1834,7 @@ function MythologyPage() {
                                 children: "探索泰国文化"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 269,
+                                lineNumber: 253,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1858,7 +1842,7 @@ function MythologyPage() {
                                 children: "神话传说"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 272,
+                                lineNumber: 256,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1866,13 +1850,13 @@ function MythologyPage() {
                                 children: "深入探索泰国古老的神话世界。这些故事已经流传了数个世纪，塑造了泰国的文化认同和精神信仰。"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 273,
+                                lineNumber: 257,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 268,
+                        lineNumber: 252,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1886,12 +1870,12 @@ function MythologyPage() {
                             onCharacterChange: handleCharacterChange
                         }, void 0, false, {
                             fileName: "[project]/app/explore/mythology/page.tsx",
-                            lineNumber: 280,
+                            lineNumber: 264,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 279,
+                        lineNumber: 263,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1902,7 +1886,7 @@ function MythologyPage() {
                                 children: "泰国神话宇宙"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 290,
+                                lineNumber: 274,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1913,7 +1897,7 @@ function MythologyPage() {
                                         children: "泰国神话深深植根于古老的宗教信仰和文化传统。其中最重要的是《罗摩衍那》（Ramakien），这是古代印度史诗在泰国的独特改编版本。"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 292,
+                                        lineNumber: 276,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1921,26 +1905,26 @@ function MythologyPage() {
                                         children: "这些故事不仅仅是娱乐，它们是道德教育的工具，教导人们关于勇气、忠诚、智慧和正义。通过寺庙壁画、古典舞蹈和民间传说，这些神话人物在泰国文化中继续发挥着重要的作用。"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 295,
+                                        lineNumber: 279,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "从女神到战士，从妖怪到凡人，每个角色都代表了人类体验的某个方面，为泰国人民提供了深刻的文化和精神指引。"
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 298,
+                                        lineNumber: 282,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 291,
+                                lineNumber: 275,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 289,
+                        lineNumber: 273,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1951,7 +1935,7 @@ function MythologyPage() {
                                 children: "主要人物详情"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 305,
+                                lineNumber: 289,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1959,7 +1943,7 @@ function MythologyPage() {
                                 children: "以下是当前视频中出现的人物介绍："
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 306,
+                                lineNumber: 290,
                                 columnNumber: 11
                             }, this),
                             displayedCharacters.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1969,12 +1953,12 @@ function MythologyPage() {
                                     children: "暂无相关人物信息"
                                 }, void 0, false, {
                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                    lineNumber: 310,
+                                    lineNumber: 294,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 309,
+                                lineNumber: 293,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
@@ -1990,12 +1974,12 @@ function MythologyPage() {
                                                     className: "object-cover"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 320,
+                                                    lineNumber: 304,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                                lineNumber: 319,
+                                                lineNumber: 303,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2006,7 +1990,7 @@ function MythologyPage() {
                                                         children: character.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 328,
+                                                        lineNumber: 312,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2014,7 +1998,7 @@ function MythologyPage() {
                                                         children: character.thai
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 329,
+                                                        lineNumber: 313,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2022,7 +2006,7 @@ function MythologyPage() {
                                                         children: character.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 330,
+                                                        lineNumber: 314,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2030,30 +2014,30 @@ function MythologyPage() {
                                                         children: character.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                                        lineNumber: 331,
+                                                        lineNumber: 315,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                                lineNumber: 327,
+                                                lineNumber: 311,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, character.id, true, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 315,
+                                        lineNumber: 299,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 313,
+                                lineNumber: 297,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 304,
+                        lineNumber: 288,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2064,7 +2048,7 @@ function MythologyPage() {
                                 children: "相关文化"
                             }, void 0, false, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 341,
+                                lineNumber: 325,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2083,7 +2067,7 @@ function MythologyPage() {
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 345,
+                                                    lineNumber: 329,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2091,7 +2075,7 @@ function MythologyPage() {
                                                     children: "古典舞蹈"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 352,
+                                                    lineNumber: 336,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2099,7 +2083,7 @@ function MythologyPage() {
                                                     children: "通过舞蹈表现神话人物和故事"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 353,
+                                                    lineNumber: 337,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2111,24 +2095,24 @@ function MythologyPage() {
                                                             className: "ml-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                                            lineNumber: 355,
+                                                            lineNumber: 339,
                                                             columnNumber: 22
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 354,
+                                                    lineNumber: 338,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                            lineNumber: 344,
+                                            lineNumber: 328,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 343,
+                                        lineNumber: 327,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2144,7 +2128,7 @@ function MythologyPage() {
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 362,
+                                                    lineNumber: 346,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2152,7 +2136,7 @@ function MythologyPage() {
                                                     children: "节日庆典"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 353,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2160,7 +2144,7 @@ function MythologyPage() {
                                                     children: "庆祝与神话相关的重要节日"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 370,
+                                                    lineNumber: 354,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2172,24 +2156,24 @@ function MythologyPage() {
                                                             className: "ml-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                                            lineNumber: 372,
+                                                            lineNumber: 356,
                                                             columnNumber: 22
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 371,
+                                                    lineNumber: 355,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                            lineNumber: 361,
+                                            lineNumber: 345,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 360,
+                                        lineNumber: 344,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2205,7 +2189,7 @@ function MythologyPage() {
                                                     className: "w-full h-48 object-cover rounded-lg mb-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 379,
+                                                    lineNumber: 363,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2213,7 +2197,7 @@ function MythologyPage() {
                                                     children: "建筑艺术"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 386,
+                                                    lineNumber: 370,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2221,7 +2205,7 @@ function MythologyPage() {
                                                     children: "寺庙中的神话艺术展现"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 387,
+                                                    lineNumber: 371,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2233,42 +2217,42 @@ function MythologyPage() {
                                                             className: "ml-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                                            lineNumber: 389,
+                                                            lineNumber: 373,
                                                             columnNumber: 22
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/explore/mythology/page.tsx",
-                                                    lineNumber: 388,
+                                                    lineNumber: 372,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/explore/mythology/page.tsx",
-                                            lineNumber: 378,
+                                            lineNumber: 362,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/explore/mythology/page.tsx",
-                                        lineNumber: 377,
+                                        lineNumber: 361,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/explore/mythology/page.tsx",
-                                lineNumber: 342,
+                                lineNumber: 326,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/explore/mythology/page.tsx",
-                        lineNumber: 340,
+                        lineNumber: 324,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 266,
+                lineNumber: 250,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2281,40 +2265,40 @@ function MythologyPage() {
                             size: 20
                         }, void 0, false, {
                             fileName: "[project]/app/explore/mythology/page.tsx",
-                            lineNumber: 403,
+                            lineNumber: 387,
                             columnNumber: 11
                         }, this),
                         "返回探索"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/explore/mythology/page.tsx",
-                    lineNumber: 399,
+                    lineNumber: 383,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 398,
+                lineNumber: 382,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 408,
+                lineNumber: 392,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$back$2d$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BackButton"], {}, void 0, false, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 409,
+                lineNumber: 393,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$scroll$2d$to$2d$top$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ScrollToTop"], {}, void 0, false, {
                 fileName: "[project]/app/explore/mythology/page.tsx",
-                lineNumber: 410,
+                lineNumber: 394,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/explore/mythology/page.tsx",
-        lineNumber: 263,
+        lineNumber: 247,
         columnNumber: 5
     }, this);
 }

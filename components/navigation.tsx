@@ -66,9 +66,9 @@ export function Navigation() {
       label: "文创",
       href: "/cultural-products",
       submenu: [
-        { label: "文创产品", href: "/cultural-products?category=creative" },
-        { label: "本地特产", href: "/cultural-products?category=local" },
-        { label: "精美壁纸", href: "/cultural-products?category=wallpapers" },
+        { label: "文创产品", href: "/cultural-products/creative" },
+        { label: "本地特产", href: "/cultural-products/local" },
+        { label: "精美壁纸", href: "/cultural-products/wallpapers" },
       ],
     },
     {

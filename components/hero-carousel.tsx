@@ -7,6 +7,7 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { thaiFont } from '@/app/fonts';
 
+
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [autoPlay, setAutoPlay] = useState(true)
@@ -78,9 +79,8 @@ export function HeroCarousel() {
   }
 
   return (
-    // 移除 bg-muted，让轮播图透明以显示主页背景
     <div
-      className="relative w-full h-96 md:h-[700px] overflow-hidden cursor-pointer"
+      className="relative w-full h-96 md:h-[700px] bg-muted overflow-hidden cursor-pointer"
       role="region"
       aria-label="英雄轮播"
       onKeyDown={handleKeyDown}
@@ -106,12 +106,12 @@ export function HeroCarousel() {
               className="object-cover"
               priority={index === 0}
             />
-            {/* 调整遮罩层，使背景更清晰 */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <h2 
-                className={`text-6xl md:text-7xl font-bold mb-3 ${thaiFont.className} no-decoration`}
+            <h2 
+               className={`text-6xl md:text-7xl font-bold mb-3 ${thaiFont.className} no-decoration`}
                 style={{ 
                   textShadow: '2px 2px 8px rgba(0,0,0,0.5)',
                   letterSpacing: '-0.05em',

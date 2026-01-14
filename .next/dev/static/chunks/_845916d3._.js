@@ -116,15 +116,15 @@ function Navigation() {
             submenu: [
                 {
                     label: "文创产品",
-                    href: "/cultural-products?category=creative"
+                    href: "/cultural-products/creative"
                 },
                 {
                     label: "本地特产",
-                    href: "/cultural-products?category=local"
+                    href: "/cultural-products/local"
                 },
                 {
                     label: "精美壁纸",
-                    href: "/cultural-products?category=wallpapers"
+                    href: "/cultural-products/wallpapers"
                 }
             ]
         },
@@ -1305,6 +1305,36 @@ const products = [
     },
     {
         id: 6,
+        name: "泰式少女一周幸运色系列手办盲盒摆件礼物",
+        category: "文创产品",
+        price: "¥58.8",
+        rating: 5.0,
+        reviews: 124,
+        image: "/images/IP2.jpg",
+        description: "泰式少女，装点美好生活"
+    },
+    {
+        id: 7,
+        name: "THAI STYLE COLLECTION系列文创",
+        category: "文创产品",
+        price: "¥8.8-99",
+        rating: 4.8,
+        reviews: 156,
+        image: "/images/IP1.jpg",
+        description: "寻泰国风情，拾异域美好。"
+    },
+    {
+        id: 8,
+        name: "泰国少女可爱贴纸高颜值IP周边手账DIY防水贴纸",
+        category: "文创产品",
+        price: "¥8.8",
+        rating: 4.9,
+        reviews: 142,
+        image: "/images/IP3.jpg",
+        description: "手账里的打工人一周情绪搭子，每天状态贴贴贴！"
+    },
+    {
+        id: 9,
         name: "暹罗猫陶瓷摆件",
         category: "工艺品",
         price: "¥349",
@@ -1316,6 +1346,7 @@ const products = [
 ];
 const categories = [
     "全部",
+    "文创产品",
     "纺织品",
     "工艺品",
     "护理产品",
@@ -1337,7 +1368,7 @@ function CreativeProductsPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navigation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                lineNumber: 90,
+                lineNumber: 120,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1351,14 +1382,14 @@ function CreativeProductsPage() {
                                 size: 20
                             }, void 0, false, {
                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                lineNumber: 98,
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, this),
                             "返回"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                        lineNumber: 94,
+                        lineNumber: 124,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1369,7 +1400,7 @@ function CreativeProductsPage() {
                                 children: "文创产品"
                             }, void 0, false, {
                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                lineNumber: 104,
+                                lineNumber: 134,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1377,13 +1408,13 @@ function CreativeProductsPage() {
                                 children: "发现融合传统工艺与现代设计的创意产品。每件物品都代表了泰国文化的深厚底蕴和工匠的精湛技艺。"
                             }, void 0, false, {
                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                lineNumber: 105,
+                                lineNumber: 135,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                        lineNumber: 103,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1394,12 +1425,12 @@ function CreativeProductsPage() {
                                 children: category
                             }, category, false, {
                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                lineNumber: 113,
+                                lineNumber: 143,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                        lineNumber: 111,
+                        lineNumber: 141,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1417,7 +1448,7 @@ function CreativeProductsPage() {
                                                 className: "object-cover group-hover:scale-105 transition-transform"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 165,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1428,18 +1459,18 @@ function CreativeProductsPage() {
                                                     className: favorites.includes(product.id) ? "fill-red-500 text-red-500" : "text-foreground"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                    lineNumber: 145,
+                                                    lineNumber: 175,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 171,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 164,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1450,7 +1481,7 @@ function CreativeProductsPage() {
                                                 children: product.category
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                lineNumber: 152,
+                                                lineNumber: 182,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1458,7 +1489,7 @@ function CreativeProductsPage() {
                                                 children: product.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 185,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1466,7 +1497,7 @@ function CreativeProductsPage() {
                                                 children: product.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                lineNumber: 156,
+                                                lineNumber: 186,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1481,12 +1512,12 @@ function CreativeProductsPage() {
                                                                 className: i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-muted-foreground"
                                                             }, i, false, {
                                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                                lineNumber: 160,
+                                                                lineNumber: 190,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                        lineNumber: 158,
+                                                        lineNumber: 188,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1499,13 +1530,13 @@ function CreativeProductsPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                        lineNumber: 169,
+                                                        lineNumber: 199,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 187,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1516,7 +1547,7 @@ function CreativeProductsPage() {
                                                         children: product.price
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 204,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1525,62 +1556,62 @@ function CreativeProductsPage() {
                                                             size: 20
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                            lineNumber: 176,
+                                                            lineNumber: 206,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                        lineNumber: 175,
+                                                        lineNumber: 205,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                                lineNumber: 173,
+                                                lineNumber: 203,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 181,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, product.id, true, {
                                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                                lineNumber: 130,
+                                lineNumber: 160,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/cultural-products/creative/page.tsx",
-                        lineNumber: 128,
+                        lineNumber: 158,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                lineNumber: 92,
+                lineNumber: 122,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                lineNumber: 185,
+                lineNumber: 215,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$back$2d$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BackButton"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                lineNumber: 186,
+                lineNumber: 216,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$scroll$2d$to$2d$top$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollToTop"], {}, void 0, false, {
                 fileName: "[project]/app/cultural-products/creative/page.tsx",
-                lineNumber: 187,
+                lineNumber: 217,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/cultural-products/creative/page.tsx",
-        lineNumber: 89,
+        lineNumber: 119,
         columnNumber: 5
     }, this);
 }

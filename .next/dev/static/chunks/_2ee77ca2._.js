@@ -1538,7 +1538,7 @@ const creativeProducts = [
     {
         id: 1,
         name: "THAI STYLE COLLECTION系列文创",
-        price: "¥8.8-99",
+        price: "¥12-99",
         rating: 4.8,
         reviews: 156,
         image: "/images/IP1.jpg",

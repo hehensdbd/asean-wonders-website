@@ -100,9 +100,10 @@ const videos: MythologyVideo[] = [
     title: "南塔尼的惩戒",
     description:
       "以“守树即守心”为核心主题，讲述了关于自然敬畏与初心救赎的故事 。",
-    duration: "4:30",
+    duration: "3:14",
     thumbnail: "/images/南塔尼视频1.png",
     characters: [1, 7], 
+    videoUrl: "/videos/南塔尼的惩戒.mp4",
   },
   {
     id: 2,
@@ -112,6 +113,7 @@ const videos: MythologyVideo[] = [
     duration: "8:45",
     thumbnail: "/images/南塔尼视频4.png",
     characters: [1],
+    videoUrl: "",
   },
   {
     id: 3,
